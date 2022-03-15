@@ -1,7 +1,7 @@
 from app.models import db, Post
 
 
-def see_posts():
+def seed_posts():
     p1 = Post(
         user_id=1, votes=80, img_url='https://media3.giphy.com/media/hQKiGV6MG8WmsHg2yx/giphy.webp?cid=ecf05e470ze15s2fdrphzhs7x0thci92vnblr2gozuzw15ev&rid=giphy.webp&ct=g', title='Poor grandma doesn\'t deserve this.', description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit sed vulputate mi sit amet mauris. Nulla facilisi nullam vehicula ipsum a arcu cursus. Et malesuada fames ac turpis. Eget magna fermentum iaculis eu non diam phasellus vestibulum. In aliquam sem fringilla ut. Sit amet mauris commodo quis imperdiet massa tincidunt nunc. Nunc faucibus a pellentesque sit amet porttitor eget. Et netus et malesuada fames. Massa ultricies mi quis hendrerit. Mi quis hendrerit dolor magna. Dignissim diam quis enim lobortis scelerisque fermentum. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Senectus et netus et malesuada fames. Semper quis lectus nulla at. Senectus et netus et malesuada. Quis commodo odio aenean sed. Penatibus et magnis dis parturient. In iaculis nunc sed augue lacus viverra vitae.')
 
