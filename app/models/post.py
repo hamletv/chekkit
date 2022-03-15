@@ -21,6 +21,6 @@ class Post(db.Model):
             'img_url': self.img_url,
             'title': self.title,
             'description': self.description,
-            'user_img': self.user.profile_img,
+            'profile_img': self.user.profile_img,
             'comments': [comment.to_dict() for comment in self.comments]
         }
