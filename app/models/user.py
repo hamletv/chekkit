@@ -41,5 +41,7 @@ class User(db.Model, UserMixin):
             'last_name': self.last_name,
             'profile_img': self.profile_img,
             'about': self.about,
-            'posts': [post.to_dict() for post in self.posts]
+            'posts': [post.to_dict() for post in self.posts],
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }
