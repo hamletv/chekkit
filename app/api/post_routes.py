@@ -18,6 +18,19 @@ def view_single_post(id):
     return { 'single post': post }
 
 
+@post_routes.route('/users/<int:id>')
+@login_required
+def user_posts(id):
+    posts = Post.query.filter_by(user_id=id).all()
+    return { 'posts': [post.to_dict() for post in posts] }
+
+
+@post_routes.route('/<int:id>', methods=['PUT'])
+@login_required
+def edit_post(id):
+    post = Post.query.get(id)
+
+
 @post_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def delete_post(id):
