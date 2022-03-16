@@ -1,6 +1,7 @@
-from flask import Blueprint
-from flask_login import login_required
+from flask import Blueprint, request
+from flask_login import login_required, current_user
 from app.models import db, Post
+from app.forms.post_form import PostForm
 
 post_routes = Blueprint('post_routes', __name__)
 
@@ -18,11 +19,27 @@ def view_single_post(id):
     return { 'single post': post }
 
 
+@post_routes.route('/new', methods=['POST'])
+@login_required
+def add_post():
+    form = PostForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_post = Post(
+            user_id=form.data['user_id'],
+            img_url=form.data['img_url'],
+            title=form.data['title']
+            description=form.data['description']
+        )
+        db.session.add(new_post)
+        db.session.commit()
+        return new_post.to_dict()
+
+
 @post_routes.route('/users/<int:id>')
 @login_required
 def user_posts(id):
     posts = Post.query.filter_by(user_id=id).all()
-    return { 'posts': [post.to_dict() for post in posts] }
 
 
 @post_routes.route('/<int:id>', methods=['PUT'])

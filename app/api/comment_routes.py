@@ -30,7 +30,6 @@ def create_comment():
             post_id=form.data['post_id'],
             comment=form.data['comment']
             )
-
         db.session.add(new_comment)
         db.session.commit()
         return new_comment.to_dict()
