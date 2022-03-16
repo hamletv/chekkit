@@ -3,7 +3,7 @@ from wtforms.validators import DataRequired, Length
 from wtforms import IntegerField, TextAreaField, SubmitField
 
 
-class Comment(FlaskForm):
+class CommentForm(FlaskForm):
     user_id = IntegerField('user_id')
     post_id = IntegerField('post_id')
     # likes = IntegerField('likes')
