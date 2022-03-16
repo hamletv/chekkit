@@ -23,7 +23,7 @@ class Comment(db.Model):
             # 'likes': self.likes,
             'comment': self.comment,
             'user_username': self.user.username,
-            'user_pic': self.user.profile.img,
+            'user_pic': self.user.profile_img,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
