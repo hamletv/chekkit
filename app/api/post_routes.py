@@ -28,7 +28,7 @@ def add_post():
         new_post = Post(
             user_id=form.data['user_id'],
             img_url=form.data['img_url'],
-            title=form.data['title']
+            title=form.data['title'],
             description=form.data['description']
         )
         db.session.add(new_post)
@@ -40,12 +40,21 @@ def add_post():
 @login_required
 def user_posts(id):
     posts = Post.query.filter_by(user_id=id).all()
+    return { 'posts': [post.to_dict() for post in posts] }
 
 
 @post_routes.route('/<int:id>', methods=['PUT'])
 @login_required
 def edit_post(id):
-    post = Post.query.get(id)
+    form = PostForm()
+    if form.validate_on_submit():
+        post_to_edit = Post.query.get_or_404(id)
+        post_to_edit.img_url = form.data['img_url']
+        post_to_edit.title = form.data['title']
+        post_to_edit.description = form.data['description']
+
+        db.session.commit()
+        return post_to_edit.to_dict()
 
 
 @post_routes.route('/<int:id>', methods=['DELETE'])

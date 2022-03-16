@@ -38,11 +38,13 @@ def create_comment():
 @comment_routes.route('/<int:id>', methods=['PUT'])
 @login_required
 def edit_comment(id):
-    comment_to_edit = Comment.query.get(id)
-    comment_to_edit.comment = request.json
-    db.session.add(comment_to_edit)
-    db.session.commit()
-    return comment_to_edit.to_dict()
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment_to_edit = Comment.query.get_or_404(id)
+        comment_to_edit.comment = form.data['comment']
+
+        db.session.commit()
+        return comment_to_edit.to_dict()
 
 
 @comment_routes.route('/<int:id>', methods=['DELETE'])
