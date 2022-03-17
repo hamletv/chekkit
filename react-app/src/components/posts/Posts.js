@@ -1,19 +1,35 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import './Posts.css'
 
 const AllPosts = () => {
     const posts = useSelector(state => Object.values(state.post))
-    console.log('SINGLE POST: ', posts[1]);
+    const user_id = useSelector(state => state.session.user?.id)
+    // console.log('SINGLE POST AND USER: ', posts[1], user_id);
     return (
         <div className="all-posts-container">
             {posts?.map(post => (
-                <div className="post-container" key={post.id}>
-                    <Link to={`/posts/${post.id}`}>
-                        {post.title}
-                        {post.description}
-                    </Link>
-                </div>
+                <Link to={`/posts/${post.id}`}>
+                    <div className="post-container" key={post.id}>
+                        <div className="vote-container">
+                            <div>upvote</div>
+                            <div>0000</div>
+                            <div>downvote</div>
+                        </div>
+                        <div className="post">
+                            <div className="user-content">
+                            <p>Posted by: <a>username here</a></p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 className="post-title">{post.title}</h3>
+                        </div>
+                        <div>
+                            <p className="text-content">{post.description}</p>
+                        </div>
+                    </div>
+                </Link>
             ))}
         </div>
      );
