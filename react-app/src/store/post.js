@@ -1,9 +1,9 @@
-const GET_POSTS = 'posts/GET_POSTS'
-const ADD_POST = 'posts/ADD_POST'
-const EDIT_POST = 'posts/EDIT_POST'
-const DELETE_POST = 'posts/DELETE_POST'
+const GET_POSTS = 'post/GET_POSTS'
+const ADD_POST = 'post/ADD_POST'
+const EDIT_POST = 'post/EDIT_POST'
+const DELETE_POST = 'post/DELETE_POST'
 
-/* ----- ACTIONS ------ */
+/* ----- ACTION CREATORS ------ */
 export const getPostsAC = (posts) => {
     return {
         type: GET_POSTS,
