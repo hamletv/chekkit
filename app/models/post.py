@@ -25,7 +25,7 @@ class Post(db.Model):
             'title': self.title,
             'description': self.description,
             'profile_img': self.user.profile_img,
-            'comments': [comment.to_dict() for comment in self.comments],
+            # 'comments': [comment.to_dict() for comment in self.comments],
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

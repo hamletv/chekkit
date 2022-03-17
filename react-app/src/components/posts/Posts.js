@@ -10,8 +10,8 @@ const AllPosts = () => {
     return (
         <div className="all-posts-container">
             {posts?.map(post => (
-                <Link to={`/posts/${post.id}`}>
-                    <div className="post-container" key={post.id}>
+                <Link to={`/posts/${post.id}`} key={post.id}>
+                    <div className="post-container">
                         <div className="vote-container">
                             <div>upvote</div>
                             <div>0000</div>
@@ -19,7 +19,7 @@ const AllPosts = () => {
                         </div>
                         <div className="post">
                             <div className="user-content">
-                            <p>Posted by: <a>username here</a></p>
+                            <p>Posted by: </p>
                             </div>
                         </div>
                         <div>
