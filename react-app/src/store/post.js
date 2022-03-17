@@ -11,10 +11,10 @@ export const getPostsAC = (posts) => {
     };
 };
 
-export const addPostAC = (newPost) => {
+export const addPostAC = (post) => {
     return {
         type: ADD_POST,
-        newPost
+        post
     };
 };
 
@@ -28,7 +28,7 @@ export const editPostAC = (post, imgUrl, title, description) => {
 export const removePostAC = (postId) => {
     return {
         type: DELETE_POST,
-        posts
+        postId
     };
 };
 
@@ -49,8 +49,8 @@ export const addPost = (payload) => async(dispatch) => {
         body: JSON.stringify(payload)
     });
     if(response.ok){
-        const newPost = await response.json();
-        dispatch(addPostAC(newPost))
+        const post = await response.json();
+        dispatch(addPostAC(post))
     };
     return response;
 };
@@ -62,8 +62,8 @@ export const editPost = (id, formInfo) => async(dispatch) => {
         body: JSON.stringify(formInfo)
     });
     if(response.ok){
-        const data = await response.json();
-        dispatch(editPostAC(data))
+        const post = await response.json();
+        dispatch(editPostAC(post))
     };
     return response;
 };
@@ -72,8 +72,40 @@ export const deletePost = (id) => async(dispatch) => {
     const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE' });
     const data = await response.json();
-    dispatch(deleteImageAC(data))
+    dispatch(deleteImageAC(id))
     return response;
 };
 
 /* ----- REDUCER ------ */
+const postReducer = (state = {}, action) => {
+    let newState;
+    switch(action.type){
+        case GET_POSTS: {
+            const newState = { ...state }
+            action.posts.map(post => newState[post.id] = post);
+            return newState
+        }
+
+        case ADD_POST: {
+            const newState = { ...state, [action.post.id]: { ...action.post }
+            }
+            return newState;
+        }
+
+        case EDIT_POST: {
+            const newState = { ...state, [action.post.id]: action.post }
+            return newState;
+        }
+
+        case DELETE_POST: {
+            const newState = { ...state }
+            delete newState[action.postId]
+            return newState;
+        }
+        default:
+            return state;
+    };
+};
+
+
+export default postReducer;
