@@ -1,0 +1,14 @@
+#root {
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+}
+
+#nav-bar {
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid red;
+    z-index: 100;
+}
