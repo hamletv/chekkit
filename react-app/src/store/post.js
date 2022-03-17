@@ -72,7 +72,7 @@ export const deletePost = (id) => async(dispatch) => {
     const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE' });
     const data = await response.json();
-    dispatch(deleteImageAC(id))
+    dispatch(removePostAC(id))
     return response;
 };
 
@@ -82,7 +82,8 @@ const postReducer = (state = {}, action) => {
     switch(action.type){
         case GET_POSTS: {
             const newState = { ...state }
-            action.posts.map(post => newState[post.id] = post);
+            // console.log('THE POSTS', action.posts.posts);
+            action.posts.posts.forEach(post => newState[post.id] = post);
             return newState
         }
 
