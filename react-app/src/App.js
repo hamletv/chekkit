@@ -11,7 +11,8 @@ import { authenticate } from './store/session';
 import { getPosts } from './store/post';
 import { getComments, editComment, deleteComment } from './store/comment';
 import AllPosts from './components/posts/Posts';
-import NewPost from './components/posts/NewPost';
+import NewPost from './components/posts/MediaPost';
+import MediaPost from './components/posts/MediaPost';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,7 +48,7 @@ function App() {
           <AllPosts/>
         </ProtectedRoute>
         <ProtectedRoute path='/new' exact={true} >
-          <NewPost/>
+          <MediaPost/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />

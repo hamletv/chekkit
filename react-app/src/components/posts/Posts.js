@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import './Posts.css'
 
 const AllPosts = () => {
-    const posts = useSelector(state => Object.values(state.post))
+    const allPosts = useSelector(state => Object.values(state.post))
+    const posts = allPosts.reverse();
     const comments = useSelector(state => Object.values(state.comment))
     // const comments = useSelector(state => state?.comment)
     const user_id = useSelector(state => state.session.user?.id)
@@ -25,10 +26,13 @@ const AllPosts = () => {
                             </div>
                         </div>
                         <div>
-                            <h3 className="post-title">{post.title}</h3>
+                            <h3 className="post-title">{post?.title}</h3>
                         </div>
                         <div>
-                            <p className="text-content">{post.description}</p>
+                            <p className="text-content">{post?.description}</p>
+                        </div>
+                        <div>
+                            <img src={post?.img_url} />
                         </div>
                     </div>
                 </Link>

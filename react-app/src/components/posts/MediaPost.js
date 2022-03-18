@@ -48,7 +48,6 @@ const MediaPost = () => {
             <div className="create-post-container">
                 <div className="create-top-line">
                     Create a post
-                    <hr>-----</hr>
                 </div>
             <div>
                 <div className="form-error"></div>
@@ -59,7 +58,7 @@ const MediaPost = () => {
                         </li>
 
                         <li>
-                            <input type='text' onChange={(e) => setImg_Url(e.target.value)} value={img_url} placeholder='Url' className="field-style field-full align none" required />
+                            <input type='text' onChange={(e) => setImg_Url(e.target.value)} value={img_url} placeholder='Image url' className="field-style field-full align none" required />
                         </li>
                     </ul>
                     <div>
