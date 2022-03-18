@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addPost } from "../../store/post";
 
@@ -9,6 +9,7 @@ const MediaPost = () => {
     const [title, setTitle] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const dispatch = useDispatch();
     const user_id = useSelector(state => state.session.user.id);
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const MediaPost = () => {
         setImg_Url('');
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const new_post = {
             user_id,
