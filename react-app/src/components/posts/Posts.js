@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import './Posts.css'
+import SinglePost from "./SinglePost";
 
 const AllPosts = () => {
     const allPosts = useSelector(state => Object.values(state.post))
@@ -9,7 +10,8 @@ const AllPosts = () => {
     const comments = useSelector(state => Object.values(state.comment))
     // const comments = useSelector(state => state?.comment)
     const user_id = useSelector(state => state.session.user?.id)
-    console.log('COMMENTS IN COMPONENT: ', comments);
+    // console.log('COMMENTS IN COMPONENT: ', comments);
+    // console.log('ALL THE POSTS', allPosts[3])
     return (
         <div className="all-posts-container">
             {posts?.map(post => (

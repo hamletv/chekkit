@@ -13,6 +13,7 @@ import { getComments, editComment, deleteComment } from './store/comment';
 import AllPosts from './components/posts/Posts';
 import NewPost from './components/posts/MediaPost';
 import MediaPost from './components/posts/MediaPost';
+import SinglePost from './components/posts/SinglePost';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,6 +47,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/posts' exact={true} >
           <AllPosts/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/posts/:id' exact={true} >
+          <SinglePost/>
         </ProtectedRoute>
         <ProtectedRoute path='/new' exact={true} >
           <MediaPost/>
