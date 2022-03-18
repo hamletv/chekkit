@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
-import './NavBar.css'
+// import './NavBar.css'
 
 const NavBar = () => {
   const dispatch = useDispatch();

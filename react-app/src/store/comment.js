@@ -43,7 +43,7 @@ export const getComments = (postId) => async(dispatch) => {
 };
 
 export const addComment = ({ userId, postId, comment }) => async(dispatch) => {
-    const response = await fetch('/api/comments/posts/', {
+    const response = await fetch('/api/comments/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, postId, comment})
@@ -68,15 +68,15 @@ export const editComment = (comment) => async(dispatch) => {
     return response;
 };
 
-export const deleteComment = (id) => async (dispatch) => {
-    const response = await fetch(`/api/comments/${id}`, {
-        method: 'DELETE' });
-    const data = await response.json();
-    if(data) {
-        dispatch(removeCommentAC(id))
-    }
-    return response;
-};
+// export const deleteComment = (id) => async (dispatch) => {
+//     const response = await fetch(`/api/comments/${id}`, {
+//         method: 'DELETE' });
+//     const data = await response.json();
+//     if(data) {
+//         dispatch(removeCommentAC(id))
+//     }
+//     return response;
+// };
 
 
 /* ----- REDUCER ------ */

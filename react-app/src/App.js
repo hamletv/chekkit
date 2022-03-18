@@ -22,8 +22,6 @@ function App() {
       await dispatch(authenticate());
       await dispatch(getPosts());
       await dispatch(getComments());
-      await dispatch(editComment());
-      await dispatch(deleteComment());
       setLoaded(true);
     })();
   }, [dispatch]);

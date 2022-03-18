@@ -6,6 +6,7 @@ import './Posts.css'
 const AllPosts = () => {
     const posts = useSelector(state => Object.values(state.post))
     const comments = useSelector(state => Object.values(state.comment))
+    // const comments = useSelector(state => state?.comment)
     const user_id = useSelector(state => state.session.user?.id)
     console.log('COMMENTS IN COMPONENT: ', comments);
     return (
