@@ -4,6 +4,7 @@
 }
 
 #nav-bar {
+    position: fixed;
     overflow: visible;
     position: fixed;
     top: 0;

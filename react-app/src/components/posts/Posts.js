@@ -17,7 +17,7 @@ const AllPosts = () => {
                     <div className="post-container">
                         <div className="vote-container">
                             <div>upvote</div>
-                            <div>0000</div>
+                            <div>00</div>
                             <div>downvote</div>
                         </div>
                         <div className="post">
