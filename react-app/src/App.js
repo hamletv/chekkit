@@ -9,8 +9,9 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import { getPosts } from './store/post';
-import { getComments } from './store/comment';
+import { getComments, editComment, deleteComment } from './store/comment';
 import AllPosts from './components/posts/Posts';
+import NewPost from './components/posts/NewPost';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -21,6 +22,8 @@ function App() {
       await dispatch(authenticate());
       await dispatch(getPosts());
       await dispatch(getComments());
+      await dispatch(editComment());
+      await dispatch(deleteComment());
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -45,6 +48,9 @@ function App() {
         <ProtectedRoute path='/posts' exact={true} >
           <AllPosts/>
         </ProtectedRoute>
+        <ProtectedRoute path='/new' exact={true} >
+          <NewPost/>
+        </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
@@ -52,6 +58,9 @@ function App() {
           <h1>My Home Page</h1>
           <AllPosts/>
         </ProtectedRoute>
+        <Route>
+          <h1>404: Page Not Found</h1>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

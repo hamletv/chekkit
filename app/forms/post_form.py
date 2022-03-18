@@ -8,6 +8,6 @@ class PostForm(FlaskForm):
     user_id = IntegerField('user_id')
     # votes = IntegerField('votes')
     img_url = TextAreaField('img_url')
-    title = TextAreaField('title', validators=[DataRequired(), Length(min=5, max=2200)])
+    title = TextAreaField('title', validators=[DataRequired(), Length(min=5, max=300)])
     description = TextAreaField('description')
     submit = SubmitField('Post')
