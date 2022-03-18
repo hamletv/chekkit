@@ -3,12 +3,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/navbar/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import { getPosts } from './store/post';
+import { getComments } from './store/comment';
 import AllPosts from './components/posts/Posts';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      await dispatch(getPosts())
+      await dispatch(getPosts());
+      await dispatch(getComments());
       setLoaded(true);
     })();
   }, [dispatch]);

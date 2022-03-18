@@ -1,5 +1,5 @@
 const GET_COMMENTS = 'comment/GET_COMMENTS'
-const ADD_COMMENT = 'comment/ADD_POST'
+const ADD_COMMENT = 'comment/ADD_COMMENT'
 const EDIT_COMMENT = 'comment/EDIT_COMMENT'
 const DELETE_COMMENT = 'comment/DELETE_COMMENT'
 
@@ -34,7 +34,7 @@ export const removeCommentAC = (commentId) => {
 
 /* ----- THUNK ------ */
 export const getComments = (postId) => async(dispatch) => {
-    const response = await fetch(`/api/comments/posts/${postId}`);
+    const response = await fetch(`/api/comments/`);
     if(response.ok){
         const comments = await response.json();
         dispatch(getCommentsAC(comments))
@@ -69,7 +69,7 @@ export const editComment = (comment) => async(dispatch) => {
 };
 
 export const deleteComment = (id) => async (dispatch) => {
-    const response = await csrfFetch(`/api/comments/posts/${id}`, {
+    const response = await fetch(`/api/comments/posts/${id}`, {
         method: 'DELETE' });
     const data = await response.json();
     dispatch(removeCommentAC(id))
@@ -83,7 +83,7 @@ const commentReducer = (state = {}, action)  => {
     switch (action.type) {
         case GET_COMMENTS: {
             const newState = { ...state };
-            const entries = {};
+            // console.log('THE COMMENTS: ', action.comments.comments)
             action.comments.comments.forEach(comment => newState[comment.id] = comment);
             return newState;
         }

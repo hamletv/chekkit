@@ -5,8 +5,9 @@ import './Posts.css'
 
 const AllPosts = () => {
     const posts = useSelector(state => Object.values(state.post))
+    const comments = useSelector(state => Object.values(state.comment))
     const user_id = useSelector(state => state.session.user?.id)
-    // console.log('SINGLE POST AND USER: ', posts[1], user_id);
+    console.log('COMMENTS IN COMPONENT: ', comments);
     return (
         <div className="all-posts-container">
             {posts?.map(post => (
