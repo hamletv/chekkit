@@ -63,7 +63,7 @@ const SinglePost = () => {
                         }
                     </li>
                     <li>
-                        <button onClick={(e) => history.push('/')}>Cancel</button>
+                        <button onClick={(e) => history.push('/')}>Back</button>
                     </li>
                     <li>
                         {user.id === singlePost?.user_id &&
