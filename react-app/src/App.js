@@ -14,6 +14,7 @@ import AllPosts from './components/posts/Posts';
 import NewPost from './components/posts/MediaPost';
 import MediaPost from './components/posts/MediaPost';
 import SinglePost from './components/posts/SinglePost';
+import LoginFormModal from './components/auth/LoginFormModal';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -36,9 +37,6 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
@@ -58,7 +56,6 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          <h1>My Home Page</h1>
           <AllPosts/>
         </Route>
         <Route>

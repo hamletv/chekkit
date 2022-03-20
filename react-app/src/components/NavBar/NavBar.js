@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import LoginFormModal from '../auth/LoginFormModal';
+import SignUpFormModal from '../auth/SignUpFormModal';
 import LogoutButton from '../auth/LogoutButton';
+
 import './NavBar.css'
 
 const NavBar = () => {
@@ -14,6 +17,9 @@ const NavBar = () => {
     if(profileClicked) return;
     setProfileClicked(true);
   };
+
+  let sessionLinks;
+
   return (
     <nav id='nav-bar'>
       <div>
@@ -33,21 +39,12 @@ const NavBar = () => {
               Home
             </NavLink>
           </li> */}
-          <li>
-            <NavLink to='/login' exact={true} activeClassName='active nav-right'>
-              Login
-            </NavLink>
+          <li className='nav-left'>
+            <LoginFormModal />
           </li>
           <li>
-            <NavLink to='/sign-up' exact={true} activeClassName='active nav-right'>
-              Sign Up
-            </NavLink>
+            <SignUpFormModal />
           </li>
-          {/* <li>
-            <NavLink to='/users' exact={true} activeClassName='active'>
-              Users
-            </NavLink>
-          </li> */}
           <li className='nav-right'>
             <LogoutButton />
           </li>

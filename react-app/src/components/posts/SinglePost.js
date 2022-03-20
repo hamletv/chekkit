@@ -13,7 +13,7 @@ const SinglePost = () => {
     // const singlePost = useSelector(state => Object.values(state.post))
     const singlePost = useSelector(state => state.post[id])
     const comments = useSelector(state => Object.values(state.comment))
-    console.log('ALL THE POSTS', singlePost)
+    console.log('SINGLE POST', singlePost)
 
     const openComment = (e) => {
         e.preventDefault();
