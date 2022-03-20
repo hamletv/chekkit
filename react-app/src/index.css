@@ -7,3 +7,7 @@
 html {
     background-color: lightgray;
 }
+
+body {
+    padding-top: 48px;
+}

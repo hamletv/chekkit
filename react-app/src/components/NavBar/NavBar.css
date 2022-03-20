@@ -1,15 +1,100 @@
-#root {
-    width: 100%;
-    background-color: rgb(250, 250, 250);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,200&family=Source+Sans+Pro&display=swap');
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
+/* #root {
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+} */
+
 #nav-bar {
+    display: flex;
     position: fixed;
     overflow: visible;
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white;
-    border: 1px solid red;
+    background-color: #ffffff;
     z-index: 100;
+    list-style-type: none;
+    height: 48px;
+    overflow: hidden;
+}
+
+#nav-bar li {
+    display: inline-block;
+    padding: 0 8px;
+    margin-top: 15px;
+}
+
+.logo {
+    height: 32px;
+    margin: 8px 25px;
+    width: 32px;
+
+}
+
+/* .nav-left li {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.nav-right li {
+    float: right;
+}
+
+/* .nav-right li { */
+    /* float: right; */
+/* } */ */
+.app-name {
+    display: inline;
+    width: 48px;
+    margin-top: 25px;
+}
+.app-name a {
+    font-size: 28px;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(255, 69, 0);
+    /* margin-top: 20px; */
+}
+
+li {
+    display: inline;
+    /* float: right; */
+}
+#nav-bar .session-links {
+    justify-content: flex-end;
+}
+.session-links {
+    display: inline-block;
+    text-decoration: none;
+    width: auto;
+    margin-left: 58%;
+}
+
+.session-links a {
+    font-family: 'Fira Sans', sans-serif;
+    padding: 6px 15px;
+    border-radius: 18px;
+    text-decoration: none;
+}
+
+.session-links li:first-child a {
+    border: 1.5px solid rgb(19, 94, 243);
+    color: rgb(19, 94, 243);
+}
+.session-links li:nth-child(2) a {
+    background-color: rgb(19, 94, 243);
+    border: 1px solid rgb(19, 94, 243);
+    color: white;
 }
