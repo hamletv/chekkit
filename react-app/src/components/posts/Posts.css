@@ -1,0 +1,24 @@
+.post-container {
+    display: flex;
+    /* width: 800px; */
+    /* height: 950px; */
+    /* background-color: bisque; */
+}
+
+.vote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    background: gray;
+}
+
+.user-content {
+    height: 30px;
+    background: yellow;
+}
+
+.post {
+    flex-grow: 1;
+}

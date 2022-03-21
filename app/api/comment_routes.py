@@ -39,6 +39,7 @@ def create_comment():
 @login_required
 def edit_comment(id):
     form = CommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         comment_to_edit = Comment.query.get_or_404(id)
         comment_to_edit.comment = form.data['comment']

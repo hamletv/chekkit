@@ -7,9 +7,9 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     # votes = db.Column(db.Integer)
-    img_url = db.Column(db.Text)
+    img_url = db.Column(db.Text, nullable=False) # remove nullable
     title = db.Column(db.Text, nullable=False)
-    description = db.Column(db.Text)
+    description = db.Column(db.Text, nullable=False)  # remove nullable
     created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
@@ -25,7 +25,7 @@ class Post(db.Model):
             'title': self.title,
             'description': self.description,
             'profile_img': self.user.profile_img,
-            'comments': [comment.to_dict() for comment in self.comments],
+            # 'comments': [comment.to_dict() for comment in self.comments],
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
