@@ -56,7 +56,6 @@ export const addPost = (payload) => async(dispatch) => {
 };
 
 export const editPost = ({id, user_id, title, description, img_url}) => async(dispatch) => {
-    console.log('THIS IS THE EDIT ID: ', id)
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -83,7 +82,6 @@ const postReducer = (state = {}, action) => {
     switch(action.type){
         case GET_POSTS: {
             const newState = { ...state }
-            // console.log('THE POSTS', action.posts.posts);
             action.posts.posts.forEach(post => newState[post.id] = post);
             return newState
         }

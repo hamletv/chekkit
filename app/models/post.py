@@ -7,9 +7,9 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     # votes = db.Column(db.Integer)
-    img_url = db.Column(db.Text, nullable=False) # remove nullable
+    img_url = db.Column(db.Text)
     title = db.Column(db.Text, nullable=False)
-    description = db.Column(db.Text, nullable=False)  # remove nullable
+    description = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 

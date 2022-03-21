@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { deletePost, getPosts, editPost } from "../../store/post";
 
 
-const UpdatePostForm = () => {
+const UpdatePostForm = ({ setShowModal }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -21,7 +21,7 @@ const UpdatePostForm = () => {
         e.preventDefault();
         const post = { description, img_url, id, title, user_id: user.id };
         await dispatch(editPost(post));
-        history.push(`/posts/${post.id}`)
+        setShowModal(false)
     };
 
     const handleDelete = async (e) => {
