@@ -42,11 +42,11 @@ export const getComments = (postId) => async(dispatch) => {
     return response;
 };
 
-export const addComment = ({ userId, postId, comment }) => async(dispatch) => {
+export const addComment = ({ user_id, post_id, comment }) => async(dispatch) => {
     const response = await fetch('/api/comments/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, postId, comment})
+        body: JSON.stringify({ user_id, post_id, comment})
     });
     if(response.ok){
         const comment = await response.json();
@@ -55,11 +55,11 @@ export const addComment = ({ userId, postId, comment }) => async(dispatch) => {
     return response;
 };
 
-export const editComment = (comment) => async(dispatch) => {
-    const response = await fetch(`/api/comments/${comment.id}`, {
+export const editComment = ({ id, user_id, post_id, comment }) => async(dispatch) => {
+    const response = await fetch(`/api/comments/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(comment)
+        body: JSON.stringify({ user_id, post_id, comment })
     });
     if(response.ok) {
         const comment = await response.json();

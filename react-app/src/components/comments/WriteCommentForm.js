@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "../../store/comment";
 import { useHistory } from "react-router-dom";
 
-const WriteComment = ({ singlePost }) => {
+const WriteCommentForm = ({ singlePost, setShowModal }) => {
     const user_id = useSelector(state => state.session.user.id);
     const dispatch = useDispatch();
     const [comment, setComment] = useState('');
+    const [errors, setErrors] = useState([]);
     const history = useHistory();
 
     const reset = () => {
@@ -25,18 +26,29 @@ const WriteComment = ({ singlePost }) => {
         e.preventDefault();
         const newComment = {
             comment,
-            post_id,
+            post_id: singlePost.id,
             user_id,
         };
         dispatch(addComment(newComment));
         reset();
+        // setShowModal(false);
     };
 
     const handleCancel = (e) => {
         e.preventDefault();
         history.push('/')
     }
-    return (  );
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="textarea" onChange={(e) => setComment(e.target.value)} value={comment} placeholder='What are your thoughts?' name="comment"></input>
+                <div>
+                    <button onClick={handleSubmit}>Comment</button>
+                    <button onClick={handleCancel}>Cancel</button>
+                </div>
+            </form>
+        </div>
+     );
 }
 
-export default WriteComment;{ singlePost }
+export default WriteCommentForm;

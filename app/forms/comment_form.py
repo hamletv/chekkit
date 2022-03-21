@@ -8,4 +8,4 @@ class CommentForm(FlaskForm):
     post_id = IntegerField('post_id')
     # likes = IntegerField('likes')
     comment = TextAreaField('comment', validators=[DataRequired(), Length(min=2, max=2200)])
-    submit = SubmitField
+    submit = SubmitField('Comment')
