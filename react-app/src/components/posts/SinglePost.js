@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { deleteComment } from "../../store/comment";
+import { deleteComment, editComment } from "../../store/comment";
 import { deletePost } from "../../store/post";
 import EditPostModal from "./EditPostModal";
 import WriteCommentForm from "../comments/WriteCommentForm";
@@ -16,20 +16,19 @@ const SinglePost = () => {
     const commentsObj = useSelector(state => Object.values(state.comment));
     const allComments = Object.values(commentsObj) // array of objs
     const comments = allComments.filter(comment => comment?.post_id === +id)
-    console.log('SINGLE POST COMMENTS', comments)
+    console.log('SINGLE POST COMMENTS', comments, id)
 
     const openComment = (e) => {
         e.preventDefault();
         setLoadComment(!loadComment);
     };
 
-    const deleteComment = (e, id) => {
-        e.preventDefault();
-        dispatch(deleteComment(id))
-    };
+    const handleDeleteComment = async (id) => {
+        console.log('COMMENT ID FROM HANDLE DELTEE: ', id)
+        await dispatch(deleteComment(id))
+    }
 
-    const handleDeletePost = async (e) => {
-        e.preventDefault();
+    const handleDeletePost = async (id) => {
         await dispatch(deletePost(singlePost.id))
         history.push('/');
     };
@@ -80,6 +79,12 @@ const SinglePost = () => {
                 {comments?.map(comment => (
                     <div>
                         {comment.comment}
+                        <div>{user.id === comment?.user_id &&
+                            (<button >Edit</button>)}
+                        </div>
+                        <div>{user.id === comment?.user_id &&
+                            (<button onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
+                        </div>
                     </div>
                 ))}
             </div>
