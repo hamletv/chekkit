@@ -22,7 +22,6 @@ const UpdatePostForm = ({ setShowModal }) => {
         const post = { description, img_url, id, title, user_id: user.id };
         await dispatch(editPost(post));
         setShowModal(false)
-        // history.push(`/posts/${post.id}`)
     };
 
     const handleDelete = async (e) => {
