@@ -8,20 +8,18 @@ const AllPosts = () => {
     const allPosts = useSelector(state => Object.values(state.post))
     const posts = allPosts.reverse();
     const comments = useSelector(state => Object.values(state.comment))
-    // const comments = useSelector(state => state?.comment)
     const user_id = useSelector(state => state.session.user?.id)
-    // console.log('COMMENTS IN COMPONENT: ', comments);
-    // console.log('ALL THE POSTS', allPosts[3])
+
     return (
         <div className="all-posts-container">
             {posts?.map(post => (
-                <Link to={`/posts/${post.id}`} key={post.id}>
-                    <div className="post-container">
-                        <div className="vote-container">
-                            <div>upvote</div>
-                            <div>00</div>
-                            <div>downvote</div>
-                        </div>
+                <div className="post-container">
+                    <div className="vote-container">
+                        <div>upvote</div>
+                        <div>00</div>
+                        <div>downvote</div>
+                    </div>
+                    <Link to={`/posts/${post.id}`} key={post.id}>
                         <div className="post">
                             <div className="user-content">
                             <p>Posted by: </p>
@@ -36,8 +34,8 @@ const AllPosts = () => {
                         <div>
                             <img src={post?.img_url} />
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             ))}
         </div>
      );

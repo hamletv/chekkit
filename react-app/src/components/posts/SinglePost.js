@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { deleteComment } from "../../store/comment";
 import { deletePost } from "../../store/post";
+import EditPostModal from "./EditPostModal";
 
 const SinglePost = () => {
     const [loadComment, setLoadComment] = useState(false);
@@ -57,9 +58,9 @@ const SinglePost = () => {
             <div>
                 <ul>
                     <li>
-                        {user.id === singlePost?.user_id &&
-                        (<button onClick={(e) => history.push('/')}>Edit</button>
-                        )
+                        {user.id === singlePost?.user_id && (<EditPostModal/>)
+                        // (<button onClick={(e) => history.push('/')}>Edit</button>
+                        // )
                         }
                     </li>
                     <li>

@@ -55,11 +55,12 @@ export const addPost = (payload) => async(dispatch) => {
     return response;
 };
 
-export const editPost = (id, formInfo) => async(dispatch) => {
+export const editPost = ({id, user_id, title, description, img_url}) => async(dispatch) => {
+    console.log('THIS IS THE EDIT ID: ', id)
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formInfo)
+        body: JSON.stringify({ title, user_id, description, img_url })
     });
     if(response.ok){
         const post = await response.json();
