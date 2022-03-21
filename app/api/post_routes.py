@@ -47,10 +47,7 @@ def user_posts(id):
 def edit_post(id):
     form = PostForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    print('\n\n FORM ERRORS \n\n', form.errors)
-    print('\n\n BEFORE VALIDATION \n\n', form.data)
     if form.validate_on_submit():
-        print('\n\n AFTER VALIDATION \n\n', form.data)
         post_to_edit = Post.query.get_or_404(id)
         post_to_edit.img_url = form.data['img_url']
         post_to_edit.title = form.data['title']
