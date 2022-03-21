@@ -32,7 +32,7 @@ const UpdatePostForm = ({ setShowModal }) => {
 
     const handleCancel = async (e) => {
         e.preventDefault();
-        return history.push(`/posts/${singlePost.id}`);
+        setShowModal(false);
     };
 
     useEffect(() => {
