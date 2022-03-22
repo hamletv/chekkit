@@ -9,7 +9,7 @@ import './NavBar.css'
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+  const user = useSelector(state => state.session.user);
   const [profileClicked, setProfileClicked] = useState(false);
   const [postForm, setPostForm] = useState(true);
 
@@ -17,8 +17,6 @@ const NavBar = () => {
     if(profileClicked) return;
     setProfileClicked(true);
   };
-
-  let sessionLinks;
 
   return (
     <nav id='nav-bar'>
@@ -34,17 +32,13 @@ const NavBar = () => {
       </div>
       <div className='session-links'>
         <ul>
-          {/* <li>
-            <NavLink to='/' exact={true} activeClassName='active nav-left'>
-              Home
-            </NavLink>
-          </li> */}
-          <li className='nav-left'>
-            <LoginFormModal />
-          </li>
-          <li>
-            <SignUpFormModal />
-          </li>
+            <li className='nav-left'>
+              <LoginFormModal />
+            </li>
+            <li>
+              <SignUpFormModal />
+            </li>
+
           <li className='nav-right'>
             <LogoutButton />
           </li>
