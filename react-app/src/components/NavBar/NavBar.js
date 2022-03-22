@@ -30,14 +30,19 @@ const NavBar = () => {
           chekkit
         </NavLink>
       </div>
+
       <div className='session-links'>
         <ul>
-            <li className='nav-left'>
+      {!user && (
+        <div>
+        <li className='nav-left'>
               <LoginFormModal />
             </li>
             <li>
               <SignUpFormModal />
             </li>
+        </div>
+              )}
 
           <li className='nav-right'>
             <LogoutButton />
