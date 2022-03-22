@@ -5,19 +5,19 @@ import { useHistory } from "react-router-dom";
 import { editComment } from "../../store/comment";
 
 
-const UpdateCommentForm = ({ comm, id, setShowModal }) => {
+const UpdateCommentForm = ({ comm, setShowModal }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     // const commentsObj = useSelector(state => state.comment)
     const user = useSelector(state => state.session.user);
     const [comment, setComment] = useState(comm?.comment || '');
-    console.log('THE COMMENTS FROM UPDATE FORM: ', comm, id);
+    console.log('THE COMMENTS FROM UPDATE FORM: ', comm);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const cmnt = { comment, user_id: user.id, post_id: comment.post_id };
+        const cmnt = { comment, user_id: user.id, post_id: comment.post_id, id: comm.id };
         await dispatch(editComment(cmnt));
-        // setShowModal(false);
+        setShowModal(false);
     };
 
     const handleCancel = async (e) => {

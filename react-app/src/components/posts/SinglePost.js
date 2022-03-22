@@ -6,6 +6,7 @@ import { deletePost } from "../../store/post";
 import EditPostModal from "./EditPostModal";
 import WriteCommentForm from "../comments/WriteCommentForm";
 import UpdateCommentForm from "../comments/UpdateCommentForm";
+import EditCommentModal from "../comments/EditCommentModal";
 
 const SinglePost = () => {
     const [loadComment, setLoadComment] = useState(false);
@@ -78,7 +79,7 @@ const SinglePost = () => {
                 {comments?.map((comment, id) => (
                     <div>
                         {comment.comment}
-                        <div>{user.id === singlePost?.user_id && (<UpdateCommentForm comm={comment} id={id}/>)}
+                        <div>{user.id === singlePost?.user_id && (<EditCommentModal comm={comment}/>)}
                         </div>
                         <div>{user.id === comment?.user_id &&
                             (<button onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
