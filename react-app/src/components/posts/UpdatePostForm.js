@@ -12,7 +12,6 @@ const UpdatePostForm = ({ setShowModal }) => {
     const postsObj = useSelector(state => state.post)
     const singlePost = postsObj[id];
     const user = useSelector(state => state.session.user);
-    // const singlePost = useSelector(state => state.post[id]);
     const [title, setTitle] = useState(singlePost?.title || '');
     const [img_url, setImgUrl] = useState(singlePost?.img_url || '');
     const [description, setDescription] = useState(singlePost?.description || '');

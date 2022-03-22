@@ -33,7 +33,7 @@ export const removeCommentAC = (commentId) => {
 };
 
 /* ----- THUNK ------ */
-export const getComments = (postId) => async(dispatch) => {
+export const getComments = (postId) => async(dispatch) => { // remove postId
     const response = await fetch(`/api/comments/`);
     if(response.ok){
         const comments = await response.json();
@@ -85,7 +85,6 @@ const commentReducer = (state = {}, action)  => {
     switch (action.type) {
         case GET_COMMENTS: {
             const newState = { ...state };
-            // console.log('THE COMMENTS: ', action.comments.comments)
             action.comments.comments.forEach(comment => newState[comment.id] = comment);
             return newState;
         }

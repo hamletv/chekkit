@@ -3,18 +3,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/navbar/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import { getPosts } from './store/post';
-import { getComments, editComment, deleteComment } from './store/comment';
+import { getComments } from './store/comment';
 import AllPosts from './components/posts/Posts';
 import NewPost from './components/posts/MediaPost';
 import MediaPost from './components/posts/MediaPost';
 import SinglePost from './components/posts/SinglePost';
 import LoginFormModal from './components/auth/LoginFormModal';
+// import NavBar from './components/Navbar/NavBar';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,6 +38,10 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+        <Route path='/login' exact={true}>
+          {/* <LoginFormModal /> */}
+          <LoginForm />
+        </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>

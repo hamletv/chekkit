@@ -5,6 +5,8 @@ import { deleteComment, editComment } from "../../store/comment";
 import { deletePost } from "../../store/post";
 import EditPostModal from "./EditPostModal";
 import WriteCommentForm from "../comments/WriteCommentForm";
+import UpdateCommentForm from "../comments/UpdateCommentForm";
+import EditCommentModal from "../comments/EditCommentModal";
 
 const SinglePost = () => {
     const [loadComment, setLoadComment] = useState(false);
@@ -16,7 +18,6 @@ const SinglePost = () => {
     const commentsObj = useSelector(state => Object.values(state.comment));
     const allComments = Object.values(commentsObj) // array of objs
     const comments = allComments.filter(comment => comment?.post_id === +id)
-    console.log('SINGLE POST COMMENTS', comments, id)
 
     const openComment = (e) => {
         e.preventDefault();
@@ -24,7 +25,6 @@ const SinglePost = () => {
     };
 
     const handleDeleteComment = async (id) => {
-        console.log('COMMENT ID FROM HANDLE DELTEE: ', id)
         await dispatch(deleteComment(id))
     }
 
@@ -76,11 +76,10 @@ const SinglePost = () => {
                 <WriteCommentForm singlePost={singlePost} />
             </div>
             <div>
-                {comments?.map(comment => (
+                {comments?.map((comment, id) => (
                     <div>
                         {comment.comment}
-                        <div>{user.id === comment?.user_id &&
-                            (<button >Edit</button>)}
+                        <div>{user.id === singlePost?.user_id && (<EditCommentModal comm={comment}/>)}
                         </div>
                         <div>{user.id === comment?.user_id &&
                             (<button onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
