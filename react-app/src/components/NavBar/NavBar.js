@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
 import LogoutButton from '../auth/LogoutButton';
-
 import './NavBar.css'
 
 const NavBar = () => {
@@ -25,7 +24,7 @@ const NavBar = () => {
           <img className='logo' src='/chekkit_logo2.png' alt='chekkit logo'/>
         </NavLink>
       </div>
-      <div className='app-name'>
+      <div className='app-name-container'>
         <NavLink to='/' exact={true}>
           chekkit
         </NavLink>
@@ -43,7 +42,9 @@ const NavBar = () => {
             </li>
         </div>
               )}
-
+          <li className='nav-right'>
+            <LogoutButton />
+          </li>
           <li className='nav-right'>
             <LogoutButton />
           </li>
