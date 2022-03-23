@@ -1,0 +1,59 @@
+.page-container {
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1586508577428-120d6b072945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGRpdmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+}
+.login-container {
+    margin: 16px;
+    height: 50%;
+    width: 40%;
+    background-color: aliceblue;
+    margin: 0 auto;
+    border-radius: 5px;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* margin: 0; */
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.lg-title-row {
+    margin-bottom: 8px;
+}
+
+.lg-title-input {
+    position: relative;
+}
+
+.lg-title-field {
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 39px;
+    padding: 8px 68px 8px 16px;
+    border: 1px solid #edeff1;
+    background-color: white;
+    resize: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    width: 95%;
+    outline: #edeff1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Fira Sans, sans-serif;
+    font-weight: 400;
+    line-height: 21px;
+    caret-color: #0079d3;
+}

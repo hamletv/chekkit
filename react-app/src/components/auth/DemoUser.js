@@ -1,17 +1,15 @@
+import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
-import * as sessionActions from '../../store/session'
+import { login } from '../../store/session';
 
 const DemoUser = () => {
     const dispatch = useDispatch();
-    const handleClick = e => {
+    const handleDemo = (e) => {
         e.preventDefault()
-        const credential = 'Demo';
-        const password = 'password';
-
-        dispatch(sessionActions.login({ credential, password }))
+        dispatch(login('demo@aa.io', 'password'))
     }
     return (
-        <button id='demo_button' onClick={handleClick} type="submit" className='function-button'>Demo</button>
+        <button id='demo_button' onClick={handleDemo} type="submit" className=''>Demo</button>
     )
 }
 
