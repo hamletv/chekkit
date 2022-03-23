@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { login } from '../../store/session';
+import './LoginForm.css'
+
 
 const DemoUser = () => {
     const dispatch = useDispatch();
@@ -9,7 +11,7 @@ const DemoUser = () => {
         dispatch(login('demo@aa.io', 'password'))
     }
     return (
-        <button id='demo_button' onClick={handleDemo} type="submit" className=''>Demo</button>
+        <button className='lg-post-button lg-demo' onClick={handleDemo} type="submit">Demo</button>
     )
 }
 

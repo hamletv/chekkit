@@ -36,8 +36,10 @@ const LoginForm = ({ setShowModal }) => {
   return (
     <div className='page-container'>
       <div className='login-container'>
+        <div className='lg-app-name'>chekkit</div>
+        <div className='lg-line'>Dive Into Whatever is Here</div>
         <form onSubmit={onLogin}>
-          <div>
+          <div className='lg-errors'>
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}
@@ -71,9 +73,11 @@ const LoginForm = ({ setShowModal }) => {
                 />
               </div>
             </div>
-            <button type='submit'>Login</button>
+            <div className='lg-button-container'>
+              <button type='submit' className='lg-post-button'>Login</button>
+            </div>
           </div>
-          <div>
+          <div className='lg-button-container'>
             <DemoUser/>
           </div>
         </form>
