@@ -9,15 +9,16 @@ const AllPosts = () => {
     const posts = allPosts.reverse();
     const comments = useSelector(state => Object.values(state.comment))
     const user_id = useSelector(state => state.session.user?.id)
-
+    const user = useSelector(state => state.session.user?.username)
+    console.log('THE POSTS ', posts, user);
     return (
         <div className="all-posts-container">
             {posts?.map(post => (
                 <div className="post-container">
                     <div className="vote-container">
-                        <div>upvote</div>
-                        <div>00</div>
-                        <div>downvote</div>
+                        <div><i class="fa-thin fa-square-arrow-up"></i></div>
+                        <div>--</div>
+                        <div><i class="fa-thin fa-square-arrow-down"></i></div>
                     </div>
                     <Link to={`/posts/${post.id}`} key={post.id}>
                         <div className="post">
