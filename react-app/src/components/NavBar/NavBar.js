@@ -33,7 +33,7 @@ const NavBar = () => {
       <div className='session-links'>
         <ul>
       {!user && (
-        <div>
+        <div className='nav-buttons'>
         <li className='nav-left'>
               <LoginFormModal />
             </li>

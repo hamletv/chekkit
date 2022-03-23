@@ -80,17 +80,16 @@ const CreatePost = () => {
                                     <input type='text' className="content-field" onChange={(e) => setDescription(e.target.value)} value={description} placeholder='Text (optional)'></input>
                                 </div>
                             </div>
-                        </form>
-                    </div>
                     <hr className="divider-line"></hr>
                     <div className="bottom-row">
                         <div className="button-bar">
-                            <div className="button-container"><button className="post-button" type="submit" disabled={errors.length > 0}>Post</button></div>
+                            <div className="button-container"><button className="post-button" type="submit" disabled={errors.length > 0} onSubmit={handleSubmit}>Post</button></div>
 
-                            <div className="button-container"><button className="post-button" role="button" type="submit" onClick={handleCancel}>Cancel</button></div>
+                            <div className="button-container"><button className="post-button" role="button" type="button" onClick={handleCancel}>Cancel</button></div>
                         </div>
                     </div>
-
+                    </form>
+                    </div>
                 </div>
             </div>
         </div>

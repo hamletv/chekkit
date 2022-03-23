@@ -16,6 +16,7 @@ import MediaPost from './components/posts/MediaPost';
 import SinglePost from './components/posts/SinglePost';
 import LoginFormModal from './components/auth/LoginFormModal';
 import CreatePost from './components/posts/CreatePost';
+import ErrorPage from './components/auth/404Page';
 // import NavBar from './components/Navbar/NavBar';
 
 function App() {
@@ -68,7 +69,8 @@ function App() {
           <AllPosts/>
         </Route>
         <Route>
-          <h1>404: Page Not Found</h1>
+          <ErrorPage />
+          {/* <h1>404: Page Not Found</h1> */}
         </Route>
       </Switch>
     </BrowserRouter>

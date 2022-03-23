@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,200&family=Source+Sans+Pro&display=swap');
+
+
+.error-page-container {
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1510133768164-a8f7e4d4e3dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bG9zdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    display: flex;
+}
+
+.error-text {
+    height: 200px;
+    width: 400px;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 12px;
+}
+h4 {
+    margin-top: 15px;
+}
+
+h1, h4, p {
+    font-family: Fira Sans, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+.error-line {
+    border: 1px solid lightgray;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.error-button {
+    background-color: #0079d3;
+    color: white;
+    width: 35%;
+    position: relative;
+    border: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 20px;
+    margin: 0 auto;
+    margin-top: 12px;
+    cursor: pointer;
+}

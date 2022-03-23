@@ -65,13 +65,15 @@ const SignUpForm = ({ setShowModal }) => {
       <div>
         <label>First Name</label>
         <input type='text'
+        required={true}
         name='firstname'
         onChange={updateFirstName}
-        value={firstName}></input>
+        value={firstName} ></input>
       </div>
       <div>
         <label>Last Name</label>
         <input type='text'
+        required={true}
         name='lastname'
         onChange={updateLastName}
         value={lastName}></input>
@@ -80,6 +82,7 @@ const SignUpForm = ({ setShowModal }) => {
         <label>User Name</label>
         <input
           type='text'
+          required={true}
           name='username'
           onChange={updateUsername}
           value={username}
@@ -92,6 +95,7 @@ const SignUpForm = ({ setShowModal }) => {
           name='email'
           onChange={updateEmail}
           value={email}
+          required={true}
         ></input>
       </div>
       <div>
@@ -101,6 +105,7 @@ const SignUpForm = ({ setShowModal }) => {
           name='password'
           onChange={updatePassword}
           value={password}
+          required={true}
         ></input>
       </div>
       <div>

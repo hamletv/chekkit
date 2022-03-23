@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,200&family=Source+Sans+Pro&display=swap');
 
-
 * {
     margin: 0;
     box-sizing: border-box;
@@ -98,4 +97,46 @@ li {
     background-color: rgb(19, 94, 243);
     border: 1px solid rgb(19, 94, 243);
     color: white;
+}
+
+.nav-signup {
+    background-color: #0079d3;
+    color: white;
+    width: 100%;
+    position: relative;
+    border: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 20px;
+    margin-inline: 8px;
+    cursor: pointer;
+}
+
+.nav-login {
+    margin-top: 15px;
+    border: 1.5px solid #0079d3;
+    background-color: #edeff1;
+    color:#0079d3
+}
+
+.nav-login:hover {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px #66afe9;
+    cursor: pointer;
+}
+
+.nav-buttons {
+    margin-top: -22px;
 }

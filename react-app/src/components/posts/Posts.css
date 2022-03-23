@@ -1,11 +1,237 @@
 .post-container {
-    display: flex;
-    /* width: 800px; */
-    /* height: 950px; */
-    /* background-color: bisque; */
+    cursor: pointer;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 4px;
+    padding-left: 40px;
+    cursor: pointer;
+    transition: color .5s,fill .5s,box-shadow .5s;
+    max-width: 750px;
+    background-color: #f8f9fa;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.post-container:hover {
+    border-color: #222222;
 }
 
 .vote-container {
+    width: 40px;
+    border-left: 4px solid transparent;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 8px 4px 8px 0;
+    position: absolute;
+    top: 0;
+    background-color: #f8f9fa;
+}
+
+.vote-button {
+    height: 24px;
+    width: 24px;
+}
+
+.vote-button button {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: initial;
+}
+
+.post-span {
+    border-radius: 2px;
+    cursor: pointer;
+    color: #878a8c;
+    display: inline-block;
+    overflow: hidden;
+    height: 24px;
+    width: 24px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.fa-square-arrow-up {
+    line-height: 24px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 400;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+    cursor: pointer;
+    color: #878a8c;
+}
+
+.fa-square-arrow-down {
+    line-height: 24px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 400;
+    height: 20px;
+    vertical-align: middle;
+    width: 20px;
+    cursor: pointer;
+    color: #878a8c;
+}
+
+.num-vote {
+    color: rgb(26, 26, 27);
+    margin: 4px 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    pointer-events: none;
+    word-break: normal;
+}
+
+.content {
+    background:rgb(255, 255, 255);
+    position: relative;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.user-content {
+    font-size: 12px;
+    font-family: Fira Sans, sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    flex-flow: row nonwrap;
+    align-items: start;
+    margin: 0 8px 8px;
+    position: relative;
+}
+
+.user-image {
+    flex: 0 0 auto
+}
+
+.user-image-1 {
+    font-size: 12px;
+    font-weight: 700;
+    color:rgb(26, 26, 27);
+    display: inline;
+    line-height: 20px;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+
+.posted-by {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.posted-bar {
+    display: inline;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    align-items: center;
+    color: inherit;
+}
+
+.posted-span {
+    color: rgb(120, 124, 126);
+    flex: 0 0 auto;
+    margin-right: 3px;
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+.username {
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+.user-link {
+    color: rgb(120, 124, 126);
+    margin-right: 3px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.posted-time {
+    color: rgb(120, 124, 126);
+    margin-right: 3px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.title-container {
+    margin: 0 8px;
+}
+
+.title-line {
+    display: inline;
+    position: relative;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.post-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    display: inline;
+    padding-right: 5px;
+    word-wrap: break-word;
+}
+
+.title {
+    color: #9b9b9b;
+    display: inline;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-decoration: none;
+    padding-left: 7px;
+}
+
+.image-container {
+    margin-top: 8px;
+}
+
+.image-container-2 {
+    position: relative;
+    max-height: 512px;
+    width: 100%;
+}
+
+.image-container-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.image {
+    width: 710px;
+}
+/* .post-container { */
+    /* display: flex; */
+    /* width: 800px; */
+    /* height: 950px; */
+    /* background-color: bisque; */
+/* } */
+
+/* .vote-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,4 +247,4 @@
 
 .post {
     flex-grow: 1;
-}
+} */
