@@ -76,3 +76,136 @@
 .fa-solid {
     padding-right: 8px;
 }
+.form-container {
+    margin: 16px;
+}
+
+.title-row {
+    margin-bottom: 8px;
+}
+.title-input {
+    position: relative;
+}
+.title-field {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 39px;
+    padding: 8px 68px 8px 16px;
+    border: 1px solid #edeff1;
+    background-color: transparent;
+    resize: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 21px;
+    caret-color: #0079d3;
+}
+
+/* .text-container1 {
+    position: relative;
+}
+.text-container2 {
+    border: 1px solid #edeff1;
+    border-radius: 4px;
+    position: relative;
+}
+.text-container3 {
+    color: #1c1c1c;
+    position: absolute;
+    z-index: 100;
+}
+.text-container4 {
+    bottom: 0;
+    color: #1c1c1c;
+    content: 'Text (optional)';
+    cursor: text;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.editor-root {
+    overflow: auto;
+    position: relative;
+    height: inherit;
+    text-align: initial;
+}
+.editor-container {
+    border-left: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    height: inherit;
+    text-align: initial;
+} */
+.content-field {
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 196px;
+    padding: 8px 68px 8px 16px;
+    border: 1px solid #edeff1;
+    background-color: transparent;
+    resize: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 21px;
+    caret-color: #0079d3;
+}
+.divider-line {
+    width: 97%;
+    border: 0;
+    margin: 0 auto;
+    margin-top: 70px;
+    border-top: 1px solid #edeff1
+}
+.bottom-row {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+}
+.button-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 8px;
+    align-items: center;
+    width: 98.5%;
+}
+.button-container {
+    box-sizing: border-box;
+    display: flex;
+}
+.post-button {
+    background-color: #0079d3;
+    color: white;
+    width: 100%;
+    position: relative;
+    border: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 20px;
+    margin-inline: 8px;
+}

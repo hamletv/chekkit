@@ -7,6 +7,7 @@ import { addPost } from "../../store/post";
 const MediaPost = () => {
     const [img_url, setImg_Url] = useState('');
     const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const MediaPost = () => {
     const reset = () => {
         setTitle('');
         setImg_Url('');
+        setDescription('')
     };
 
     const handleSubmit = async (e) => {
@@ -32,7 +34,8 @@ const MediaPost = () => {
         const new_post = {
             user_id,
             title,
-            img_url
+            img_url,
+            description
         };
         await dispatch(addPost(new_post));
         reset();
@@ -59,6 +62,10 @@ const MediaPost = () => {
 
                         <li>
                             <input type='text' onChange={(e) => setImg_Url(e.target.value)} value={img_url} placeholder='Image url' className="field-style field-full align none" required />
+                        </li>
+
+                        <li>
+                            <input type='text' onChange={(e) => setDescription(e.target.value)} value={description} placeholder='Text' className="field-style field-full align none" required />
                         </li>
                     </ul>
                     <div>

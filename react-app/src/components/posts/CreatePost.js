@@ -5,6 +5,47 @@ import { addPost } from "../../store/post";
 import './CreatePost.css'
 
 const CreatePost = () => {
+    const [img_url, setImg_Url] = useState('');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [errors, setErrors] = useState([]);
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const user_id = useSelector(state => state.session.user.id);
+
+    useEffect(() => {
+        const validationErrors = [];
+
+        if(title.length < 5) validationErrors.push('Please provide a more descriptive title.')
+        if(title.length > 300) validationErrors.push('Your title is longer than the character limit')
+        if(img_url.length < 5) validationErrors.push('Please enter a valid url.')
+        if(!img_url.includes('http')) validationErrors.push('Your url must include http or https prefix.');
+        setErrors(validationErrors);
+    }, [title, img_url])
+
+    const reset = () => {
+        setTitle('');
+        setImg_Url('');
+        setDescription('')
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const new_post = {
+            user_id,
+            title,
+            description,
+            img_url
+        };
+        await dispatch(addPost(new_post));
+        reset();
+        history.push('/')
+    }
+
+    const handleCancel = (e) => {
+        e.preventDefault();
+        history.push('/');
+    }
 
     return (
         <div className="container">
@@ -22,7 +63,34 @@ const CreatePost = () => {
                             <button className="new-post-button">Blank</button>
                         </div>
                     </div>
-                    <h1>Post here</h1>
+                    <div className="form-container">
+                        <form onSubmit={handleSubmit}>
+                            <div className="title-row">
+                                <div className="title-input">
+                                    <input type='text' className="title-field" onChange={(e) => setTitle(e.target.value)} value={title}  maxlength='300' required placeholder='Title'></input>
+                                </div>
+                            </div>
+                            <div className="title-row">
+                                <div className="title-input">
+                                    <input type='textarea' className="title-field" onChange={(e) => setImg_Url(e.target.value)} value={img_url} required placeholder='Image URL'></input>
+                                </div>
+                            </div>
+                            <div className="title-row">
+                                <div className="title-input">
+                                    <input type='text' className="content-field" onChange={(e) => setDescription(e.target.value)} value={description} placeholder='Text (optional)'></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <hr className="divider-line"></hr>
+                    <div className="bottom-row">
+                        <div className="button-bar">
+                            <div className="button-container"><button className="post-button" type="submit" disabled={errors.length > 0}>Post</button></div>
+
+                            <div className="button-container"><button className="post-button" role="button" type="submit" onClick={handleCancel}>Cancel</button></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -30,81 +98,3 @@ const CreatePost = () => {
 }
 
 export default CreatePost;
-// const MediaPost = () => {
-//     const [img_url, setImg_Url] = useState('');
-//     const [title, setTitle] = useState('');
-//     const [errors, setErrors] = useState([]);
-//     const history = useHistory();
-//     const dispatch = useDispatch();
-//     const user_id = useSelector(state => state.session.user.id);
-
-//     useEffect(() => {
-//         const validationErrors = [];
-
-//         if(title.length < 5) validationErrors.push('Please provide a more descriptive title.')
-//         if(title.length > 300) validationErrors.push('Your title is longer than the character limit')
-//         if(img_url.length < 5) validationErrors.push('Please enter a valid url.')
-//         if(!img_url.includes('http')) validationErrors.push('Your url must include http or https prefix.');
-//         setErrors(validationErrors);
-//     }, [title, img_url])
-
-//     const reset = () => {
-//         setTitle('');
-//         setImg_Url('');
-//     };
-
-//     const handleSubmit = async (e) => {
-//         e.preventDefault();
-//         const new_post = {
-//             user_id,
-//             title,
-//             img_url
-//         };
-//         await dispatch(addPost(new_post));
-//         reset();
-//         history.push('/')
-//     }
-
-//     const handleCancel = (e) => {
-//         e.preventDefault();
-//         history.push('/');
-//     }
-//     return (
-//         <div className="page-container">
-//             <div className="create-post-container">
-//                 <div className="create-top-line">
-//                     Create a post
-//                 </div>
-//             <div>
-//                 <div className="form-error"></div>
-//                 <form onSubmit={handleSubmit} className='form-style'>
-//                     <ul>
-//                         <li>
-//                             <input type='text' onChange={(e) => setTitle(e.target.value)} value={title}placeholder='Title' className="field-style field-full align none" required />
-//                         </li>
-
-//                         <li>
-//                             <input type='text' onChange={(e) => setImg_Url(e.target.value)} value={img_url} placeholder='Image url' className="field-style field-full align none" required />
-//                         </li>
-//                     </ul>
-//                     <div>
-//                         <ul>
-//                             <li>
-//                                 <button className="cancel-button" type="submit" onClick={handleCancel}>Cancel</button>
-//                             </li>
-//                             <li>
-//                                 <button className="post-button" type="submit" disabled={errors.length > 0}>Post</button>
-//                             </li>
-//                         </ul>
-//                     </div>
-
-//                 </form>
-//             </div>
-//             </div>
-//         </div>
-//      );
-// }
-
-
-
-// export default MediaPost;
