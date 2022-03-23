@@ -5,7 +5,9 @@
 }
 
 html {
-    background-color: lightgray;
+    background-color: #DAE0E6;
+    height: 100%;
+    width: 100%
 }
 
 body {
