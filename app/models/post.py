@@ -20,6 +20,7 @@ class Post(db.Model):
         return {
             'id': self.id,
             'user_id': self.user_id,
+            'username': self.user.username,
             # 'votes': self.votes,
             'img_url': self.img_url,
             'title': self.title,

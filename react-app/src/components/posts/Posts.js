@@ -10,7 +10,7 @@ const AllPosts = () => {
     const comments = useSelector(state => Object.values(state.comment))
     const user_id = useSelector(state => state.session.user?.id)
     const user = useSelector(state => state.session.user?.username)
-    console.log('THE POSTS ', user);
+
     return (
         <div className="all-posts-container">
             {posts?.map(post => (
@@ -38,7 +38,7 @@ const AllPosts = () => {
                                         <div className="posted-bar">
                                             <span className="posted-span">Posted by</span>
                                             <div className="username">
-                                                <a className="user-link">{user}</a>
+                                                <a className="user-link">{post.username}</a>
                                                 <a className="posted-time">{post?.created_at}</a>
                                             </div>
                                         </div>
