@@ -15,6 +15,7 @@ import NewPost from './components/posts/MediaPost';
 import MediaPost from './components/posts/MediaPost';
 import SinglePost from './components/posts/SinglePost';
 import LoginFormModal from './components/auth/LoginFormModal';
+import CreatePost from './components/posts/CreatePost';
 // import NavBar from './components/Navbar/NavBar';
 
 function App() {
@@ -54,8 +55,11 @@ function App() {
         <ProtectedRoute path='/posts/:id' exact={true} >
           <SinglePost/>
         </ProtectedRoute>
-        <ProtectedRoute path='/new' exact={true} >
+        {/* <ProtectedRoute path='/new' exact={true} >
           <MediaPost/>
+        </ProtectedRoute> */}
+        <ProtectedRoute path='/new' exact={true} >
+          <CreatePost/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />

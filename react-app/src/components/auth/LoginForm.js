@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import DemoUser from './DemoUser';
+import './LoginForm.css';
 
 const LoginForm = ({ setShowModal }) => {
   const [errors, setErrors] = useState([]);
@@ -33,38 +34,54 @@ const LoginForm = ({ setShowModal }) => {
   }
 
   return (
-    <div className='modal-container'>
-      <form onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div>
-          <label htmlFor='email'>Email</label>
-          <input
-            name='email'
-            type='text'
-            placeholder='Email'
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            name='password'
-            type='password'
-            placeholder='Password'
-            value={password}
-            onChange={updatePassword}
-          />
-          <button type='submit'>Login</button>
-        </div>
-        <div>
-          <DemoUser/>
-        </div>
-      </form>
+    <div className='page-container'>
+      <div className='login-container'>
+        <div className='lg-app-name'>chekkit</div>
+        <div className='lg-line'>Dive Into Whatever is Here</div>
+        <form onSubmit={onLogin}>
+          <div className='lg-errors'>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div>
+            <label htmlFor='email'/>
+            <div className="lg-title-row">
+              <div className="lg-title-input">
+                <input
+                  className='lg-title-field'
+                  name='email'
+                  type='text'
+                  placeholder='User Email'
+                  value={email}
+                  onChange={updateEmail}
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <label htmlFor='password'/>
+            <div className="lg-title-row">
+              <div className="lg-title-input">
+                <input
+                  className='lg-title-field'
+                  name='password'
+                  type='password'
+                  placeholder='Password'
+                  value={password}
+                  onChange={updatePassword}
+                />
+              </div>
+            </div>
+            <div className='lg-button-container'>
+              <button type='submit' className='lg-post-button'>Login</button>
+            </div>
+          </div>
+          <div className='lg-button-container'>
+            <DemoUser/>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

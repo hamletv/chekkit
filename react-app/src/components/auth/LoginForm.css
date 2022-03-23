@@ -1,0 +1,142 @@
+.page-container {
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1503177847378-d2048487fa46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGRpdmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    display: flex;
+}
+.login-container {
+    height: 350px;
+    width: 300px;
+    background-color: #edeff1;
+    margin: 0 auto;
+    border-radius: 5px;
+    top: 30%;
+    position: relative;
+    border: 1.5px solid rgb(189, 184, 184);
+}
+.login-container:hover {
+    border-color: #0079d3;
+}
+
+.lg-title-row {
+    margin-bottom: 8px;
+}
+
+.lg-title-input {
+    position: relative;
+}
+
+.lg-title-field {
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    height: 39px;
+    padding: 8px 68px 8px 16px;
+    border: 1px solid #edeff1;
+    background-color: white;
+    resize: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    width: 93%;
+    outline: #edeff1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Fira Sans, sans-serif;
+    font-weight: 400;
+    line-height: 21px;
+    caret-color: #0079d3;
+}
+.lg-title-field:hover {
+    border-color: #0079d3;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.lg-app-name {
+    font-size: 28px;
+    font-family: Fira Sans, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 69, 0);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.lg-line {
+    font-family: Fira Sans, sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    font-style: oblique;
+    display: flex;
+    margin-top: 15px;
+}
+
+.lg-button-container {
+    box-sizing: border-box;
+    display: flex;
+}
+
+.lg-post-button {
+    background-color: #0079d3;
+    color: white;
+    width: 90%;
+    position: relative;
+    border: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 20px;
+    margin-inline: 14px;
+}
+.lg-post-button:hover {
+    cursor: pointer;
+}
+
+.lg-demo {
+    margin-top: 15px;
+    border: 1.5px solid #0079d3;
+    background-color: #edeff1;
+    color:#0079d3
+}
+
+.lg-demo:hover {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px #66afe9;
+    cursor: pointer;
+}
+
+.lg-errors {
+    font-family: Fira Sans, sans-serif;
+    font-size: 12px;
+    justify-content: center;
+    margin-top: -35px;
+    margin-bottom: 10px;
+    color: red;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px;
+}

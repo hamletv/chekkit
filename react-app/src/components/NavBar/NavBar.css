@@ -54,12 +54,14 @@
 /* .nav-right li { */
     /* float: right; */
 /* } */ */
-.app-name {
+.app-name-container * {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 48px;
     margin-top: 35px;
 }
-.app-name a {
+.app-name-container a {
     font-size: 28px;
     text-decoration: none;
     font-family: 'Fira Sans', sans-serif;
