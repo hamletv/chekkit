@@ -67,12 +67,12 @@ const CreatePost = () => {
                         <form onSubmit={handleSubmit}>
                             <div className="title-row">
                                 <div className="title-input">
-                                    <input type='text' className="title-field" onChange={(e) => setTitle(e.target.value)} value={title}  maxlength='300' required placeholder='Title'></input>
+                                    <input type='text' className="title-field" onChange={(e) => setTitle(e.target.value)} value={title}  maxlength='300' required placeholder='Title (required)'></input>
                                 </div>
                             </div>
                             <div className="title-row">
                                 <div className="title-input">
-                                    <input type='textarea' className="title-field" onChange={(e) => setImg_Url(e.target.value)} value={img_url} required placeholder='Image URL'></input>
+                                    <input type='textarea' className="title-field" onChange={(e) => setImg_Url(e.target.value)} value={img_url} required placeholder='Image URL (required)'></input>
                                 </div>
                             </div>
                             <div className="title-row">
