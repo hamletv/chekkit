@@ -24,7 +24,7 @@ const SignUpForm = ({ setShowModal }) => {
           setRepeatPassword('')
         }
       }
-      setShowModal(false);
+      // setShowModal(false);
   };
 
   const updateFirstName = (e) => {
