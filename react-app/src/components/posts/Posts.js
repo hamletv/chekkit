@@ -31,7 +31,7 @@ const AllPosts = () => {
                                 <div className="post">
                                     <div className="user-content">
                                         <div className="user-image">
-                                        <a className="user-image-1"></a>
+                                        {/* <a className="user-image-1"></a> */}
                                         </div>
                                     </div>
                                     <div className="posted-by">
