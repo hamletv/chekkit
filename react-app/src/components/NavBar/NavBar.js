@@ -34,20 +34,24 @@ const NavBar = () => {
         <ul>
       {!user && (
         <div className='nav-buttons'>
-        <li className='nav-left'>
-              <LoginFormModal />
-            </li>
-            <li>
-              <SignUpFormModal />
-            </li>
+          <li>
+            <SignUpFormModal />
+          </li>
+          <li className='nav-left'>
+            <LoginFormModal />
+          </li>
         </div>
               )}
-            <NavLink to='/new' exact={true}>
-              <i className="fa-solid fa-plus"></i>
+      {user && (
+        <div>
+          <NavLink to='/new' exact={true}>
+            <i className="fa-solid fa-plus"></i>
             </NavLink>
           <li className='nav-right'>
             <LogoutButton />
           </li>
+        </div>
+      )}
         </ul>
       </div>
     </nav>
