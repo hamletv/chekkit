@@ -31,3 +31,21 @@ Chekkit is a reddit-like clone for uploading, viewing, sharing and commenting of
  - `npm start`
 
 ## Features
+
+## Users
+* A new user can sign up for an account.
+* An existing user can log in.
+* A demo user can try out the site without an account.
+
+## Posts (CRUD)
+* Registered users can create/add, view, update and delete posts.
+* Unregistered users can scroll through the available posts only.
+
+## Comments (CRUD)
+* Registered users can create, view, update and delete comments on posts.
+
+## Communities (CRUD)
+* Registered users can create, view, update and delete communities that include posts with a specific, niche interest.
+
+## Up/Down Votes (CRU)
+* Registered users can add, view, update votes for posts and comments.
