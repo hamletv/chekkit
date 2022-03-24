@@ -38,6 +38,10 @@
     width: 32px;
 }
 
+ul {
+    margin-top: 15px;
+}
+
 /* .nav-left li {
     float: left;
     color: #f2f2f2;
@@ -79,7 +83,7 @@ li {
     display: inline-block;
     text-decoration: none;
     width: auto;
-    margin-left: 58%;
+    margin-left: 78%;
 }
 
 .session-links a {
@@ -125,7 +129,7 @@ li {
 }
 
 .nav-login {
-    margin-top: 15px;
+    margin-top: -15px;
     border: 1.5px solid #0079d3;
     background-color: #edeff1;
     color:#0079d3
@@ -139,4 +143,29 @@ li {
 
 .nav-buttons {
     margin-top: -22px;
+}
+
+.nav-logout {
+    background-color: #0079d3;
+    color: white;
+    width: 100%;
+    position: relative;
+    border: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 20px;
+    margin-inline: 8px;
+    cursor: pointer;
 }
