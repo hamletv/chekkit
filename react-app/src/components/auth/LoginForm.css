@@ -61,7 +61,7 @@
 }
 
 form {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .lg-app-name {
@@ -117,7 +117,7 @@ form {
 }
 
 .lg-demo {
-    margin-top: 15px;
+    margin-top: 10px;
     border: 1.5px solid #0079d3;
     background-color: #edeff1;
     color:#0079d3
@@ -133,10 +133,11 @@ form {
     font-family: Fira Sans, sans-serif;
     font-size: 12px;
     justify-content: center;
-    margin-top: -35px;
+    margin-top: -55px;
     margin-bottom: 10px;
     color: red;
     width: 200px;
     border-radius: 4px;
     padding: 10px;
+    margin: auto;
 }

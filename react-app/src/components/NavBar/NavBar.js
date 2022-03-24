@@ -43,7 +43,7 @@ const NavBar = () => {
         </div>
               )}
             <NavLink to='/new' exact={true}>
-              <i class="fa-solid fa-plus"></i>
+              <i className="fa-solid fa-plus"></i>
             </NavLink>
           <li className='nav-right'>
             <LogoutButton />
