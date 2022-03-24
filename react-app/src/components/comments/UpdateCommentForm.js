@@ -11,7 +11,6 @@ const UpdateCommentForm = ({ comm, setShowModal }) => {
     // const commentsObj = useSelector(state => state.comment)
     const user = useSelector(state => state.session.user);
     const [comment, setComment] = useState(comm?.comment || '');
-    console.log('THE COMMENTS FROM UPDATE FORM: ', comm);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,15 +46,12 @@ const UpdateCommentForm = ({ comm, setShowModal }) => {
                 value={comment}
                 name="comment"
                 />
-                <div className="">
-                    <ul>
-                        <li>
-                            <button type="submit" onClick={(e) => handleSubmit} className="">Edit comment</button>
-                        </li>
-                        <li>
-                            <button className="" type="submit" onClick={handleCancel}>Cancel</button>
-                        </li>
-                    </ul>
+                <div className="sp-post-container">
+                    <div className="button-bar">
+                        <button type="submit" onClick={(e) => handleSubmit} className="post-button">Edit comment</button>
+
+                        <button className="w-post-button" type="submit" onClick={handleCancel}>Cancel</button>
+                    </div>
                 </div>
             </form>
         </div>

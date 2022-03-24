@@ -78,9 +78,6 @@ const SinglePost = () => {
                 <div>
                     <p className="text-content">{singlePost?.description}</p>
                 </div>
-                {/* <div>
-                    <img src={singlePost?.img_url} />
-                </div> */}
                 <div className="image-container">
                     <div className="image-container-2">
                         <img className='image' src={singlePost?.img_url} />
@@ -117,12 +114,18 @@ const SinglePost = () => {
             </div>
             <div>
                 {comments?.map((comment, id) => (
-                    <div>
-                        {comment.comment}
+                    <div className="sp-post-container">
+
+                        <div className="sp-title-field">
+                            {comment.comment}
+                        </div>
+
                         <div>{user.id === singlePost?.user_id && (<EditCommentModal comm={comment} />)}
                         </div>
-                        <div>{user.id === comment?.user_id &&
-                            (<button className="post-button" onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
+                        <div className="sp-post-container">
+                            <div className="button-bar">{user.id === comment?.user_id &&
+                                (<button className="post-button" onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
+                            </div>
                         </div>
                     </div>
                 ))}

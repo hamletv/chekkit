@@ -7,7 +7,11 @@ function EditCommentModal({comm}) {
 
     return(
         <>
-            <button onClick={() => setShowModal(true)}>Edit</button>
+            <div className='sp-post-container'>
+                <div className='button-bar'>
+                <button className='post-button' onClick={() => setShowModal(true)}>Edit</button>
+                </div>
+            </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <UpdateCommentForm setShowModal={setShowModal} comm={comm}/>
