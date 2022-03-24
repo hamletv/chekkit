@@ -56,9 +56,9 @@ const CreatePost = () => {
                 <div className="create-container">
                     <div className="button-row">
                     <div className="buttons-container">
-                            <button className="new-post-button"><i class="fa-solid fa-bars"></i>Post</button>
-                            <button className="new-post-button"><i class="fa-solid fa-image"></i>Images & Video</button>
-                            <button className="new-post-button"><i class="fa-solid fa-link"></i>Link</button>
+                            <button className="new-post-button"><i className="fa-solid fa-bars"></i>Post</button>
+                            <button className="new-post-button"><i className="fa-solid fa-image"></i>Images & Video</button>
+                            <button className="new-post-button"><i className="fa-solid fa-link"></i>Link</button>
                             <button className="new-post-button">Blank</button>
                             <button className="new-post-button">Blank</button>
                         </div>
