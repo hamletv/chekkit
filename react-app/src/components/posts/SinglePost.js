@@ -7,6 +7,7 @@ import EditPostModal from "./EditPostModal";
 import WriteCommentForm from "../comments/WriteCommentForm";
 import UpdateCommentForm from "../comments/UpdateCommentForm";
 import EditCommentModal from "../comments/EditCommentModal";
+import './SinglePost.css'
 
 const SinglePost = () => {
     const [loadComment, setLoadComment] = useState(false);
@@ -88,24 +89,31 @@ const SinglePost = () => {
                 <div>
                     <p className="text-content">{singlePost?.description}</p>
                 </div>
-            <div className="edit-post">
-                {/* <ul> */}
-                    {/* <li> */}
-                        {user.id === singlePost?.user_id && (<EditPostModal />)}
-                    {/* </li> */}
-                    {/* <li> */}
-                        <button onClick={(e) => history.push('/')}>Back</button>
-                    {/* </li> */}
-                    {/* <li> */}
+            </div>
+            <div className="sp-post-container">
+                <div className="button-bar">
+                    <div>
                         {user.id === singlePost?.user_id &&
-                            (<button onClick={handleDeletePost}>Delete</button>
+                            (<button className="post-button" onClick={handleDeletePost}>Delete</button>
                             )
                         }
-                    {/* </li> */}
-                {/* </ul> */}
+                    </div>
+                    <div className="button-container">
+                        {user.id === singlePost?.user_id && (<EditPostModal />)}
+                    </div>
+                    <div>
+                        <button className="post-button" onClick={(e) => history.push('/')}>Back</button>
+                    </div>
+                </div>
             </div>
-            <div className="comment-container">
-                <WriteCommentForm singlePost={singlePost} />
+            <div className="sp-post-container">
+
+                <div className="title-row">
+                    <div className="title-input">
+                        <WriteCommentForm singlePost={singlePost} />
+                    </div>
+                </div>
+
             </div>
             <div>
                 {comments?.map((comment, id) => (
@@ -114,11 +122,10 @@ const SinglePost = () => {
                         <div>{user.id === singlePost?.user_id && (<EditCommentModal comm={comment} />)}
                         </div>
                         <div>{user.id === comment?.user_id &&
-                            (<button onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
+                            (<button className="post-button" onClick={() => handleDeleteComment(comment?.id)}>Delete</button>)}
                         </div>
                     </div>
                 ))}
-            </div>
             </div>
         </div>
     )

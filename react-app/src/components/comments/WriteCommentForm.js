@@ -41,10 +41,12 @@ const WriteCommentForm = ({ singlePost, setShowModal }) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="textarea" onChange={(e) => setComment(e.target.value)} value={comment} placeholder='What are your thoughts?' name="comment"></input>
-                <div>
-                    <button onClick={handleSubmit}>Comment</button>
-                    <button onClick={handleCancel}>Cancel</button>
+                <input className="title-field" type="textarea" onChange={(e) => setComment(e.target.value)} value={comment} placeholder='What are your thoughts?' name="comment"></input>
+                <div className="sp-post-container">
+                    <div className="button-bar">
+                        <button className="w-post-button" onClick={handleSubmit}>Comment</button>
+                        <button className="w-post-button" onClick={handleCancel}>Cancel</button>
+                    </div>
                 </div>
             </form>
         </div>

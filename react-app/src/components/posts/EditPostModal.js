@@ -7,7 +7,7 @@ function EditPostModal() {
 
     return(
         <>
-            <button onClick={() => setShowModal(true)}>Edit</button>
+            <button className='post-button' onClick={() => setShowModal(true)}>Edit</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <UpdatePostForm setShowModal={setShowModal} />
