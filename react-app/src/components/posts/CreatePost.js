@@ -7,7 +7,7 @@ import './CreatePost.css'
 const CreatePost = () => {
     const [img_url, setImg_Url] = useState('');
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    // const [description, setDescription] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const CreatePost = () => {
     useEffect(() => {
         const validationErrors = [];
 
-        if(title.length < 5) validationErrors.push('Please provide a more descriptive title.')
+        if(title.length < 5) validationErrors.push('Please provide a descriptive title.')
         if(title.length > 300) validationErrors.push('Your title is longer than the character limit')
         if(img_url.length < 5) validationErrors.push('Please enter a valid url.')
         if(!img_url.includes('http')) validationErrors.push('Your url must include http or https prefix.');
@@ -26,7 +26,7 @@ const CreatePost = () => {
     const reset = () => {
         setTitle('');
         setImg_Url('');
-        setDescription('')
+        // setDescription('')
     };
 
     const handleSubmit = async (e) => {
@@ -34,12 +34,17 @@ const CreatePost = () => {
         const new_post = {
             user_id,
             title,
-            description,
+            // description,
             img_url
         };
-        await dispatch(addPost(new_post));
-        reset();
-        history.push('/')
+        const response = await dispatch(addPost(new_post));
+        console.log('HERE IS THE RESPONSE: ', response)
+        if (response.errors) {
+            setErrors(response.errors)
+        } else {
+            reset();
+            history.push('/');
+        }
     }
 
     const handleCancel = (e) => {
@@ -72,18 +77,23 @@ const CreatePost = () => {
                             </div>
                             <div className="title-row">
                                 <div className="title-input">
-                                    <input type='textarea' className="title-field" onChange={(e) => setImg_Url(e.target.value)} value={img_url} required placeholder='Image URL (required)'></input>
+                                    <input type='textarea' className="title-field" onChange={(e) => setImg_Url(e.target.value)} value={img_url} required placeholder='Image URL (Required .jpg, .jpeg, .gif, .png format only)'></input>
                                 </div>
                             </div>
                             <div className="title-row">
                                 <div className="title-input">
-                                    <input type='text' className="content-field" onChange={(e) => setDescription(e.target.value)} value={description} placeholder='Text (optional)'></input>
+                                    {errors && (<div>
+                                        {errors?.map((error, i) => (
+                                            <p key={i}>{error}</p>
+                                        ))}
+                                    </div>)}
+                                    {/* <input type='text' className="content-field" onChange={(e) => setDescription(e.target.value)} value={description} placeholder='Text (optional)'></input> */}
                                 </div>
                             </div>
                     <hr className="divider-line"></hr>
                     <div className="bottom-row">
                         <div className="button-bar">
-                            <div className="button-container"><button className="post-button" type="submit" disabled={errors.length > 0} onSubmit={handleSubmit}>Post</button></div>
+                            <div className="button-container"><button className="post-button" type="submit" disabled={errors?.length > 0} onSubmit={handleSubmit}>Post</button></div>
 
                             <div className="button-container"><button className="post-button" role="button" type="button" onClick={handleCancel}>Cancel</button></div>
                         </div>

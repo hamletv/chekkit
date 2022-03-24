@@ -224,6 +224,14 @@
 .image {
     width: 710px;
 }
+
+.edit-post {
+    margin-top: 30px;
+}
+
+.comment-container {
+    margin-bottom: 30px;
+}
 /* .post-container { */
     /* display: flex; */
     /* width: 800px; */
