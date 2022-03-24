@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, Email, ValidationError, Length, Equ
 def valid_image_format(form, field):
     # Check file format
     img_url = field.data
-    if not img_url.endswith(('.png', '.jpg', '.jpeg', '.gif', '.tiff')):
-        raise ValidationError('File url must end with .png, .jpg, .jpeg, .gif or .tiff')
+    if not img_url.endswith(('.png', '.jpg', '.jpeg', '.gif')):
+        raise ValidationError('File url must end with .png, .jpg, .jpeg, .gif')
 
 
 class PostForm(FlaskForm):

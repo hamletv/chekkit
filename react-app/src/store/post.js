@@ -43,6 +43,7 @@ export const getPosts = () => async(dispatch) => {
 };
 
 export const addPost = (payload) => async(dispatch) => {
+    console.log('THE PAYLOAD', payload)
     const response = await fetch('/api/posts/new', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -51,7 +52,13 @@ export const addPost = (payload) => async(dispatch) => {
     if(response.ok){
         const post = await response.json();
         dispatch(addPostAC(post))
-    };
+        return post
+    } else if(response.status < 500) {
+        const data = await response.json()
+        if(data.errors) {
+            return data;
+        }
+    }
     return response;
 };
 
