@@ -56,9 +56,6 @@ function App() {
         <ProtectedRoute path='/posts/:id' exact={true} >
           <SinglePost/>
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/new' exact={true} >
-          <MediaPost/>
-        </ProtectedRoute> */}
         <ProtectedRoute path='/new' exact={true} >
           <CreatePost/>
         </ProtectedRoute>
@@ -70,7 +67,6 @@ function App() {
         </Route>
         <Route>
           <ErrorPage />
-          {/* <h1>404: Page Not Found</h1> */}
         </Route>
       </Switch>
     </BrowserRouter>
