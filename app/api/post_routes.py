@@ -6,6 +6,17 @@ from app.forms.post_form import PostForm
 post_routes = Blueprint('post_routes', __name__)
 
 
+def validation_errors_to_error_messages(validation_errors):
+    """
+    Simple function that turns the WTForms validation errors into a simple list
+    """
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{field} : {error}')
+    return errorMessages
+
+
 @post_routes.route('/')
 def all_posts():
     posts = Post.query.all()
@@ -33,6 +44,7 @@ def add_post():
         db.session.add(new_post)
         db.session.commit()
         return new_post.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @post_routes.route('/users/<int:id>')
