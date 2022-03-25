@@ -132,3 +132,23 @@ li {
     margin-inline: 8px;
     cursor: pointer;
 }
+
+.logo-container * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.fa-reddit-alien {
+    font-size: 35px;
+    margin-left: 20px;
+    color: red;
+    /* background-color: blue; */
+    margin-right: 30px;
+    margin-top: -1px;
+}
+/* .glow-container {
+    height: 5px;
+    width: 8px;
+    background-color: #fff;
+} */

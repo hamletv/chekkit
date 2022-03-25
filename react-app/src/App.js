@@ -17,7 +17,7 @@ import SinglePost from './components/posts/SinglePost';
 import LoginFormModal from './components/auth/LoginFormModal';
 import CreatePost from './components/posts/CreatePost';
 import ErrorPage from './components/auth/404Page';
-// import NavBar from './components/Navbar/NavBar';
+import SplashPage from './components/Splash/SplashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -63,7 +63,8 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          <AllPosts/>
+          {/* <AllPosts/> */}
+          <SplashPage />
         </Route>
         <Route>
           <ErrorPage />
