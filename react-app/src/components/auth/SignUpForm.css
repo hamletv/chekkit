@@ -6,8 +6,17 @@
     border-radius: 5px;
     top: 30%;
     position: relative;
-    border: 1.5px solid rgb(189, 184, 184);
+    border: 2px solid gray;
 }
+
+.su-container:hover {
+    border-color: #0079d3;
+}
+
 .su-bottom {
     height: 40px;
+}
+
+.su-bottom-2 {
+    height: 20px;
 }

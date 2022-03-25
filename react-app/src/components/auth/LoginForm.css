@@ -75,6 +75,17 @@ form {
     padding-top: 30px;
 }
 
+.upf-title {
+    font-size: 18px;
+    font-family: Fira Sans, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 69, 0);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
 .lg-line {
     font-family: Fira Sans, sans-serif;
     font-size: 15px;

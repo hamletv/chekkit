@@ -41,31 +41,36 @@ const UpdateCommentForm = ({ comm, setShowModal }) => {
     }, [comm]);
 
     return (
-        <div >
-            <div className="">
-            {errors && (<div>
-                {errors?.map((error, i) => (
-                    <p key={i}>{error}</p>
-                                        ))}
-                </div>)}
-            </div>
+        <div className='su-page-container'>
+            <div className='su-container'>
+            <div className='upf-title'>Change your mind?</div>
             <form onSubmit={handleSubmit} className="">
+                <div className="lg-errors">
+                    {errors?.map((error, i) => (
+                        <div key={i}>{error.split(':')[1]}</div>
+                    ))}
+                </div>
+                <div className='lg-title-row'>
+                    <div className='lg-title-input'>
                 <input
-                className=""
+                className="lg-title-field"
                 type="text"
                 required
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
                 name="comment"
                 />
+                </div>
+                </div>
                 <div className="sp-post-container">
-                    <div className="button-bar">
-                        <button type="submit" onClick={(e) => handleSubmit} className="post-button">Edit comment</button>
+                    <div className="ec-button-bar">
+                        <button type="submit" onClick={(e) => handleSubmit} className="post-button">Edit</button>
 
                         <button className="w-post-button" type="submit" onClick={handleCancel}>Cancel</button>
                     </div>
                 </div>
             </form>
+            </div>
         </div>
      );
 }
