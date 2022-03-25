@@ -10,7 +10,7 @@ const SplashPage = () => {
             <div className='sp-text'>
             <div className='sp-app-container'>
                 <NavLink to='/posts' exact={true}>
-                - chekkit -
+                chekkit
                 </NavLink>
             </div>
                 <h4>Chekkit is a reddit clone.<br></br>
