@@ -38,18 +38,17 @@ const CreatePost = () => {
             img_url
         };
         const response = await dispatch(addPost(new_post));
-        console.log('HERE IS THE RESPONSE: ', response)
         if (response.errors) {
             setErrors(response.errors)
         } else {
             reset();
-            history.push('/');
+            history.push('/posts');
         }
     }
 
     const handleCancel = (e) => {
         e.preventDefault();
-        history.push('/');
+        history.push('/posts');
     }
 
     return (

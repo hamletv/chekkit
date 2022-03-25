@@ -69,7 +69,7 @@ const UpdatePostForm = ({ setShowModal }) => {
                 required
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
-                placeholder="Description"
+                placeholder="Description (optional)"
                 name="description"
                 />
                 <input
