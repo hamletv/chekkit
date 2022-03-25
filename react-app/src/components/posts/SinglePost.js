@@ -75,17 +75,22 @@ const SinglePost = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <p className="text-content">{singlePost?.description}</p>
-                </div>
+                </div> */}
                 <div className="image-container">
                     <div className="image-container-2">
                         <img className='image' src={singlePost?.img_url} />
                     </div>
                 </div>
-                <div>
-                    <p className="text-content">{singlePost?.description}</p>
-                </div>
+                {singlePost?.description &&
+                    (<div>
+                        <div className='su-bottom-2'></div>
+                    <div>
+                        <p className="text-content">{singlePost?.description}</p>
+                    </div>
+                    <div className='su-bottom-2'></div>
+                </div>)}
             </div>
             <div className="sp-post-container">
                 <div className="button-bar">
