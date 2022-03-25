@@ -15,7 +15,7 @@ const ErrorPage = () => {
                 <p>Click below to be redirected.</p>
                 <div className='error-line'></div>
                 <div className='error-button-container'>
-                    <a href='/'>
+                    <a href='/posts'>
                         <button className='error-button'>Let's go!</button>
                     </a>
                 </div>

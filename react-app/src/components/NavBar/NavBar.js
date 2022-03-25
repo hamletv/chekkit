@@ -20,13 +20,13 @@ const NavBar = () => {
   return (
     <nav id='nav-bar'>
       <div className='logo-container'>
-        <NavLink to='/' exact={true}>
+        <NavLink to='/posts' exact={true}>
           {/* <img className='logo' src='/chekkit_logo2.png' alt='chekkit logo'/> */}
           <i className="fa-brands fa-reddit-alien"></i>
         </NavLink>
       </div>
       <div className='app-name-container'>
-        <NavLink to='/' exact={true}>
+        <NavLink to='/posts' exact={true}>
           chekkit
         </NavLink>
       </div>
