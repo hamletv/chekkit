@@ -7,5 +7,5 @@ class CommentForm(FlaskForm):
     user_id = IntegerField('user_id')
     post_id = IntegerField('post_id')
     # likes = IntegerField('likes')
-    comment = TextAreaField('comment', validators=[DataRequired(), Length(min=5, max=2200)])
+    comment = TextAreaField('comment', validators=[DataRequired(message='Add your comment.'), Length(min=5, max=2200)])
     submit = SubmitField('Comment')

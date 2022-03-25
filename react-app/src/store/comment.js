@@ -51,7 +51,13 @@ export const addComment = ({ user_id, post_id, comment }) => async(dispatch) => 
     if(response.ok){
         const comment = await response.json();
         dispatch(addCommentAC(comment))
-    };
+        return comment
+    } else if (response.status < 500) {
+        const data = await response.json()
+        if(data.errors) {
+            return data;
+        }
+    }
     return response;
 };
 
