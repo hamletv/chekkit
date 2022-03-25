@@ -37,14 +37,15 @@
     text-decoration: none;
     cursor: pointer;
 }
-.error-text {
+.sp-text {
     height: 200px;
     width: 400px;
-    border: 2px solid lightgray;
+    /* border: 2px solid lightgray; */
     border-radius: 8px;
     margin: 0 auto;
     margin-top: 10%;
     text-align: center;
+    color: white;
 }
 
 h1 {
@@ -93,6 +94,31 @@ a {
     margin-top: 12px;
     cursor: pointer;
 }
+
+.sp-app-container a {
+    font-size: 68px;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(255, 69, 0);
+    cursor: pointer;
+}
+
+a {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+a:hover {
+    color: #fdec6e;
+    text-shadow:0px 0px 30px #fdec6e;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
 
 
 

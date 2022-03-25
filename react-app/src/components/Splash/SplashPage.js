@@ -7,18 +7,21 @@ import './SplashPage.css';
 const SplashPage = () => {
     return (
         <div className='splash-page-container'>
-            <div className='error-text'>
-                <h1> - 404 - </h1>
-                <h4>You're a little lost.<br></br>
-                    You've reached the middle of nowhere of our site.
+            <div className='sp-text'>
+            <div className='sp-app-container'>
+                <NavLink to='/posts' exact={true}>
+                - chekkit -
+                </NavLink>
+            </div>
+                <h4>Chekkit is a reddit clone.<br></br>
+                    Enter and chekk out blog posts, create your own posts and comments.
                 </h4>
-                <p>Click below to be redirected.</p>
                 <div className='error-line'></div>
-                <div className='error-button-container'>
+                {/* <div className='error-button-container'>
                     <a href='/'>
                         <button className='error-button'>Let's go!</button>
                     </a>
-                </div>
+                </div> */}
             </div>
             <footer className='footer'>
                 <div className='linkedin'>
