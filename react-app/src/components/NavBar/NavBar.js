@@ -19,13 +19,14 @@ const NavBar = () => {
 
   return (
     <nav id='nav-bar'>
-      <div>
-        <NavLink to='/' exact={true}>
-          <img className='logo' src='/chekkit_logo2.png' alt='chekkit logo'/>
+      <div className='logo-container'>
+        <NavLink to='/posts' exact={true}>
+          {/* <img className='logo' src='/chekkit_logo2.png' alt='chekkit logo'/> */}
+          <i className="fa-brands fa-reddit-alien"></i>
         </NavLink>
       </div>
       <div className='app-name-container'>
-        <NavLink to='/' exact={true}>
+        <NavLink to='/posts' exact={true}>
           chekkit
         </NavLink>
       </div>
@@ -34,20 +35,24 @@ const NavBar = () => {
         <ul>
       {!user && (
         <div className='nav-buttons'>
-        <li className='nav-left'>
-              <LoginFormModal />
-            </li>
-            <li>
-              <SignUpFormModal />
-            </li>
+          <li>
+            <SignUpFormModal />
+          </li>
+          <li className='nav-left'>
+            <LoginFormModal />
+          </li>
         </div>
               )}
-            <NavLink to='/new' exact={true}>
-              <i className="fa-solid fa-plus"></i>
+      {user && (
+        <div>
+          <NavLink to='/new' exact={true}>
+            <i className="fa-solid fa-plus"></i>
             </NavLink>
           <li className='nav-right'>
             <LogoutButton />
           </li>
+        </div>
+      )}
         </ul>
       </div>
     </nav>

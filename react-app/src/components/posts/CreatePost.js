@@ -15,11 +15,6 @@ const CreatePost = () => {
 
     useEffect(() => {
         const validationErrors = [];
-
-        if(title.length < 5) validationErrors.push('Please provide a descriptive title.')
-        if(title.length > 300) validationErrors.push('Your title is longer than the character limit')
-        if(img_url.length < 5) validationErrors.push('Please enter a valid url.')
-        if(!img_url.includes('http')) validationErrors.push('Your url must include http or https prefix.');
         setErrors(validationErrors);
     }, [title, img_url])
 
@@ -38,18 +33,17 @@ const CreatePost = () => {
             img_url
         };
         const response = await dispatch(addPost(new_post));
-        console.log('HERE IS THE RESPONSE: ', response)
         if (response.errors) {
             setErrors(response.errors)
         } else {
             reset();
-            history.push('/');
+            history.push('/posts');
         }
     }
 
     const handleCancel = (e) => {
         e.preventDefault();
-        history.push('/');
+        history.push('/posts');
     }
 
     return (
@@ -72,7 +66,7 @@ const CreatePost = () => {
                         <form onSubmit={handleSubmit}>
                             <div className="title-row">
                                 <div className="title-input">
-                                    <input type='text' className="title-field" onChange={(e) => setTitle(e.target.value)} value={title}  maxlength='300' required placeholder='Title (required)'></input>
+                                    <input type='text' className="title-field" onChange={(e) => setTitle(e.target.value)} value={title} required placeholder='Title (required)'></input>
                                 </div>
                             </div>
                             <div className="title-row">

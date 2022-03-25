@@ -36,7 +36,7 @@
     min-width: 32px;
     padding: 4px 20px;
     margin-inline: 80px;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 .sp-title-field {

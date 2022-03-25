@@ -16,30 +16,38 @@ const WriteCommentForm = ({ singlePost, setShowModal }) => {
 
     useEffect(() => {
         const validationErrors = [];
-        if(comment.length === 0) validationErrors.push('Please enter your comment.');
-        if(comment.length > 1000) validationErrors.push('Enter a brief comment.');
         setErrors(validationErrors)
-
     },[comment])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const newComment = {
             comment,
             post_id: singlePost.id,
             user_id,
         };
-        dispatch(addComment(newComment));
-        reset();
-        // setShowModal(false);
+        const response = await dispatch(addComment(newComment));
+        if (response.errors){
+            setErrors(response.errors)
+        } else {
+            reset();
+            // setShowModal(false);
+        }
     };
 
     const handleCancel = (e) => {
         e.preventDefault();
-        history.push('/')
+        history.push('/posts')
     }
     return (
         <div>
+            <div className="title-input">
+                {errors && (<div>
+                    {errors?.map((error, i) => (
+                        <p key={i}>{error}</p>
+                    ))}
+                </div>)}
+            </div>
             <form onSubmit={handleSubmit}>
                 <input className="title-field" type="textarea" onChange={(e) => setComment(e.target.value)} value={comment} placeholder='What are your thoughts?' name="comment"></input>
                 <div className="sp-post-container">

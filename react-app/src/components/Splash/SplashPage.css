@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,200&family=Source+Sans+Pro&display=swap');
+
+
+.splash-page-container {
+    padding: 0;
+    margin: 0;
+    margin-top: 0;
+    height: 100%;
+    width: 100% !important;
+    background: url('https://images.unsplash.com/photo-1487452066049-a710f7296400?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTY1fHxhcnR8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fa0133;
+    color: white;
+    text-align: center;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+}
+.footer-logo {
+    margin-top: 12px;
+    font-size: 24px;
+    margin-inline: 100px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sp-text {
+    height: 200px;
+    width: 400px;
+    /* border: 2px solid lightgray; */
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin-top: 12px;
+}
+h4 {
+    margin-top: 15px;
+}
+
+h1, h4, p {
+    font-family: Fira Sans, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+.error-line {
+    border: 1px solid lightgray;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.error-button {
+    background-color: #0079d3;
+    color: white;
+    width: 35%;
+    position: relative;
+    border: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 20px;
+    margin: 0 auto;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.sp-app-container a {
+    font-size: 68px;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(255, 69, 0);
+    cursor: pointer;
+}
+
+.linked, .git, a {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.linked:hover, .git:hover, .sp-app-container a:hover {
+    color: #fdec6e;
+    text-shadow:0px 0px 30px #fdec6e;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+
+
+
+/* url('https://images.unsplash.com/photo-1581850518616-bcb8077a2336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGFydHxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60')
+
+url(https://images.unsplash.com/photo-1549277513-f1b32fe1f8f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFydHxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60)
+
+https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODN8fGFydHxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60
+
+https://images.unsplash.com/photo-1487452066049-a710f7296400?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTY1fHxhcnR8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60
+*/

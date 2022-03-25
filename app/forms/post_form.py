@@ -13,9 +13,9 @@ def valid_image_format(form, field):
 class PostForm(FlaskForm):
     user_id = IntegerField('user_id')
     # votes = IntegerField('votes')
-    img_url = TextAreaField('img_url', validators=[DataRequired(message='Enter a valid image url'), URL(require_tld=True, message='The url provided is not valid.'), valid_image_format])
-    title = TextAreaField('title', validators=[DataRequired(message='Please enter a descriptive title.'), Length(min=5, max=300)])
-    description = TextAreaField('description')
+    img_url = TextAreaField('img_url', validators=[DataRequired(message='Enter a valid image url'), URL(require_tld=True, message='The url provided is not valid, must contain http(s).'), valid_image_format])
+    title = TextAreaField('title', validators=[DataRequired(message='Please enter a descriptive title, 5 char or more.'), Length(min=5, max=300)])
+    description = TextAreaField('description', validators=[Length(max=10000)])
     submit = SubmitField('Post')
 
 

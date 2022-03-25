@@ -67,8 +67,7 @@ def edit_post(id):
 
         db.session.commit()
         return post_to_edit.to_dict()
-    else:
-        return {'error': 'Missing information'}
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @post_routes.route('/<int:id>', methods=['DELETE'])
