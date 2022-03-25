@@ -87,7 +87,7 @@ const SinglePost = () => {
                     (<div>
                         <div className='su-bottom-2'></div>
                     <div>
-                        <p className="text-content">{singlePost?.description}</p>
+                        <p className="text-content desc">{singlePost?.description}</p>
                     </div>
                     <div className='su-bottom-2'></div>
                 </div>)}

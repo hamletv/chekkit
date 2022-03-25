@@ -58,7 +58,7 @@ const AllPosts = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <p className="text-content">{post?.description}</p>
+                                    <p className="text-content desc">{post?.description}</p>
                                 </div>
                             </Link>
                         </div>

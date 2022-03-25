@@ -64,6 +64,16 @@
     cursor: pointer;
 }
 
+p {
+    word-break: break-all;
+    text-decoration: none;
+}
+
+.desc {
+    width: 95%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
 .sp-title-field {
     overflow-x: hidden;
     /* overflow-wrap: break-word; */
