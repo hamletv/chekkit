@@ -25,12 +25,12 @@ const SplashPage = () => {
             </div>
             <footer className='footer'>
                 <div className='linkedin'>
-                <a href='https://www.linkedin.com/in/hamlet-villa/'>
+                <a className='linked' href='https://www.linkedin.com/in/hamlet-villa/'>
                     <i className="fa-brands footer-logo fa-linkedin"></i>
                 </a>
                 </div>
                 <div className='github'>
-                <a href='https://github.com/hamletv'>
+                <a className='git' href='https://github.com/hamletv'>
                 <i className="fa-brands footer-logo fa-github"></i>
                 </a>
                 </div>
