@@ -41,7 +41,7 @@ const LoginForm = ({ setShowModal }) => {
         <form onSubmit={onLogin}>
           <div className='lg-errors'>
             {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div key={ind}>{error.split(':')[1]}</div>
             ))}
           </div>
           <div>

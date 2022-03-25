@@ -44,7 +44,7 @@ const WriteCommentForm = ({ singlePost, setShowModal }) => {
             <div className="title-input">
                 {errors && (<div>
                     {errors?.map((error, i) => (
-                        <p key={i}>{error}</p>
+                        <p key={i}>{error.split(':')[1]}</p>
                     ))}
                 </div>)}
             </div>
