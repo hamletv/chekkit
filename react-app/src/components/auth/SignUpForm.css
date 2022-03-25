@@ -1,0 +1,13 @@
+.su-container {
+    height: auto;
+    width: 300px;
+    background-color: #edeff1;
+    margin: 0 auto;
+    border-radius: 5px;
+    top: 30%;
+    position: relative;
+    border: 1.5px solid rgb(189, 184, 184);
+}
+.su-bottom {
+    height: 40px;
+}
