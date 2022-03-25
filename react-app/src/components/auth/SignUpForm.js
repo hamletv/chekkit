@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignUpForm.css'
 
 const SignUpForm = ({ setShowModal }) => {
   const [errors, setErrors] = useState([]);
@@ -56,70 +57,116 @@ const SignUpForm = ({ setShowModal }) => {
   }
 
   return (
+    <div className='su-page-container'>
+      <div className='su-container'>
+        <div className='lg-app-name'>chekkit</div>
+        <div className='lg-line'>Dive Into Whatever is Here</div>
     <form onSubmit={onSignUp}>
-      <div>
+      <div className='lg-errors'>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div key={ind}>{error.split(':')[1]}</div>
         ))}
       </div>
       <div>
-        <label>First Name</label>
-        <input type='text'
-        required={true}
-        name='firstname'
-        onChange={updateFirstName}
-        value={firstName} ></input>
-      </div>
-      <div>
-        <label>Last Name</label>
-        <input type='text'
-        required={true}
-        name='lastname'
-        onChange={updateLastName}
-        value={lastName}></input>
-      </div>
-      <div>
-        <label>User Name</label>
-        <input
-          type='text'
+        <label htmlFor='first name'/>
+        <div className='lg-title-row'>
+          <div className='lg-title-input'>
+          <input type='text'
+          className='lg-title-field'
+          placeholder='Enter first name'
           required={true}
-          name='username'
-          onChange={updateUsername}
-          value={username}
-        ></input>
+          name='firstname'
+          onChange={updateFirstName}
+          value={firstName} />
+          </div>
+        </div>
       </div>
       <div>
-        <label>Email</label>
-        <input
-          type='text'
-          name='email'
-          onChange={updateEmail}
-          value={email}
+        <label htmlFor='last name'/>
+        <div className='lg-title-row'>
+          <div className='lg-title-input'>
+          <input type='text'
+          className='lg-title-field'
+          placeholder='Enter last name'
           required={true}
-        ></input>
+          name='lastname'
+          onChange={updateLastName}
+          value={lastName}></input>
+          </div>
+        </div>
       </div>
       <div>
-        <label>Password</label>
+        <label htmlFor='username'/>
+        <div className='lg-title-row'>
+          <div className='lg-title-input'>
+            <input
+              className='lg-title-field'
+              placeholder='Enter desired username'
+              type='text'
+              required={true}
+              name='username'
+              onChange={updateUsername}
+              value={username}
+            ></input>
+        </div>
+        </div>
+      </div>
+      <div>
+        <label htmlFor='email'/>
+        <div className='lg-title-row'>
+          <div className='lg-title-input'>
+            <input
+              className='lg-title-field'
+              placeholder='Enter email'
+              type='text'
+              name='email'
+              onChange={updateEmail}
+              value={email}
+              required={true}
+            />
+        </div>
+        </div>
+      </div>
+      <div>
+        <label htmlFor='password'/>
+        <div className='lg-title-row'>
+          <div className='lg-title-input'>
         <input
+          placeholder='Enter password'
+          className='lg-title-field'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
           required={true}
         ></input>
+        </div>
+        </div>
       </div>
       <div>
-        <label>Confirm Password</label>
+        <label htmlFor='password'/>
+        <div className='lg-title-row'>
+          <div className='lg-title-input'>
         <input
+          className='lg-title-field'
+          placeholder='Confirm password'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
-        ></input>
+        />
+        </div>
+        </div>
       </div>
-      <button type='submit'>Sign Up</button>
+      <div className='lg-button-container'>
+        <button className='lg-post-button' type='submit'>Sign Up</button>
+      </div>
+      <div className='su-bottom'>
+      </div>
     </form>
+    </div>
+    </div>
   );
 };
 

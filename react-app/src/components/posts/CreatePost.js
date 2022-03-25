@@ -78,7 +78,7 @@ const CreatePost = () => {
                                 <div className="title-input">
                                     {errors && (<div>
                                         {errors?.map((error, i) => (
-                                            <p key={i}>{error}</p>
+                                            <p key={i}>{error.split(':')[1]}</p>
                                         ))}
                                     </div>)}
                                     {/* <input type='text' className="content-field" onChange={(e) => setDescription(e.target.value)} value={description} placeholder='Text (optional)'></input> */}

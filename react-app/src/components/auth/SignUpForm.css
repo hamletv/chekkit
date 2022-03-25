@@ -1,0 +1,22 @@
+.su-container {
+    height: auto;
+    width: 300px;
+    background-color: #edeff1;
+    margin: 0 auto;
+    border-radius: 5px;
+    top: 30%;
+    position: relative;
+    border: 2px solid gray;
+}
+
+.su-container:hover {
+    border-color: #0079d3;
+}
+
+.su-bottom {
+    height: 40px;
+}
+
+.su-bottom-2 {
+    height: 20px;
+}
