@@ -31,7 +31,7 @@ const SinglePost = () => {
 
     const handleDeletePost = async (id) => {
         await dispatch(deletePost(singlePost.id))
-        history.push('/');
+        history.push('/posts');
     };
 
     return (
@@ -99,7 +99,7 @@ const SinglePost = () => {
                         {user.id === singlePost?.user_id && (<EditPostModal />)}
                     </div>
                     <div>
-                        <button className="post-button" onClick={(e) => history.push('/')}>Back</button>
+                        <button className="post-button" onClick={(e) => history.push('/posts')}>Back</button>
                     </div>
                 </div>
             </div>
