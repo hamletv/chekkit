@@ -9,6 +9,7 @@ const UpdatePostForm = ({ setShowModal }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
+    const [errors, setErrors] = useState([]);
     const postsObj = useSelector(state => state.post)
     const singlePost = postsObj[id];
     const user = useSelector(state => state.session.user);
@@ -16,11 +17,20 @@ const UpdatePostForm = ({ setShowModal }) => {
     const [img_url, setImgUrl] = useState(singlePost?.img_url || '');
     const [description, setDescription] = useState(singlePost?.description || '');
 
+    useEffect(() => {
+        const validationErrors = [];
+        setErrors(validationErrors);
+    }, [title, img_url, description])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const post = { description, img_url, id, title, user_id: user.id };
-        await dispatch(editPost(post));
-        setShowModal(false)
+        const response = await dispatch(editPost(post));
+        if (response.errors){
+            setErrors(response.errors)
+        } else {
+            setShowModal(false);
+        }
     };
 
     const handleDelete = async (e) => {
@@ -49,9 +59,11 @@ const UpdatePostForm = ({ setShowModal }) => {
     return (
         <div >
             <div className="">
-                {/* <ul>
-                    {errors.map(error => (<li key={error}>{error}</li>))}
-                </ul> */}
+            {errors && (<div>
+                {errors?.map((error, i) => (
+                    <p key={i}>{error}</p>
+                                        ))}
+                </div>)}
             </div>
             <form onSubmit={handleSubmit} className="">
                 <input

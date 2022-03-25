@@ -16,7 +16,7 @@ const CreatePost = () => {
     useEffect(() => {
         const validationErrors = [];
 
-        if(title.length < 5) validationErrors.push('Please provide a descriptive title.')
+        if(title.length < 5) validationErrors.push('Please add a descriptive title.')
         if(title.length > 300) validationErrors.push('Your title is longer than the character limit')
         if(img_url.length < 5) validationErrors.push('Please enter a valid url.')
         if(!img_url.includes('http')) validationErrors.push('Your url must include http or https prefix.');
