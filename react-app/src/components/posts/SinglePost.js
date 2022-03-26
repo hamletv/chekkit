@@ -19,6 +19,9 @@ const SinglePost = () => {
     const commentsObj = useSelector(state => Object.values(state.comment));
     const allComments = Object.values(commentsObj) // array of objs
     const comments = allComments.filter(comment => comment?.post_id === +id)
+    console.log('THE COMMENTS: ', comments)
+    console.log('THE USER ID: ', user.id)
+    console.log('THE POST OWNER: ', singlePost?.user_id)
 
     const openComment = (e) => {
         e.preventDefault();
@@ -125,7 +128,7 @@ const SinglePost = () => {
                             {comment.comment}
                         </div>
 
-                        <div>{user.id === singlePost?.user_id && (<EditCommentModal comm={comment} />)}
+                        <div>{user.id === comment?.user_id && (<EditCommentModal comm={comment} />)}
                         </div>
                         <div className="sp-post-container">
                             <div className="button-bar">{user.id === comment?.user_id &&
