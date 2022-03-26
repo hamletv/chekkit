@@ -125,7 +125,7 @@ const SinglePost = () => {
                             {comment.comment}
                         </div>
 
-                        <div>{user.id === singlePost?.user_id && (<EditCommentModal comm={comment} />)}
+                        <div>{user.id === comment?.user_id && (<EditCommentModal comm={comment} />)}
                         </div>
                         <div className="sp-post-container">
                             <div className="button-bar">{user.id === comment?.user_id &&

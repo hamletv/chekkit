@@ -21,10 +21,10 @@ def username_exists(form, field):
 
 
 class SignUpForm(FlaskForm):
-    first_name = StringField('First Name', validators=[DataRequired(message='Please enter your first name.'), Length(min=2, max=60)])
-    last_name = StringField('Last Name', validators=[DataRequired(message='Please enter your last name.'), Length(min=2, max=60)])
+    first_name = StringField('First Name', validators=[DataRequired(message='Please enter your first name.'), Length(min=2, max=60, message='Name must be between 2 and 60 characters.')])
+    last_name = StringField('Last Name', validators=[DataRequired(message='Please enter your last name.'), Length(min=2, max=60, message='Last name must be between 2 and 60 characters.')])
     username = StringField(
-        'Username', validators=[DataRequired(message='Please enter a username.'), username_exists, Length(min=2, max=25)])
+        'Username', validators=[DataRequired(message='Please enter a username.'), username_exists, Length(min=4, max=25, message='Username must be between 4 and 25 characters.')])
     email = StringField('Email', validators=[DataRequired(message='Please enter your email.'), user_exists, Email(message='Please provide a valid email'), Length(min=5, max=50, message='Email must be > 5 and < 50 chars.')])
-    password = StringField('Password', validators=[DataRequired(message='Enter password with at least 6 characters.'), Length(min=6, max=25), EqualTo('confirm_password', message='Passwords must match'), Length(min=5, max=25, message='Password must be > 5 and < 20 chars.')])
+    password = StringField('Password', validators=[DataRequired(message='Enter password with at least 6 characters.'), Length(min=6, max=25, message='Password must be between 6 and 25 characters.'), EqualTo('confirm_password', message='Passwords must match')])
     confirm_password = StringField('Confirm Password', validators=[DataRequired(message='Enter previously typed password')])
