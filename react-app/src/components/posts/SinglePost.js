@@ -19,9 +19,6 @@ const SinglePost = () => {
     const commentsObj = useSelector(state => Object.values(state.comment));
     const allComments = Object.values(commentsObj) // array of objs
     const comments = allComments.filter(comment => comment?.post_id === +id)
-    console.log('THE COMMENTS: ', comments)
-    console.log('THE USER ID: ', user.id)
-    console.log('THE POST OWNER: ', singlePost?.user_id)
 
     const openComment = (e) => {
         e.preventDefault();
