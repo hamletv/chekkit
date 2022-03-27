@@ -122,7 +122,7 @@ const SinglePost = () => {
                     <div className="sp-post-container">
 
                         <div className="comment-title-field" key={id}>
-                            {comment.comment}
+                            {`${user.username} says: ${comment.comment}`}
                         </div>
 
                         <div>{user.id === comment?.user_id && (<EditCommentModal comm={comment} />)}
