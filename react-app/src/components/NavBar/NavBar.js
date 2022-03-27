@@ -26,7 +26,7 @@ const NavBar = () => {
         </NavLink>
       </div>
       <div className='app-name-container'>
-        <NavLink to='/posts' exact={true}>
+        <NavLink to='/' exact={true}>
           chekkit
         </NavLink>
       </div>
