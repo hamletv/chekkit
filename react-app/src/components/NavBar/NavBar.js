@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
 import LogoutButton from '../auth/LogoutButton';
@@ -39,7 +39,10 @@ const NavBar = () => {
             <SignUpFormModal />
           </li>
           <li className='nav-left'>
-            <LoginFormModal />
+            <Link to='login'>
+          <button type='submit' className='nav-signup nav-login'>Log In</button>
+            </Link>
+            {/* <LoginFormModal /> */}
           </li>
         </div>
               )}
