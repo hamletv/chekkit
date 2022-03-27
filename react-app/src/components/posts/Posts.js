@@ -39,7 +39,7 @@ const AllPosts = () => {
                                             <span className="posted-span">Posted by</span>
                                             <div className="username">
                                                 <a className="user-link">{post.username}</a>
-                                                <a className="posted-time">{post?.created_at}</a>
+                                                <a className="posted-time">{post?.created_at.slice(0,16)}</a>
                                             </div>
                                         </div>
                                     </div>

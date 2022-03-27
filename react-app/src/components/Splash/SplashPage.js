@@ -17,11 +17,6 @@ const SplashPage = () => {
                     Enter and chekk out blog posts, create your own posts and comments.
                 </h4>
                 <div className='error-line'></div>
-                {/* <div className='error-button-container'>
-                    <a href='/'>
-                        <button className='error-button'>Let's go!</button>
-                    </a>
-                </div> */}
             </div>
             <footer className='footer'>
                 <div className='linkedin'>
