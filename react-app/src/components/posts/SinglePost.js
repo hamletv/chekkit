@@ -61,7 +61,7 @@ const SinglePost = () => {
                             <div className="posted-bar">
                                 <span className="posted-span">Posted by</span><div className="username">
                                     <a className="user-link">{singlePost?.username}</a>
-                                    <a className="posted-time">{singlePost?.created_at}</a>
+                                    <a className="posted-time">{singlePost?.created_at.slice(0,16)}</a>
                                 </div>
                             </div>
                         </div>
