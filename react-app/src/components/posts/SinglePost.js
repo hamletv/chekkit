@@ -121,7 +121,7 @@ const SinglePost = () => {
                 {comments?.map((comment, id) => (
                     <div className="sp-post-container">
 
-                        <div className="sp-title-field">
+                        <div className="sp-title-field" key={id}>
                             {comment.comment}
                         </div>
 
