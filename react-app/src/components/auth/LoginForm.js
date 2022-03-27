@@ -74,7 +74,7 @@ const LoginForm = ({ setShowModal }) => {
               </div>
             </div>
             <div className='lg-button-container'>
-              <button type='submit' className='lg-post-button'>Login</button>
+              <button type='submit' className='lg-post-button' disabled={!email || !password}>Login</button>
             </div>
           </div>
           <div className='lg-button-container'>
