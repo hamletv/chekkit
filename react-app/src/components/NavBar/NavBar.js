@@ -42,7 +42,6 @@ const NavBar = () => {
             <Link to='login'>
           <button type='submit' className='nav-signup nav-login'>Log In</button>
             </Link>
-            {/* <LoginFormModal /> */}
           </li>
         </div>
               )}
