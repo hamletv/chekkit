@@ -52,7 +52,7 @@ const LoginForm = ({ setShowModal }) => {
                   className='lg-title-field'
                   name='email'
                   type='text'
-                  placeholder='User Email'
+                  placeholder='User Email (required)'
                   value={email}
                   onChange={updateEmail}
                 />
@@ -67,7 +67,7 @@ const LoginForm = ({ setShowModal }) => {
                   className='lg-title-field'
                   name='password'
                   type='password'
-                  placeholder='Password'
+                  placeholder='Password (required)'
                   value={password}
                   onChange={updatePassword}
                 />

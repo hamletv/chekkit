@@ -75,7 +75,7 @@ const SignUpForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
           <input type='text'
           className='lg-title-field'
-          placeholder='Enter first name'
+          placeholder='First name (required)'
           required={true}
           name='firstname'
           onChange={updateFirstName}
@@ -89,7 +89,7 @@ const SignUpForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
           <input type='text'
           className='lg-title-field'
-          placeholder='Enter last name'
+          placeholder='Last name (required)'
           required={true}
           name='lastname'
           onChange={updateLastName}
@@ -103,7 +103,7 @@ const SignUpForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
             <input
               className='lg-title-field'
-              placeholder='Enter desired username'
+              placeholder='Desired username (required)'
               type='text'
               required={true}
               name='username'
@@ -119,7 +119,7 @@ const SignUpForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
             <input
               className='lg-title-field'
-              placeholder='Enter email'
+              placeholder='Email (required)'
               type='text'
               name='email'
               onChange={updateEmail}
@@ -134,7 +134,7 @@ const SignUpForm = ({ setShowModal }) => {
         <div className='lg-title-row'>
           <div className='lg-title-input'>
         <input
-          placeholder='Enter password'
+          placeholder='Password (required)'
           className='lg-title-field'
           type='password'
           name='password'
@@ -151,7 +151,7 @@ const SignUpForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
         <input
           className='lg-title-field'
-          placeholder='Confirm password'
+          placeholder='Confirm password (required)'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
