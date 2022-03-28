@@ -39,6 +39,12 @@
     cursor: pointer;
 }
 
+.w-post-button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+  }
+
 .ec-post-button {
     background-color: #0079d3;
     color: white;

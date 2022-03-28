@@ -28,6 +28,8 @@ const SignUpForm = ({ setShowModal }) => {
       // setShowModal(false);
   };
 
+  let inputs = [firstName, lastName, username, email, password, repeatPassword];
+
   const updateFirstName = (e) => {
     setFirstName(e.target.value)
   };
@@ -160,7 +162,7 @@ const SignUpForm = ({ setShowModal }) => {
         </div>
       </div>
       <div className='lg-button-container'>
-        <button className='lg-post-button' type='submit'>Sign Up</button>
+        <button className='lg-post-button' type='submit' disabled={!firstName || !lastName || !username || !email || !password || !repeatPassword}>Sign Up</button>
       </div>
       <div className='su-bottom'>
       </div>
