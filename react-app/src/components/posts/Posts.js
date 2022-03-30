@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import CreatePostBar from "./CreatePostBar";
+import TrendingBar from "./TrendingBar";
 import './Posts.css'
 import SinglePost from "./SinglePost";
 
@@ -13,8 +15,14 @@ const AllPosts = () => {
 
     return (
         <div className="all-posts-container">
+            <div>
+                <CreatePostBar/>
+            </div>
+            {/* <di>
+                <TrendingBar/>
+            </di> */}
             {posts?.map(post => (
-                <div className="post-container">
+                <div className="post-container" key={post.id}>
                     <div></div>
                         <div className="vote-container">
                             <button className="vote-button"></button>
