@@ -18,9 +18,9 @@ const AllPosts = () => {
             <div>
                 <CreatePostBar/>
             </div>
-            <di>
+            {/* <di>
                 <TrendingBar/>
-            </di>
+            </di> */}
             {posts?.map(post => (
                 <div className="post-container" key={post.id}>
                     <div></div>
