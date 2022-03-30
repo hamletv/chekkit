@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CreatePostBar from "./CreatePostBar";
+import TrendingBar from "./TrendingBar";
 import './Posts.css'
 import SinglePost from "./SinglePost";
 
@@ -17,6 +18,9 @@ const AllPosts = () => {
             <div>
                 <CreatePostBar/>
             </div>
+            <di>
+                <TrendingBar/>
+            </di>
             {posts?.map(post => (
                 <div className="post-container" key={post.id}>
                     <div></div>
