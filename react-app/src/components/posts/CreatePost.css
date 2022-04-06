@@ -301,3 +301,112 @@
     clip-path: circle(35%);
     margin-bottom: -16px;
 }
+
+.icons-container {
+    align-items: center;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 20px;
+    margin-right: 8px;
+    padding: 6px 8px;
+    background: #f6f7f8
+}
+
+.icons-container-2 {
+    align-items: center;
+    border-radius: 4px;
+    display: flex;
+}
+
+.button-1 {
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    padding: 0 8px;
+    background: inherit;
+    color: #0079d3;
+    fill: #0079d3;
+    margin: 0;
+    outline: none;
+    display: flex;
+    border: none;
+    align-items: center;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    max-height: 54px;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 3;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+}
+
+.button-2 {
+    cursor: pointer;
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    padding: 0 8px;
+    background: inherit;
+    color: #878a8c;
+    margin: 0;
+    outline: none;
+    display: flex;
+    border: none;
+    align-items: center;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    max-height: 54px;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 3;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+}
+
+.button-2:hover {
+    color:#0079d3
+}
+
+.span-class {
+    margin-right: 6px;
+}
+
+.text-span {
+    display: inline-block;
+}
+
+
+/* .menu-item {
+    color:#0079d3;
+    fill:#0079d3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 18px;
+    max-height: 54px;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 3;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    display: block;
+    padding: 8px;
+    text-transform: capitalize;
+    text-decoration: none;
+} */
