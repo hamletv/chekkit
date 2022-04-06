@@ -14,19 +14,49 @@ const TrendingBar = () => {
 
     return (
         <div className="cpb-container">
-            <a className="cpb-img-container-1" href="#">
-                <div className="cpb-img-container-2">
-                    <div className="cpb-img-container-3">
-                        <div className="cpb-img-container-4"></div>
-                        <div className="cpb-img-container-5">
-                            <img className="cpb-image" src={user?.profile_img}/>
-                        </div>
-                    </div>
+            <div className="icons-container">
+                <div className="icons-container-2">
+                    <button className="button-1">
+                        <span className="span-class">
+                        <i class="fa-solid fa-jet-fighter-up"></i>
+                        </span>
+                        <span className="text-span">Best</span>
+                    </button>
                 </div>
-            </a>
-            <input className="cpb-input" placeholder="Create Post" onClick={handleClick}/>
-            <a className="cpb-icons" href="#"><i className="fa-solid fa-image"></i></a>
-            <a className="cpb-icons" href="#"><i className="fa-solid fa-link"></i></a>
+            </div>
+
+            <div className="icons-container">
+                <div className="icons-container-2">
+                    <button className="button-2">
+                        <span className="span-class">
+                        <i class="fa-brands fa-hotjar"></i>
+                        </span>
+                        <span className="text-span">Hot</span>
+                    </button>
+                </div>
+            </div>
+
+            <div className="icons-container">
+                <div className="icons-container-2">
+                    <button className="button-2">
+                        <span className="span-class">
+                        <i class="fa-solid fa-certificate"></i>
+                        </span>
+                        <span className="text-span">New</span>
+                    </button>
+                </div>
+            </div>
+
+            <div className="icons-container">
+                <div className="icons-container-2">
+                    <button className="button-2">
+                        <span className="span-class">
+                        <i className="fa-solid fa-trophy"></i>
+                        </span>
+                        <span className="text-span">Top</span>
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
