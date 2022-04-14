@@ -18,6 +18,7 @@ import LoginFormModal from './components/auth/LoginFormModal';
 import CreatePost from './components/posts/CreatePost';
 import ErrorPage from './components/auth/404Page';
 import SplashPage from './components/Splash/SplashPage';
+import NewNavBar from './components/NavBar/NewNavBar';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
+      <NewNavBar />
       <Switch>
         <Route path='/login' exact={true}>
           {/* <LoginFormModal /> */}
