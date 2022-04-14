@@ -18,6 +18,31 @@
     border-color: #222222;
 }
 
+.qYj {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 48px);
+}
+
+._3oz {
+    z-index: 3;
+}
+.empty {
+    max-width: 100%;
+}
+._10V {
+    width: 640px;
+}
+
+.panels-container {
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .vote-container {
     width: 40px;
     border-left: 4px solid transparent;
@@ -232,27 +257,154 @@
 .comment-container {
     margin-bottom: 30px;
 }
-/* .post-container { */
-    /* display: flex; */
-    /* width: 800px; */
-    /* height: 950px; */
-    /* background-color: bisque; */
-/* } */
 
-/* .vote-container {
+/* SIDE PANEL */
+
+._3Kd {
+    margin-left: 24px;
+    margin-top: 0px;
+    flex: 0 0 312px;
+    width: 312px;
+}
+
+._1FU {
+    width: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+}
+
+._1G4 {
+    background-color: white;
+    color: #1a1a1b;
+    fill: #1a1a1b;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: visible;
+    word-wrap: break-word;
+    margin-top: 15px;
+}
+
+._3RP {
+    padding: 0;
+}
+
+._2-a {
+    background-color: #0079d3;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 80px;
+    position: relative;
+}
+
+._3t {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    bottom: 8px;
+    color: #fff;
+    left: 16px;
+    position: absolute;
+    display: block;
+}
+
+ol {
+    list-style: none;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+._267 {
+    border-bottom: thin solid #edeff1;
+    position: relative;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    width: 310px;
+}
+
+._2AR {
+    border-bottom: thin solid #edeff1;
     align-items: center;
-    width: 70px;
-    background: gray;
+    display: flex;
+    height: 48px;
+    justify-content: space-between;
+    padding: 0 12px;
 }
 
-.user-content {
-    height: 30px;
-    background: yellow;
+._2NS {
+    align-items: center;
+    display: flex;
 }
 
-.post {
-    flex-grow: 1;
-} */
+.yPM {
+    position: absolute;
+    right: 12px;
+    top: 13px;
+}
+
+._2iu {
+    position: relative;
+    background-color: #0079d3;
+    border: none;
+    color: #ffffff;
+    fill: #ffffff;
+    font-family: Noto Sans,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 16px;
+    text-transform: unset;
+    min-height: 24px;
+    min-width: 24px;
+    padding: 4px 16px;
+    align-items: center;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    width: auto;
+    cursor: pointer;
+}
+
+._2B- {
+    color: #1c1c1c;
+    text-align: right;
+    width: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+._34C {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 24px;
+    box-sizing: border-box;
+    flex: none;
+    font-size: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 8px;
+    width: 32px;
+    vertical-align: middle;
+}
+
+.fa-angle-up {
+    color: lime;
+    font-size: 20px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    width: 20px;
+    padding-left: 6px;
+}
