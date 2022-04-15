@@ -18,14 +18,14 @@ const NewNavBar = () => {
         <header className='header-container'>
             <div className='header-container-2'>
                 <div className='header-container-3'>
-                    <span className='_1RI'></span>
-                    <div className='_32X'>
-                        <button className='_3Ka'></button>
+                    <span></span>
+                    <div className='nnb-left-container'>
+                        <button className='nnb-left'></button>
                         <div className='filler-container'></div>
-                        <a to='/posts' exact={true} className='logo-container'>
+                        <NavLink to='/posts' exact={true} className='logo-container'>
                             <i className="fa-brands fa-reddit-alien"></i>
                             <p className='nnb-app-name'>chekkit</p>
-                        </a>
+                        </NavLink>
                         <div className='nnb-comm'>
                             <button className='nnb-comm-button'>
                                 <span className='nnb-span'>
@@ -48,6 +48,22 @@ const NewNavBar = () => {
                         </form>
                     </div>
                 </div>
+
+                {/* after search bar */}
+                {!user && (
+        <div className='nav-buttons'>
+          <li>
+            <SignUpFormModal />
+          </li>
+          <li className='nav-left'>
+            <Link to='login'>
+          <button type='submit' className='nav-signup nav-login'>Log In</button>
+            </Link>
+          </li>
+        </div>
+              )}
+
+              {user && (
                 <div className='nnb-after-search'>
                     <div className='nnb-as-container-1'>
                         <div className='nnb-as-container-2'>
@@ -62,62 +78,65 @@ const NewNavBar = () => {
                             </a>
                         </div>
                     </div>
-                    <div className='_19o'>
-                        <div className='XZK'>
-                            <div className='XZK'>
+                    <div className='nnb-blank'>
+                        <div className='nnb-containers'>
+                            <div className='nnb-containers'>
                                 <span className='nnb-span-3'>
-                                    <a className='_1x6' href='#'>
+                                    <a className='nnb-anchors' href='#'>
                                         <i class="fa-regular fa-comment-dots nav-icon"></i>
                                     </a>
                                 </span>
                                 <span className='nnb-span-3'>
-                                    <a className='_1x6' href='#'>
+                                    <a className='nnb-anchors' href='#'>
                                         <i class="fa-regular fa-bell nav-icon"></i>
                                     </a>
                                 </span>
                                 <span className='nnb-span-3'>
-                                    <a className='_1x6' href='#'>
+                                    <NavLink className='nnb-anchors' to='/new' exact={true}>
                                         <i className="fa-solid fa-plus nav-icon"></i>
-                                    </a>
+                                    </NavLink>
                                 </span>
                                 <span className='nnb-span-3'>
-                                    <a className='_1x6' href='#'>
+                                    <a className='nnb-anchors' href='#'>
                                         <i class="fa-solid fa-bullhorn nav-icon"></i>
                                     </a>
                                 </span>
                                 <span className='nnb-span-3'>
-                                    <button className='_1t5' href='#'>
-                                        <div className='jEU'>
+                                    <button className='nnb-bitcoin' href='#'>
+                                        <div className='nnb-bit-container'>
                                             <i class="fa-brands fa-bitcoin"></i>
-                                            <span className='_2Q7'>Free</span>
+                                            <span className='nnb-bit-text'>Free</span>
                                         </div>
                                     </button>
                                 </span>
                             </div>
                             <div className='hud'>
                                 <span></span>
-                                <button className='_10K'>
-                                    <span className='DFK'>
-                                        <span className='_3Kf'>
-                                            <div className='efd'>
-                                                <div className='_1cy'>
-                                                    <div className='_2_Q'></div>
-                                                    <div className='_1XJ'>
-                                                        <img alt='user avatar'/>
+                                <LogoutButton />
+                                {/* <button className='_10K'>
+                                    <span className='nnb-span-4'>
+                                        <span className='nnb-span-5'>
+                                            <div className='nnb-profpic-container'>
+                                                <div className='nnb-profpic-container-2'>
+                                                    <div className='nnb-ppic-round'></div>
+                                                    <div className='nnb-profpic-container-3'>
+                                                        <img alt='user avatar' className='user-avatar'/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <span className='_1pH'>
-                                                <span className='_2BM'>username goes here</span>
+                                                <span className='nnb-username'>username</span>
                                             </span>
                                         </span>
                                         <i className="fa-solid fa-angle-down"></i>
                                     </span>
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
                 </div>
+                )}
+
             </div>
         </header>
     );
