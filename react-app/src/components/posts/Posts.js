@@ -4,16 +4,12 @@ import { Link } from "react-router-dom";
 import CreatePostBar from "./CreatePostBar";
 import TrendingBar from "./TrendingBar";
 import './Posts.css'
-import SinglePost from "./SinglePost";
 
 const AllPosts = () => {
     const allPosts = useSelector(state => Object.values(state.post))
     const posts = allPosts.reverse();
     const comments = useSelector(state => Object.values(state.comment))
-    // const user_id = useSelector(state => state.session.user?.id)
-    // const user = useSelector(state => state.session.user?.username)
     const user = useSelector(state => state.session.user)
-    console.log('THE USER: ', user);
 
     return (
         <div className="all-posts-container">
