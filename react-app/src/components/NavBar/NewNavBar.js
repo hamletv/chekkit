@@ -11,7 +11,7 @@ const NewNavBar = () => {
     const allPosts = useSelector(state => Object.values(state.post))
     const [search, setSearch] = useState('');
     const [searchShow, setSearchShow] = useState(false);
-    console.log('FROM NAV: ', allPosts);
+    console.log('FROM NAV: ', allPosts, user);
 
     const filtered = allPosts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
@@ -54,10 +54,27 @@ const NewNavBar = () => {
                                 </div>
                             </label>
                             <input className='input-bar' onChange={handleChange} placeholder='Search Chekkit'></input>
-                            <div>
+                            <div className='query-result-container'>
                                 {searchShow && (filtered.map(post => (
-                                <div>
-                                    <p>{post.title}</p>
+                                <div className='query-result'>
+                                    <div className='results-line'>
+                                        Search results
+                                    </div>
+                                    <Link className='result' to={`/posts/${post.id}`}>
+                                        <div>
+                                            <div>
+                                                <span>
+                                                    <div className='post-title'>
+                                                        {`${post.title}`}
+                                                    </div>
+                                                    <div className='community-line'>
+                                                        <img className='community-img' src={user.profile_img}/>
+                                                        <spa>c/{`${post.username}`}</spa>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </Link>
                                 </div>)))}
                             </div>
                         </form>
