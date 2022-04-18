@@ -23,6 +23,11 @@ const NewNavBar = () => {
         else setSearchShow(true);
     };
 
+    const handleSearch = e => {
+        // setSearch('');
+        setSearchShow(false);
+    }
+
     return (
         <header className='header-container'>
             <div className='header-container-2'>
@@ -60,7 +65,7 @@ const NewNavBar = () => {
                                     <div className='results-line'>
                                         Search results
                                     </div>
-                                    <Link className='result' to={`/posts/${post.id}`}>
+                                    <Link className='result' to={`/posts/${post.id}`} onClick={handleSearch}>
                                         <div>
                                             <div>
                                                 <span>

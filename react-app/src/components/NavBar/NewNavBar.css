@@ -462,7 +462,7 @@ label {
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #1c1c1c;
-    display: inline;
+    display: flex;
     padding-right: 5px;
     word-wrap: break-word;
     font-family: Fira Sans, sans-serif;
