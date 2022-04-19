@@ -15,6 +15,8 @@ def seed():
     seed_posts()
     seed_comments()
     seed_communities()
+    # seed_user_comms()
+    # seed_posts_comms()
 
 
 @seed_commands.command('undo')
@@ -23,3 +25,5 @@ def undo():
     undo_posts()
     undo_comments()
     undo_communities()
+    # undo_user_comms()
+    # undo_posts_comms()

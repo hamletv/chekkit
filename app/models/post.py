@@ -3,8 +3,8 @@ from datetime import datetime
 
 posts_comms = db.Table(
     'posts_comms',
-    db.Column('comm_id', db.Integer, db.ForeignKey('communities.id')),
-    db.Column('post.id', db.Integer, db.ForeignKey('posts.id'))
+    db.Column('comm_id', db.Integer, db.ForeignKey('communities.id'), primary_key=True),
+    db.Column('post.id', db.Integer, db.ForeignKey('posts.id'), primary_key=True)
     )
 
 class Post(db.Model):
@@ -21,7 +21,7 @@ class Post(db.Model):
 
     user = db.relationship('User', back_populates='posts')
     comments = db.relationship('Comment', back_populates='posts', cascade='all, delete')
-    communities = db.relationship('Community', back_populates='posts')
+    communities = db.relationship('Community', secondary=posts_comms, back_populates='posts')
 
     def to_dict(self):
         return {

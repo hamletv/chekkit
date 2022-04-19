@@ -1,11 +1,8 @@
 from .db import db
 from datetime import datetime
+from app.models.community import posts_comms
+from app.models.user import users_comms
 
-users_comms = db.Table(
-    'user_comms',
-    db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
-    db.Column('comm_id', db.Integer, db.ForeignKey('communities.id'))
-)
 
 class Community(db.Model):
     __tablename__ = 'communities'
@@ -19,6 +16,8 @@ class Community(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
     user = db.relationship('User', back_populates='communities', cascade='all, delete')
+    users = db.relationship('User', secondary=users_comms)
+    posts = db.relationship('Post', secondary=posts_comms, back_populates='posts')
 
     def to_dict(self):
         return {
