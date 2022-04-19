@@ -11,11 +11,9 @@ const NewNavBar = () => {
     const allPosts = useSelector(state => Object.values(state.post))
     const [search, setSearch] = useState('');
     const [searchShow, setSearchShow] = useState(false);
-    console.log('FROM NAV: ', allPosts, user);
-
     const filtered = allPosts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
-    })
+    });
 
     const handleChange = e => {
         setSearch(e.target.value);
@@ -26,7 +24,7 @@ const NewNavBar = () => {
     const handleSearch = e => {
         // setSearch('');
         setSearchShow(false);
-    }
+    };
 
     return (
         <header className='header-container'>
