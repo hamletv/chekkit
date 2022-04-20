@@ -24,7 +24,10 @@ class Community(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'comm_name': self.comm_name,
+            'comm_img': self.comm_img,
             'about': self.about,
+            'posts': [{'post_id': post.id} for post in self.posts],
+            'users': [{'user_id': user.id} for user in self.users],
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

@@ -9,6 +9,7 @@ const NewNavBar = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const allPosts = useSelector(state => Object.values(state.post))
+    // const allComms = useSelector(state => Object.values(state.community))
     const [search, setSearch] = useState('');
     const [searchShow, setSearchShow] = useState(false);
     const filtered = allPosts.filter(post => {
@@ -22,7 +23,6 @@ const NewNavBar = () => {
     };
 
     const handleSearch = e => {
-        // setSearch('');
         setSearchShow(false);
     };
 

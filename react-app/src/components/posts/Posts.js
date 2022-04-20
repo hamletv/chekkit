@@ -7,9 +7,11 @@ import './Posts.css'
 
 const AllPosts = () => {
     const allPosts = useSelector(state => Object.values(state.post))
+    const allComms = useSelector(state => Object.values(state.community))
     const posts = allPosts.reverse();
     const comments = useSelector(state => Object.values(state.comment))
     const user = useSelector(state => state.session.user)
+    console.log('ALL COMMUNITIES: ', allComms);
 
     return (
         <div className="all-posts-container">
@@ -91,13 +93,14 @@ const AllPosts = () => {
                                         {/* list */}
 
                                         <ol>
-                                            <li className="_267">
+                                            {allComms.map((comm, i) => (
+                                                <li className="_267">
                                                 <a className="_2AR">
                                                     <div className="_2NS">
-                                                        <span className="_2B-">1</span><i className="fa-solid fa-angle-up"></i>
-                                                        <img src={user?.profile_img} className="_34C"/>
+                                                        <span className="_2B-">{i+1}</span><i className="fa-solid fa-angle-up"></i>
+                                                        <img src={comm?.comm_img} className="_34C"/>
                                                         <span className="_1XU">
-                                                            <span className="_3A9">c/Community1</span>
+                                                            <span className="_3A9">c/{comm?.comm_name}</span>
                                                         </span>
                                                     </div>
                                                 </a>
@@ -107,74 +110,7 @@ const AllPosts = () => {
                                                     </button>
                                                 </div>
                                             </li>
-
-                                            <li className="_267">
-                                                <a className="_2AR">
-                                                    <div className="_2NS">
-                                                        <span className="_2B-">2</span><i className="fa-solid fa-angle-up"></i>
-                                                        <img src={user?.profile_img} className="_34C"/>
-                                                        <span className="_1XU">
-                                                            <span className="_3A9">c/Community2</span>
-                                                        </span>
-                                                    </div>
-                                                </a>
-                                                <div className="yPM">
-                                                    <button className="_2iu">
-                                                        <span>Join</span>
-                                                    </button>
-                                                </div>
-                                            </li>
-
-                                            <li className="_267">
-                                                <a className="_2AR">
-                                                    <div className="_2NS">
-                                                        <span className="_2B-">3</span><i className="fa-solid fa-angle-up"></i>
-                                                        <img src={user?.profile_img} className="_34C"/>
-                                                        <span className="_1XU">
-                                                            <span className="_3A9">c/Community3</span>
-                                                        </span>
-                                                    </div>
-                                                </a>
-                                                <div className="yPM">
-                                                    <button className="_2iu">
-                                                        <span>Join</span>
-                                                    </button>
-                                                </div>
-                                            </li>
-
-                                            <li className="_267">
-                                                <a className="_2AR">
-                                                    <div className="_2NS">
-                                                        <span className="_2B-">4</span><i className="fa-solid fa-angle-up"></i>
-                                                        <img src={user?.profile_img} className="_34C"/>
-                                                        <span className="_1XU">
-                                                            <span className="_3A9">c/Community4</span>
-                                                        </span>
-                                                    </div>
-                                                </a>
-                                                <div className="yPM">
-                                                    <button className="_2iu">
-                                                        <span>Join</span>
-                                                    </button>
-                                                </div>
-                                            </li>
-
-                                            <li className="_267">
-                                                <a className="_2AR">
-                                                    <div className="_2NS">
-                                                        <span className="_2B-">5</span><i className="fa-solid fa-angle-up"></i>
-                                                        <img src={user?.profile_img} className="_34C"/>
-                                                        <span className="_1XU">
-                                                            <span className="_3A9">c/Community5</span>
-                                                        </span>
-                                                    </div>
-                                                </a>
-                                                <div className="yPM">
-                                                    <button className="_2iu">
-                                                        <span>Join</span>
-                                                    </button>
-                                                </div>
-                                            </li>
+                                                ))}
                                         </ol>
 
                                         {/* list end */}

@@ -20,6 +20,7 @@ import ErrorPage from './components/auth/404Page';
 import SplashPage from './components/Splash/SplashPage';
 import NewNavBar from './components/NavBar/NewNavBar';
 import { getComms } from './store/community';
+import CreateCommForm from './components/community/CreateComm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +54,9 @@ function App() {
         </Route> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/new-subchekkit' exact={true} >
+          <CreateCommForm/>
         </ProtectedRoute>
         <ProtectedRoute path='/posts' exact={true} >
           <AllPosts/>
