@@ -18,7 +18,7 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
-@community_routes.route('/subchekkits')
+@community_routes.route('/')
 def all_communities():
     communities = Community.query.all()
     return { 'communities': [community.to_dict() for community in communities] }

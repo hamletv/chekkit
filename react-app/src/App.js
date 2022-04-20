@@ -19,6 +19,7 @@ import CreatePost from './components/posts/CreatePost';
 import ErrorPage from './components/auth/404Page';
 import SplashPage from './components/Splash/SplashPage';
 import NewNavBar from './components/NavBar/NewNavBar';
+import { getComms } from './store/community';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,6 +30,7 @@ function App() {
       await dispatch(authenticate());
       await dispatch(getPosts());
       await dispatch(getComments());
+      await dispatch(getComms());
       setLoaded(true);
     })();
   }, [dispatch]);
