@@ -15,8 +15,8 @@ class Community(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
-    user = db.relationship('User', back_populates='communities', cascade='all, delete')
-    users = db.relationship('User', secondary=users_comms)
+    user = db.relationship('User', back_populates='community', cascade='all, delete')
+    users = db.relationship('User', secondary=users_comms, back_populates='communities')
     posts = db.relationship('Post', secondary=posts_comms, back_populates='communities')
 
     def to_dict(self):

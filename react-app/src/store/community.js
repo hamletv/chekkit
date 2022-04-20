@@ -34,9 +34,7 @@ export const removeCommAC = (commId) => {
 
 /* ----- THUNK ------ */
 export const getComms = () => async(dispatch) => {
-    console.log('BEFORE FETCH')
     const response = await fetch('/api/communities/');
-    console.log('AFTER FETCH', response)
     if(response.ok){
         const comms = await response.json();
         dispatch(getCommsAC(comms))
@@ -92,11 +90,11 @@ export const deleteComm = (id) => async(dispatch) => {
 
 /* ----- REDUCER ------ */
 const commsReducer = (state = {}, action) => {
-    let newState;
+    // let newState;
     switch(action.type){
         case GET_COMMS: {
             const newState = { ...state }
-            action.comms.comms?.forEach(comm => newState[comm.id] = comm);
+            action.comms.communities?.forEach(comm => newState[comm.id] = comm);
             return newState;
         }
 

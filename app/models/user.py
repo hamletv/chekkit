@@ -26,7 +26,8 @@ class User(db.Model, UserMixin):
 
     posts = db.relationship('Post', back_populates='user', cascade='all, delete')
     comments = db.relationship('Comment', back_populates='user', cascade='all, delete')
-    communities = db.relationship('Community', secondary=users_comms, back_populates='user', cascade='all, delete')
+    community = db.relationship('Community', back_populates='user', cascade='all, delete')
+    communities = db.relationship('Community', secondary=users_comms, back_populates='users', cascade='all, delete')
 
     @property
     def password(self):
