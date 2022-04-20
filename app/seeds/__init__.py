@@ -3,6 +3,7 @@ from .users import seed_users, undo_users
 from .posts import seed_posts, undo_posts
 from .comments import seed_comments, undo_comments
 from .communities import seed_communities, undo_communities
+from .users_comms import seed_users_comms, undo_users_comms
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -15,7 +16,7 @@ def seed():
     seed_posts()
     seed_comments()
     seed_communities()
-    # seed_user_comms()
+    seed_users_comms()
     # seed_posts_comms()
 
 
@@ -25,5 +26,5 @@ def undo():
     undo_posts()
     undo_comments()
     undo_communities()
-    # undo_user_comms()
+    undo_users_comms()
     # undo_posts_comms()

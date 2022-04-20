@@ -1,7 +1,7 @@
 from .db import db
 from datetime import datetime
-from app.models.community import posts_comms
-from app.models.user import users_comms
+from app.models import posts_comms
+from app.models import users_comms
 
 
 class Community(db.Model):
@@ -17,7 +17,7 @@ class Community(db.Model):
 
     user = db.relationship('User', back_populates='communities', cascade='all, delete')
     users = db.relationship('User', secondary=users_comms)
-    posts = db.relationship('Post', secondary=posts_comms, back_populates='posts')
+    posts = db.relationship('Post', secondary=posts_comms, back_populates='communities')
 
     def to_dict(self):
         return {
