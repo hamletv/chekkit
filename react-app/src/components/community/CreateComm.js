@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { addComm } from '../../store/community';
+
 // import './SignUpForm.css'
 
 const CreateCommForm = ({ setShowModal }) => {
     const dispatch = useDispatch();
+    // const user = useSelector(state => state.session.user);
     const [errors, setErrors] = useState([]);
     const [comm_name, setComm_Name] = useState('');
     const [comm_img, setComm_Img] = useState('');

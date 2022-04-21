@@ -9,16 +9,18 @@ const NewNavBar = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const allPosts = useSelector(state => Object.values(state.post))
-    // const allComms = useSelector(state => Object.values(state.community))
+    const allComms = useSelector(state => Object.values(state.community))
     const [search, setSearch] = useState('');
     const [searchShow, setSearchShow] = useState(false);
+    const [homeBtnShow, setHomeBtnShow] = useState(false);
     const filtered = allPosts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
     });
+    console.log('NAVBAR COMMS: ', allComms)
 
     const handleChange = e => {
         setSearch(e.target.value);
-        if(e.target.value === '') setSearchShow(false);
+        if (e.target.value === '') setSearchShow(false);
         else setSearchShow(true);
     };
 
@@ -39,13 +41,47 @@ const NewNavBar = () => {
                             <p className='nnb-app-name'>chekkit</p>
                         </NavLink>
                         <div className='nnb-comm'>
-                            <button className='nnb-comm-button'>
+                            <button className='nnb-comm-button' onClick={() => setHomeBtnShow(!homeBtnShow)}>
                                 <span className='nnb-span'>
                                     <h1 className='nnb-h1'>Home</h1>
                                 </span>
                                 <i className="fa-solid fa-house"></i>
                                 <i className="fa-solid fa-angle-down"></i>
                             </button>
+                            <div className='the-menu'>
+                                <div className='results-line'>
+                                    My communities
+                                </div>
+                                <Link className='ns-button' to={'/new-subchekkit/'}>
+                                    <button className='cc-button' to>
+                                        <i className="fa-solid fa-plus nav-icon"></i>
+                                        <span className='cc-line'>Create Community</span>
+                                    </button>
+                                </Link>
+                                {homeBtnShow && (allComms.map(comm => (
+                                    <div>
+
+                                        {/* <Link className='ns-button' to={'/new-subchekkit/'}>
+                                    <button className='cc-button' to>
+                                        <i className="fa-solid fa-plus nav-icon"></i>
+                                        <span className='cc-line'>Create Community</span>
+                                    </button>
+                                </Link> */}
+
+
+                                        <Link className='result cc-a'>
+                                            <div className='community-line'>
+                                                <img className='community-img' src={comm.comm_img} />
+                                            </div>
+                                            <span>
+                                                <div className='post-title'>
+                                                    {`c/${comm.comm_name}`}
+                                                </div>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                )))}
+                            </div>
                         </div>
                         {/* // make into separate component and insert? */}
                     </div>
@@ -59,26 +95,26 @@ const NewNavBar = () => {
                             <input className='input-bar' onChange={handleChange} placeholder='Search Chekkit'></input>
                             <div className='query-result-container'>
                                 {searchShow && (filtered.map(post => (
-                                <div className='query-result'>
-                                    <div className='results-line'>
-                                        Search results
-                                    </div>
-                                    <Link className='result' to={`/posts/${post.id}`} onClick={handleSearch}>
-                                        <div>
-                                            <div>
-                                                <span>
-                                                    <div className='post-title'>
-                                                        {`${post.title}`}
-                                                    </div>
-                                                    <div className='community-line'>
-                                                        <img className='community-img' src={user.profile_img}/>
-                                                        <spa>c/{`${post.username}`}</spa>
-                                                    </div>
-                                                </span>
-                                            </div>
+                                    <div className='query-result'>
+                                        <div className='results-line'>
+                                            Search results
                                         </div>
-                                    </Link>
-                                </div>)))}
+                                        <Link className='result' to={`/posts/${post.id}`} onClick={handleSearch}>
+                                            <div>
+                                                <div>
+                                                    <span>
+                                                        <div className='post-title'>
+                                                            {`${post.title}`}
+                                                        </div>
+                                                        <div className='community-line'>
+                                                            <img className='community-img' src={user.profile_img} />
+                                                            <spa>c/{`${post.username}`}</spa>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </div>)))}
                             </div>
                         </form>
                     </div>

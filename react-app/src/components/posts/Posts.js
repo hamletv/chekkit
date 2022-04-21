@@ -112,6 +112,9 @@ const AllPosts = () => {
                                             </li>
                                                 ))}
                                         </ol>
+                                        <div className="lg-view-all">
+                                            <a className="view-all">View All</a>
+                                        </div>
 
                                         {/* list end */}
 

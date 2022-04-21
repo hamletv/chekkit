@@ -408,3 +408,28 @@ ol {
     width: 20px;
     padding-left: 6px;
 }
+.lg-view-all {
+    padding: 12px;
+    margin-top: 245px;
+}
+.view-all {
+    display: flex;
+
+    align-items: center;
+    border-radius: 999px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    font-family: Fira Sans, sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 16px;
+    border: none;
+    color: #ffffff;
+    justify-content: center;
+    width: 100%;
+    background-color: #0079d3;
+    position: relative;
+}

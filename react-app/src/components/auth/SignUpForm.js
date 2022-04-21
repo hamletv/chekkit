@@ -28,7 +28,7 @@ const SignUpForm = ({ setShowModal }) => {
       // setShowModal(false);
   };
 
-  let inputs = [firstName, lastName, username, email, password, repeatPassword];
+  // let inputs = [firstName, lastName, username, email, password, repeatPassword];
 
   const updateFirstName = (e) => {
     setFirstName(e.target.value)
