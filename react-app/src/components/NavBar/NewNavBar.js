@@ -48,6 +48,7 @@ const NewNavBar = () => {
                                 <i className="fa-solid fa-house"></i>
                                 <i className="fa-solid fa-angle-down"></i>
                             </button>
+                            {homeBtnShow &&
                             <div className='the-menu'>
                                 <div className='results-line'>
                                     My communities
@@ -58,15 +59,10 @@ const NewNavBar = () => {
                                         <span className='cc-line'>Create Community</span>
                                     </button>
                                 </Link>
-                                {homeBtnShow && (allComms.map(comm => (
+                                 {allComms.map(comm => (
                                     <div>
 
-                                        {/* <Link className='ns-button' to={'/new-subchekkit/'}>
-                                    <button className='cc-button' to>
-                                        <i className="fa-solid fa-plus nav-icon"></i>
-                                        <span className='cc-line'>Create Community</span>
-                                    </button>
-                                </Link> */}
+
 
 
                                         <Link className='result cc-a'>
@@ -80,8 +76,10 @@ const NewNavBar = () => {
                                             </span>
                                         </Link>
                                     </div>
-                                )))}
+                                    ))}
                             </div>
+
+                                }
                         </div>
                         {/* // make into separate component and insert? */}
                     </div>
