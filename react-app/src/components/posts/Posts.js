@@ -113,7 +113,7 @@ const AllPosts = () => {
                                                 ))}
                                         </ol>
                                         <div className="lg-view-all">
-                                            <a className="view-all">View All</a>
+                                            <Link to='/communities' className="view-all">View All</Link>
                                         </div>
 
                                         {/* list end */}

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
 import { addComm } from '../../store/community';
-
+// import { Modal } from '../../context/Modal';
 // import './SignUpForm.css'
 
 const CreateCommForm = ({ setShowModal }) => {
@@ -19,6 +18,7 @@ const CreateCommForm = ({ setShowModal }) => {
         if(data) {
             setErrors(data);
         }
+        setShowModal(false)
     };
 
     const updateCommName = (e) => {
@@ -48,7 +48,7 @@ const CreateCommForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
           <input type='text'
           className='lg-title-field'
-          placeholder='c/'
+          placeholder='Community name *'
           required={true}
           name='comm_name'
           onChange={updateCommName}
@@ -62,7 +62,7 @@ const CreateCommForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
           <input type='text'
           className='lg-title-field'
-          placeholder='Community image url (required)'
+          placeholder='Community img url *'
           required={true}
           name='comm_img'
           onChange={updateCommImg}
@@ -76,7 +76,7 @@ const CreateCommForm = ({ setShowModal }) => {
           <div className='lg-title-input'>
             <input
               className='lg-title-field'
-              placeholder='Community description (required)'
+              placeholder='Community description *'
               type='text'
               required={true}
               name='about'

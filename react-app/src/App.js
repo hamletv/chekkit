@@ -21,6 +21,7 @@ import SplashPage from './components/Splash/SplashPage';
 import NewNavBar from './components/NavBar/NewNavBar';
 import { getComms } from './store/community';
 import CreateCommForm from './components/community/CreateComm';
+import AllCommunities from './components/community/AllComms';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -42,21 +43,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <NavBar /> */}
       <NewNavBar />
       <Switch>
         <Route path='/login' exact={true}>
-          {/* <LoginFormModal /> */}
           <LoginForm />
         </Route>
-        {/* <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
-        <ProtectedRoute path='/new-subchekkit' exact={true} >
+        {/* <ProtectedRoute path='/new-subchekkit' exact={true} >
           <CreateCommForm/>
+        </ProtectedRoute> */}
+        <ProtectedRoute path='/communities' exact={true} >
+          <AllCommunities/>
         </ProtectedRoute>
         <ProtectedRoute path='/posts' exact={true} >
           <AllPosts/>

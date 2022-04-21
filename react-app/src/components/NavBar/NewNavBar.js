@@ -16,7 +16,7 @@ const NewNavBar = () => {
     const filtered = allPosts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
     });
-    console.log('NAVBAR COMMS: ', allComms)
+    console.log('NAVBAR COMMS!!!: ', allComms)
 
     const handleChange = e => {
         setSearch(e.target.value);
@@ -54,17 +54,13 @@ const NewNavBar = () => {
                                     My communities
                                 </div>
                                 <Link className='ns-button' to={'/new-subchekkit/'}>
-                                    <button className='cc-button' to>
+                                    <button className='cc-button'>
                                         <i className="fa-solid fa-plus nav-icon"></i>
                                         <span className='cc-line'>Create Community</span>
                                     </button>
                                 </Link>
-                                 {allComms.map(comm => (
-                                    <div>
-
-
-
-
+                                 {allComms.map((comm, i) => (
+                                    <div key={i}>
                                         <Link className='result cc-a'>
                                             <div className='community-line'>
                                                 <img className='community-img' src={comm.comm_img} />
@@ -78,7 +74,6 @@ const NewNavBar = () => {
                                     </div>
                                     ))}
                             </div>
-
                                 }
                         </div>
                         {/* // make into separate component and insert? */}
