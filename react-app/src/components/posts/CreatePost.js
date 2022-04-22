@@ -7,6 +7,8 @@ import './CreatePost.css'
 const CreatePost = () => {
     const [img_url, setImg_Url] = useState('');
     const [title, setTitle] = useState('');
+    const [commName, setCommName] = useState('Choose a community');
+    const [community_id, setCommId] = useState();
     const [homeBtnShow, setHomeBtnShow] = useState(false);
     const allComms = useSelector(state => Object.values(state.community))
     // const [description, setDescription] = useState('');
@@ -14,6 +16,7 @@ const CreatePost = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user_id = useSelector(state => state.session.user.id);
+    console.log('FROM CP: ', allComms)
 
     useEffect(() => {
         const validationErrors = [];
@@ -31,6 +34,7 @@ const CreatePost = () => {
         const new_post = {
             user_id,
             title,
+            community_id,
             // description,
             img_url
         };
@@ -48,6 +52,10 @@ const CreatePost = () => {
         history.push('/posts');
     }
 
+    const handleMenu = (e) => {
+        setHomeBtnShow(false);
+    }
+
     return (
         <div className="container">
             <div className="content-container">
@@ -61,7 +69,7 @@ const CreatePost = () => {
                         <div className='nnb-comm'>
                             <button className='nnb-comm-button' onClick={() => setHomeBtnShow(!homeBtnShow)}>
                                 <span className='nnb-span'>
-                                    <h1 className='nnb-h1'>Choose a community</h1>
+                                    <h1 className='nnb-h1'>{commName}</h1>
                                 </span>
                                 {/* <i className="fa-solid fa-house"></i> */}
                                 <i className="fa-solid fa-angle-down"></i>
@@ -79,7 +87,7 @@ const CreatePost = () => {
                                 </Link>
                                  {allComms.map((comm, i) => (
                                     <div key={i}>
-                                        <Link className='result cc-a'>
+                                        <Link className='result cc-a' onClick={() => {setCommName(comm.comm_name); setCommId(comm.id); handleMenu()}}>
                                             <div className='community-line'>
                                                 <img className='community-img' src={comm.comm_img} />
                                             </div>

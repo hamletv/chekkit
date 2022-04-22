@@ -450,6 +450,7 @@ label {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 }
 .result:hover{
     background-color: #d3d7da;

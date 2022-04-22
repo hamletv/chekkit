@@ -30,6 +30,10 @@ const NewNavBar = () => {
         setSearchShow(false);
     };
 
+    const handleMenu = (e) => {
+        setHomeBtnShow(false);
+    }
+
     return (
         <header className='header-container'>
             <div className='header-container-2'>
@@ -56,14 +60,14 @@ const NewNavBar = () => {
                                     My communities
                                 </div>
                                 <Link className='ns-button' to={'/new-subchekkit/'}>
-                                    <button className='cc-button'>
+                                    <button className='cc-button' onClick={() => handleMenu()}>
                                         <i className="fa-solid fa-plus nav-icon"></i>
                                         <span className='cc-line'>Create Community</span>
                                     </button>
                                 </Link>
                                  {allComms.map((comm, i) => (
                                     <div key={i}>
-                                        <Link className='result cc-a'>
+                                        <Link className='result cc-a' onClick={() => handleMenu()}>
                                             <div className='community-line'>
                                                 <img className='community-img' src={comm.comm_img} />
                                             </div>
