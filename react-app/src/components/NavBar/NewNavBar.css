@@ -154,6 +154,7 @@
 .nnb-h1 {
     display: inline;
     font: inherit;
+    font-family: Fira Sans, sans-serif;
 }
 
 .fa-house {
@@ -507,6 +508,7 @@ label {
     color: #1c1c1c;
     /* padding-bottom: 16px; */
     position: absolute;
+    z-index: 1;
     right: 0;
     top: 100%;
     width: 270px;

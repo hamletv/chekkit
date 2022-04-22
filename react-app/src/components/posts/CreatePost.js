@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { addPost } from "../../store/post";
 import './CreatePost.css'
 
 const CreatePost = () => {
     const [img_url, setImg_Url] = useState('');
     const [title, setTitle] = useState('');
+    const [homeBtnShow, setHomeBtnShow] = useState(false);
+    const allComms = useSelector(state => Object.values(state.community))
     // const [description, setDescription] = useState('');
     const [errors, setErrors] = useState([]);
     const history = useHistory();
@@ -52,6 +54,50 @@ const CreatePost = () => {
                 <div className="top-line-container">
                     <div className="top-line-content">Create a post</div>
                 </div>
+                {/* ddm start */}
+                <div className="ddm-container XZK">
+                    <div className="ddm-inner 2sf">
+                        <div className="ddm-btn-container 3cW">
+                        <div className='nnb-comm'>
+                            <button className='nnb-comm-button' onClick={() => setHomeBtnShow(!homeBtnShow)}>
+                                <span className='nnb-span'>
+                                    <h1 className='nnb-h1'>Choose a community</h1>
+                                </span>
+                                {/* <i className="fa-solid fa-house"></i> */}
+                                <i className="fa-solid fa-angle-down"></i>
+                            </button>
+                            {homeBtnShow &&
+                            <div className='the-menu'>
+                                <div className='results-line'>
+                                    My communities
+                                </div>
+                                <Link className='ns-button' to={'/new-subchekkit/'}>
+                                    <button className='cc-button'>
+                                        <i className="fa-solid fa-plus nav-icon"></i>
+                                        <span className='cc-line'>Create Community</span>
+                                    </button>
+                                </Link>
+                                 {allComms.map((comm, i) => (
+                                    <div key={i}>
+                                        <Link className='result cc-a'>
+                                            <div className='community-line'>
+                                                <img className='community-img' src={comm.comm_img} />
+                                            </div>
+                                            <span>
+                                                <div className='post-title'>
+                                                    {`c/${comm.comm_name}`}
+                                                </div>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                    ))}
+                            </div>
+                                }
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                {/* ddm end */}
                 <div className="create-container">
                     <div className="button-row">
                     <div className="buttons-container">

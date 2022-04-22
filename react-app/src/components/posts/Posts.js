@@ -12,6 +12,7 @@ const AllPosts = () => {
     const comments = useSelector(state => Object.values(state.comment))
     const user = useSelector(state => state.session.user)
     console.log('ALL COMMUNITIES: ', allComms);
+    console.log('ALL POSTS: ', posts)
 
     return (
         <div className="all-posts-container">
