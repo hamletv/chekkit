@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,200&family=Source+Sans+Pro&display=swap');
+
 .ac-all-container{
     transition: margin-top .3s ease;
     display: block;
@@ -82,6 +84,7 @@
 }
 .acl-categories {
     font-size: 16px;
+    font-weight: 500;
     font-family: Fira Sans, sans-serif;
     height: 40px;
     line-height: 20px;
@@ -89,16 +92,26 @@
     align-items: center;
     background-color: #ffffff;
     border-top-left-radius: 4px;
-    padding-left: 16px;
+    padding-left: 8px;
     border-bottom: thin solid #ffffff;
     display: flex;
     border-top-right-radius: 4px;
+    background-color: #f6f7f8;
 }
 .acl-ul {
     overflow: hidden;
-    /* transition: height .3s ease-out; */
+    transition: height .3s ease-out;
     display: block;
     list-style: none;
+}
+.acl-rpli {
+    padding: 5px;
+    float: left;
+    width: 100%;
+    /* height: auto; */
+}
+.acl-rpli:hover {
+    background-color: #dae0e6;
 }
 .acl-anchor {
     font-size: 12px;
@@ -110,21 +123,23 @@
     display: -ms-flexbox;
     display: flex;
     height: 36px;
-    padding-left: 16px;
+    padding-left: 10px;
     position: relative;
     text-decoration: none;
+    font-family: Fira Sans;
     text-transform: capitalize;
 }
-.ac-main-panel-10VBB {
+.ac-main-panel {
     flex: 1 1 100%;
     min-width: 0;
     width: 100%;
 }
-.ac-3GP {
+.ac-main-inner {
     background-color: #ffffff;
     border: thin solid #ffffff;
 }
-.ac-HDn {
+.ac-headline-container {
+    align-items: center;
     background-color: #ffffff;
     padding: 0 16px;
     border-top-left-radius: 4px;
@@ -146,10 +161,13 @@
 .ac-ol {
     background-color: #ffffff;
     list-style: none;
+    padding-left: 0;
 }
 .ac-community {
     border-bottom: thin solid #edeff1;
     position: relative;
+    display: list-item;
+    float: none;
 }
 .ac-comm {
     height: 65px;
@@ -213,4 +231,10 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
+}
+.ac-sidepanel {
+    margin-top: -14px;
+}
+.ac-rp-button {
+    margin-top: 8px;
 }

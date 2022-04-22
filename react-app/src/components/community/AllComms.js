@@ -30,14 +30,14 @@ const AllCommunities = () => {
                                         <div className="acl-1Le">
                                             <div className="acl-3RP">
                                                 <div className="acl-categories 1xE">
-                                                    <h2>Categories</h2>
+                                                    <h2 className="acl-categories">Recent Posts</h2>
                                                 </div>
                                                 <div>
                                                     <ul className="acl-ul 2To">
                                                         {posts.map(post => (
-                                                            <li>
-                                                                <Link className="acl-anchor">
-                                                                    {post.title.slice(0, 10)}
+                                                            <li className="acl-rpli">
+                                                                <Link to={`/posts/${post.id}`} className="acl-anchor">
+                                                                    {post.title.slice(0, 25)}
                                                                 </Link>
                                                             </li>
                                                         ))}
@@ -47,16 +47,18 @@ const AllCommunities = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="ac-main-panel-10VBB">
-                                    <div className="ac-3GP">
-                                        <div className="ac-HDn">
-                                            <h2 className="ac-h2">Chekkit's Top Communities</h2>
+                                <div className="ac-main-panel 10VBB">
+                                    <div className="ac-main-inner 3GP">
+                                        <div className="ac-headline-container HDn">
+                                            <h2><span className="ac-h2">Chekkit's Top Communities
+                                                </span>
+                                            </h2>
                                         </div>
                                         <ol className="ac-ol">
                                             {allComms?.map((comm, i) => (
                                                 <li className="ac-community">
                                                     <Link className="ac-comm">
-                                                        <div className="ac-comm-left">
+                                                        <div className="ac-comm-left 2NS">
                                                             <span className="ac-number">{i + 1}</span>
                                                             <i className="fa-thin fa-square-arrow-up ac-arrow"></i>
                                                             <img className="ac-img" src={comm.comm_img} />
@@ -78,7 +80,7 @@ const AllCommunities = () => {
                                     </div>
                                 </div>
                             <div className="_3Kd">
-                            <div className="_1FU">
+                            <div className="_1FU ac-sidepanel">
                                 <div className="_1G4">
                                     <div className="_3RP">
                                         <div className="_2-a">
