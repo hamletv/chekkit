@@ -16,7 +16,9 @@ const NewNavBar = () => {
     const filtered = allPosts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
     });
-    console.log('NAVBAR COMMS!!!: ', allComms)
+
+    console.log('NAV POSTS: ', allPosts[1])
+    console.log('NAV COMMS: ', allComms)
 
     const handleChange = e => {
         setSearch(e.target.value);

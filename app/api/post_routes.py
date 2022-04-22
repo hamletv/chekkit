@@ -39,8 +39,8 @@ def add_post():
             user_id=form.data['user_id'],
             img_url=form.data['img_url'],
             title=form.data['title'],
-            description=form.data['description']
-            # community_id // insert community id input
+            description=form.data['description'],
+            community_id=form.data['community_id']
         )
         db.session.add(new_post)
         db.session.commit()
