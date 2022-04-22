@@ -51,7 +51,7 @@ export const addPost = (payload) => async(dispatch) => {
     if(response.ok){
         const post = await response.json();
         dispatch(addPostAC(post))
-        return post
+        return post;
     } else if(response.status < 500) {
         const data = await response.json()
         if(data.errors) {
@@ -70,7 +70,7 @@ export const editPost = ({id, user_id, title, description, img_url}) => async(di
     if(response.ok){
         const post = await response.json();
         dispatch(editPostAC(post)) // start edit
-        return post
+        return post;
     } else if(response.status < 500) {
         const data = await response.json()
         if(data.errors){
@@ -95,7 +95,7 @@ const postReducer = (state = {}, action) => {
         case GET_POSTS: {
             const newState = { ...state }
             action.posts.posts.forEach(post => newState[post.id] = post);
-            return newState
+            return newState;
         }
 
         case ADD_POST: {

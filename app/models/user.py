@@ -4,6 +4,12 @@ from flask_login import UserMixin
 from datetime import datetime
 
 
+users_comms = db.Table(
+    'users_comms',
+    db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True),
+    db.Column('comm_id', db.Integer, db.ForeignKey('communities.id'), primary_key=True)
+)
+
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
@@ -20,6 +26,8 @@ class User(db.Model, UserMixin):
 
     posts = db.relationship('Post', back_populates='user', cascade='all, delete')
     comments = db.relationship('Comment', back_populates='user', cascade='all, delete')
+    community = db.relationship('Community', back_populates='user', cascade='all, delete')
+    communities = db.relationship('Community', secondary=users_comms, back_populates='users', cascade='all, delete')
 
     @property
     def password(self):

@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,200&family=Source+Sans+Pro&display=swap');
+
+.header-container {
+    height: 48px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 80;
+    margin-top: 0;
+    color: #1c1c1c;
+}
+
+.header-container-2 {
+    align-items: center;
+    display: inline-flex;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.header-container-3 {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.nnb-left-container {
+    align-items: center;
+    display: flex;
+    height: 48px;
+}
+
+.nnb-left {
+    margin-left: -90px;
+    margin-right: 16px;
+    overflow: hidden;
+    transition: margin .6s;
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid transparent;
+    color: #0079d3;
+    fill: #0079d3;
+    font-family: Fira Sans,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 16px;
+    align-items: center;
+    border-radius: 999px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+}
+
+.filler-container {
+    border-left: 1px solid #ffffff;
+    height: 48px;
+    margin-right: 20px;
+}
+
+.logo-container {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    color: inherit;
+    text-decoration: none;
+}
+
+.fa-brands fa-reddit-alien {
+    height: 32px;
+    padding: 8px 8px 0;
+    width: 32px;
+    overflow: hidden;
+}
+
+.nnb-app-name {
+    margin-left: -12px;
+    margin-right: 20px;
+    width: auto;
+    overflow: hidden;
+    font-size: 28px;
+    text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(255, 69, 0);
+}
+
+.nnb-comm {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 36px;
+    position: relative;
+    width: 270px;
+}
+
+.nnb-comm-button {
+    background-color: #ffffff;
+    bottom: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #1c1c1c;
+    height: 100%;
+    left: 0;
+    line-height: 34px;
+    overflow: hidden;
+    padding-left: 40px;
+    padding-right: 56px;
+    position: absolute;
+    text-align: left;
+    text-overflow: ellipsis;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+    border: none;
+}
+
+.nnb-comm-button:hover {
+    border: 1px solid lightgray;
+}
+
+.nnb-comm-button button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: initial;
+}
+
+.nnb-span {
+    /* display: inline; */
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color:#1c1c1c;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nnb-h1 {
+    display: inline;
+    font: inherit;
+}
+
+.fa-house {
+    font-size: 20px;
+    height: 20px;
+    left: 10px;
+    margin-top: -10px;
+    max-height: 20px;
+    max-width: 20px;
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    color: #1c1c1c;
+}
+
+.fa-angle-down {
+    margin-top: -5px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+}
+
+.nnb-search-container {
+    position: relative;
+    fill: #1c1c1c;
+    flex-grow: 1;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search-form {
+    box-sizing: border-box;
+    display: flex;
+    background-color: #f6f7f8;
+    border-radius: 4px;
+    border: 1px solid #edeff1;
+    height: 36px;
+    /* max-width: 860px; */
+    margin-top: 0;
+}
+.search-form:hover {
+    border:#0079d3 1px solid;
+}
+
+label {
+    display: flex;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    padding: 0 9px 0 15px;
+}
+
+.fa-solid fa-magnifying-glass {
+    font-size: 20px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    width: 20px;
+    color: #878a8c;
+    position: relative;
+    top: 1px;
+}
+
+.input-bar {
+    color: #1c1c1c;
+    font-size: 14px;
+    line-height: 14px;
+    margin-right: 16px;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+    background-color: #f6f7f8;
+    border: none;
+    /* max-width: 860px; */
+}
+
+.nnb-span-2 {
+    position: absolute;
+}
+
+.nnb-after-search {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    flex-grow: 0;
+}
+
+.nnb-as-container-1 {
+    border-right: 1px solid #edeff1;
+    margin-right: 8px;
+    padding-right: 8px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nnb-as-container-2 {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.nnb-as-a1 {
+    border-radius: 2px;
+    color:#1c1c1c;
+    /* height: 32px; */
+    padding: 0;
+    position: relative;
+    width: 32px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nnb-span-3 {
+    margin-left: 8px;
+    /* height: 32px; */
+    color: #1c1c1c;
+    text-decoration: none;
+}
+
+.nnb-bitcoin {
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: initial;
+}
+
+.nnb-bit-container {
+    background: linear-gradient(180deg,hsla(0,0%,100%,.1) 45.96%,hsla(0,0%,100%,.57) 46%,hsla(0,0%,100%,0) 130%),#0dff0d;
+    border: none;
+    box-shadow: 0 2px 0 #0dff0d;
+    color: #1c1c1c;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding-right: 16px;
+    padding-left: 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 400;
+    line-height: 16px;
+    font-size: 13px;
+}
+
+.fa-bitcoin {
+    font-size: 20px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+    width: 20px;
+    margin-right: 4px;
+}
+
+.nnb-bit-text {
+    text-align: center;
+}
+
+.nnb-containers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-icon {
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 2px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    color:#1c1c1c;
+}
+
+._10K {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 2px 0;
+    margin-left: 8px;
+    color: inherit;
+    cursor: pointer;
+    background: transparent;
+    min-height: 32px;
+}
+
+.nnb-span-4 {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    color: inherit;
+    cursor: pointer;
+}
+
+.nnb-span-5 {
+    align-items: center;
+    display: flex;
+    margin-left: 8px;
+    text-align: left;
+    width: 175px;
+}
+.nnb-profpic-container {
+    margin-right: 5px;
+    position: relative;
+}
+
+.nnb-profpic-container-2 {
+    border-radius: 4px;
+    float: left;
+    max-height: 24px;
+    max-width: 24px;
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+
+.nnb-ppic-round {
+    background: #edeff1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.nnb-profpic-container-3 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.user-avatar {
+    width: 100%;
+    display: block;
+    transform-origin: bottom center;
+}
+.nnb-username {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #1c1c1c;
+    display: block;
+    white-space: nowrap;
+}
+
+.query-result {
+    position: fixed;
+    z-index: 100;
+    left: 423px;
+    top: 42.5px;
+    width: 354px;
+    margin-top: 7px;
+    overflow: auto;
+    border: 1px solid #edeff1;
+    background-color: #edeff1;
+    border-top: 0 solid;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    color: #1c1c1c;
+    max-height: 482px;
+    padding-bottom: 16px;
+    right: 0;
+}
+.results-line {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    padding: 16px 16px 8px;
+    color: #878a8c;
+}
+
+.result {
+    justify-content: space-between;
+    border-bottom: 1px solid #edeff1;
+    padding: 12px 16px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.result:hover{
+    background-color: #d3d7da;
+}
+.post-title {
+    font-size: 14px;
+    line-height: 18px;
+    flex-grow: 1;
+    margin-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #1c1c1c;
+    display: flex;
+    padding-right: 5px;
+    word-wrap: break-word;
+    font-family: Fira Sans, sans-serif;
+}
+.post-title:hover {
+    color: #0079d3;
+}
+
+.community-line {
+    color: #878a8c;
+    flex: none;
+    padding-top: 6px;
+    display: flex;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    padding-right: 4px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.community-img {
+    border-radius: 9001px;
+    border: none;
+    box-sizing: border-box;
+    display: inline-block;
+    flex: none;
+    font-size: 16px;
+    height: 16px;
+    line-height: 16px;
+    margin-right: 4px;
+    vertical-align: sub;
+    width: 16px;
+}
+.the-menu {
+    border-top: 0 solid #ffffff;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    color: #1c1c1c;
+    /* padding-bottom: 16px; */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 270px;
+    left: -1px;
+    margin-top: -1px;
+    max-height: 475px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid #ffffff;
+    background-color:#ffffff
+}
+.cc-button {
+    padding: 8px 24px;
+    position: relative;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #edeff1;
+    border-top: 1px solid #edeff1;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.cc-button:hover {
+    background-color: #d3d7da;
+}
+.cc-line {
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 8px;
+    max-width: 208px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Fira Sans, sans-serif;
+}
+.cc-a {
+    justify-content:left;
+}
+.ns-button {
+    text-decoration: none;
+    color: #1c1c1c;
+}

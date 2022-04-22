@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 
 const TrendingBar = () => {
     const user = useSelector(state => state.session.user);
+
     const history = useHistory();
 
     const handleClick = (e) => {
