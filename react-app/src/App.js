@@ -22,6 +22,7 @@ import NewNavBar from './components/NavBar/NewNavBar';
 import { getComms } from './store/community';
 import CreateCommForm from './components/community/CreateComm';
 import AllCommunities from './components/community/AllComms';
+import SingleCommunity from './components/community/SingleComm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -62,6 +63,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/posts/:id' exact={true} >
           <SinglePost/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/communities/:id' exact={true} >
+          <SingleCommunity/>
         </ProtectedRoute>
         <ProtectedRoute path='/new' exact={true} >
           <CreatePost/>
