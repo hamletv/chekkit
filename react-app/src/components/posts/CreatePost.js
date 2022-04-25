@@ -16,8 +16,6 @@ const CreatePost = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const user_id = useSelector(state => state.session.user.id);
-    console.log('FROM CP: ', allComms)
-    console.log('COMM ID: ', community_id)
 
     useEffect(() => {
         const validationErrors = [];

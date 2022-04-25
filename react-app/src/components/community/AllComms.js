@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import './AllComms.css'
@@ -7,8 +7,22 @@ import './AllComms.css'
 const AllCommunities = () => {
     const allComms = useSelector(state => Object.values(state.community));
     const allPosts = useSelector(state => Object.values(state.post));
+    const user_id = useSelector(state => state.session.user.id);
     const posts = allPosts.reverse();
-    console.log('ALL COMMS: ', allComms)
+    const [join, setJoin] = useState('Join');
+    console.log('ALL COMMS: ', allComms, user_id)
+
+    const handleJoin = async (e) => {
+        e.preventDefault();
+        // when click on join, add user_id to comm.id.users array as obj
+        setJoin('Leave');
+    }
+
+    // const handleLeave = async (e) => {
+    //     e.preventDefault();
+            // when
+    // }
+
     return (
         <div>
             <div className="ac-all-container _1nx">
@@ -57,7 +71,7 @@ const AllCommunities = () => {
                                         <ol className="ac-ol">
                                             {allComms?.map((comm, i) => (
                                                 <li className="ac-community">
-                                                    <Link className="ac-comm">
+                                                    <Link className="ac-comm" to={`/communities/${comm.id}`}>
                                                         <div className="ac-comm-left 2NS">
                                                             <span className="ac-number">{i + 1}</span>
                                                             <i className="fa-thin fa-square-arrow-up ac-arrow"></i>
@@ -70,8 +84,8 @@ const AllCommunities = () => {
                                                         </div>
                                                     </Link>
                                                     <div className="yPM">
-                                                        <button className="_2iu">
-                                                            <span>Join</span>
+                                                        <button className="_2iu" onClick={handleJoin}>
+                                                            <span>{join}</span>
                                                         </button>
                                                     </div>
                                                 </li>

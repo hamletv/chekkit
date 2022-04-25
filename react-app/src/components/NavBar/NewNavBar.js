@@ -17,9 +17,6 @@ const NewNavBar = () => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
     });
 
-    console.log('NAV POSTS: ', allPosts[1])
-    console.log('NAV COMMS: ', allComms)
-
     const handleChange = e => {
         setSearch(e.target.value);
         if (e.target.value === '') setSearchShow(false);
@@ -67,7 +64,7 @@ const NewNavBar = () => {
                                 </Link>
                                  {allComms.map((comm, i) => (
                                     <div key={i}>
-                                        <Link className='result cc-a' onClick={() => handleMenu()}>
+                                        <Link to={`/communities/${comm.id}`} className='result cc-a' onClick={() => handleMenu()}>
                                             <div className='community-line'>
                                                 <img className='community-img' src={comm.comm_img} />
                                             </div>

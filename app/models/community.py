@@ -12,6 +12,7 @@ class Community(db.Model):
     comm_name = db.Column(db.Text, nullable=False)
     comm_img = db.Column(db.Text, nullable=False)
     about = db.Column(db.Text, nullable=False)
+    users = db.Column(db.Integer) ## Testing
     created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 

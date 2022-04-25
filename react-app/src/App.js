@@ -52,9 +52,9 @@ function App() {
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/new-subchekkit' exact={true} >
+        <ProtectedRoute path='/new-subchekkit' exact={true} >
           <CreateCommForm/>
-        </ProtectedRoute> */}
+        </ProtectedRoute>
         <ProtectedRoute path='/communities' exact={true} >
           <AllCommunities/>
         </ProtectedRoute>

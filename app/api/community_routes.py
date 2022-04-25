@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import login_required
-from app.models import db, Community
+from app.models import db, Community, User
 from app.forms.community_form import CommunityForm
 
 
@@ -34,10 +34,15 @@ def add_community():
             user_id=form.data['user_id'],
             comm_name=form.data['comm_name'],
             comm_img=form.data['comm_img'],
-            about=form.data['about']
+            about=form.data['about'],
         )
         db.session.add(new_subchekkit)
         db.session.commit()
+        user = User.query.get(form.data['user_id'])
+        user.communities.append(new_subchekkit)
+        db.session.commit()
+
+        return user.to_dict()
         return new_subchekkit.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
@@ -52,6 +57,7 @@ def edit_community(id):
         comm_to_edit.comm_img = form.data['img_url']
         comm_to_edit.comm_name = form.data['comm_name']
         comm_to_edit.about = form.data['about']
+
 
         db.session.commit()
         return comm_to_edit.to_dict()
