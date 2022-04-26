@@ -50,8 +50,8 @@ const AllPosts = () => {
                                                 <div className="posted-bar">
                                                     <span className="posted-span">Posted by</span>
                                                     <div className="username">
-                                                        <a className="user-link">{post.username}</a>
-                                                        <a className="posted-time">{post?.created_at.slice(0, 16)}</a>
+                                                        <span className="user-link">{post.username}</span>
+                                                        <span className="posted-time">{post?.created_at.slice(0, 16)}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -93,7 +93,7 @@ const AllPosts = () => {
 
                                         <ol>
                                             {allComms.map((comm, i) => (
-                                                <li className="_267">
+                                                <li className="_267" key={i}>
                                                 <a className="_2AR">
                                                     <div className="_2NS">
                                                         <span className="_2B-">{i+1}</span><i className="fa-solid fa-angle-up"></i>
