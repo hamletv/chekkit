@@ -42,9 +42,33 @@ def add_community():
         user.communities.append(new_subchekkit)
         db.session.commit()
 
-        return user.to_dict()
-        return new_subchekkit.to_dict()
+        return {'user': user.to_dict(), 'new_subchekkit': new_subchekkit.to_dict()}
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+@community_routes.route('/user', methods=['POST'])
+@login_required
+def join_community():
+    data = request.get_json()
+    user_id = data['user_id']
+    community_id = data['community_id']
+    user = User.query.get(user_id)
+    community = Community.query.get(community_id)
+    user.communities.append(community)
+    db.session.commit()
+    return user.to_dict()
+
+
+@community_routes.route('/user', methods=['DELETE'])
+@login_required
+def leave_community():
+    data = request.get_json()
+    user_id = data['user_id']
+    community_id = data['community_id']
+    user = User.query.get(user_id)
+    community = Community.query.get(community_id)
+    user.communities.remove(community)
+    db.session.commit()
+    return user.to_dict()
 
 
 @community_routes.route('/<int:id>', methods=['PUT'])

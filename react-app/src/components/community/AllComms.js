@@ -1,26 +1,36 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getComms } from "../../store/community";
+import { addUsertoCommunity } from "../../store/session";
 import './AllComms.css'
+import JoinCommunity from "./Join";
 
 
 const AllCommunities = () => {
     const allComms = useSelector(state => Object.values(state.community));
     const allPosts = useSelector(state => Object.values(state.post));
-    const user_id = useSelector(state => state.session.user.id);
+    const user = useSelector(state => state.session.user);
     const posts = allPosts.reverse();
     const [join, setJoin] = useState('Join');
-    console.log('ALL COMMS: ', allComms, user_id)
+    const [community_id, setCommunityId] = useState();
+    const dispatch = useDispatch();
 
-    const handleJoin = async (e) => {
+    console.log('ALL COMMS: ', allComms)
+
+    const joinCommunity = async (e) => {
         e.preventDefault();
-        // when click on join, add user_id to comm.id.users array as obj
+        const newMember = { user_id: user.id, community_id }
         setJoin('Leave');
+        await dispatch(addUsertoCommunity(newMember));
+        await dispatch(getComms());
     }
 
-    // const handleLeave = async (e) => {
+    // const leaveCommunity = async (e) => {
     //     e.preventDefault();
-            // when
+    //     const removedMember = { user_id, community_id }
+    //     setJoin('Join');
+    //     dispatch()
     // }
 
     return (
@@ -65,7 +75,7 @@ const AllCommunities = () => {
                                     <div className="ac-main-inner 3GP">
                                         <div className="ac-headline-container HDn">
                                             <h2><span className="ac-h2">Chekkit's Top Communities
-                                                </span>
+                                            </span>
                                             </h2>
                                         </div>
                                         <ol className="ac-ol">
@@ -84,55 +94,51 @@ const AllCommunities = () => {
                                                         </div>
                                                     </Link>
                                                     <div className="yPM">
-                                                        <button className="_2iu" onClick={handleJoin}>
-                                                            <span>{join}</span>
-                                                        </button>
+                                                        <JoinCommunity comm={comm} />
                                                     </div>
                                                 </li>
                                             ))}
                                         </ol>
                                     </div>
                                 </div>
-                            <div className="_3Kd">
-                            <div className="_1FU ac-sidepanel">
-                                <div className="_1G4">
-                                    <div className="_3RP">
-                                        <div className="_2-a">
-                                            <h2 className="_3t">Chekkit's Top Communities</h2>
-                                        </div>
-
-                                        {/* list */}
-
-                                        <ol>
-                                            {allComms.map((comm, i) => (
-                                                <li className="_267">
-                                                <a className="_2AR">
-                                                    <div className="_2NS">
-                                                        <span className="_2B-">{i+1}</span><i className="fa-solid fa-angle-up"></i>
-                                                        <img src={comm?.comm_img} className="_34C"/>
-                                                        <span className="_1XU">
-                                                            <span className="_3A9">c/{comm?.comm_name}</span>
-                                                        </span>
-                                                    </div>
-                                                </a>
-                                                <div className="yPM">
-                                                    <button className="_2iu">
-                                                        <span>Join</span>
-                                                    </button>
+                                <div className="_3Kd">
+                                    <div className="_1FU ac-sidepanel">
+                                        <div className="_1G4">
+                                            <div className="_3RP">
+                                                <div className="_2-a">
+                                                    <h2 className="_3t">Chekkit's Top Communities</h2>
                                                 </div>
-                                            </li>
-                                                ))}
-                                        </ol>
-                                        <div className="lg-view-all">
-                                            <Link to='/communities' className="view-all">View All</Link>
+
+                                                {/* list */}
+
+                                                <ol>
+                                                    {allComms.map((comm, i) => (
+                                                        <li className="_267">
+                                                            <a className="_2AR">
+                                                                <div className="_2NS">
+                                                                    <span className="_2B-">{i + 1}</span><i className="fa-solid fa-angle-up"></i>
+                                                                    <img src={comm?.comm_img} className="_34C" />
+                                                                    <span className="_1XU">
+                                                                        <span className="_3A9">c/{comm?.comm_name}</span>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            {/* <div className="yPM">
+                                                                <JoinCommunity comm={comm} />
+                                                            </div> */}
+                                                        </li>
+                                                    ))}
+                                                </ol>
+                                                {/* <div className="lg-view-all">
+                                                    <Link to='/communities' className="view-all">View All</Link>
+                                                </div> */}
+
+                                                {/* list end */}
+
+                                            </div>
                                         </div>
-
-                                        {/* list end */}
-
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                             </div>
 
 
