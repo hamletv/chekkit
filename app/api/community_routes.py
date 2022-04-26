@@ -45,6 +45,7 @@ def add_community():
         return {'user': user.to_dict(), 'new_subchekkit': new_subchekkit.to_dict()}
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+
 @community_routes.route('/user', methods=['POST'])
 @login_required
 def join_community():

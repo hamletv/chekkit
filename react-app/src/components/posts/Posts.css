@@ -433,3 +433,6 @@ ol {
     background-color: #0079d3;
     position: relative;
 }
+.ctc-a {
+    color: inherit;
+}

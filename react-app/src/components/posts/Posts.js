@@ -106,7 +106,9 @@ const AllPosts = () => {
                                                 </a>
                                                 <div className="yPM">
                                                     <button className="_2iu">
-                                                        <span>Join</span>
+                                                        <Link className="ctc-a" to={`/communities/${comm.id}`}>
+                                                        <span>View</span>
+                                                        </Link>
                                                     </button>
                                                 </div>
                                             </li>
