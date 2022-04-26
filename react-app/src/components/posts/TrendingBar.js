@@ -19,7 +19,7 @@ const TrendingBar = () => {
                 <div className="icons-container-2">
                     <button className="button-1">
                         <span className="span-class">
-                        <i class="fa-solid fa-jet-fighter-up"></i>
+                        <i className="fa-solid fa-jet-fighter-up"></i>
                         </span>
                         <span className="text-span">Best</span>
                     </button>
@@ -30,7 +30,7 @@ const TrendingBar = () => {
                 <div className="icons-container-2">
                     <button className="button-2">
                         <span className="span-class">
-                        <i class="fa-brands fa-hotjar"></i>
+                        <i className="fa-brands fa-hotjar"></i>
                         </span>
                         <span className="text-span">Hot</span>
                     </button>
@@ -41,7 +41,7 @@ const TrendingBar = () => {
                 <div className="icons-container-2">
                     <button className="button-2">
                         <span className="span-class">
-                        <i class="fa-solid fa-certificate"></i>
+                        <i className="fa-solid fa-certificate"></i>
                         </span>
                         <span className="text-span">New</span>
                     </button>

@@ -86,7 +86,7 @@ const NewNavBar = () => {
                         <form className='search-form'>
                             <label>
                                 <div className='icon-container'>
-                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i className="fa-solid fa-magnifying-glass"></i>
                                 </div>
                             </label>
                             <input className='input-bar' onChange={handleChange} placeholder='Search Chekkit'></input>
@@ -105,7 +105,7 @@ const NewNavBar = () => {
                                                         </div>
                                                         <div className='community-line'>
                                                             <img className='community-img' src={user.profile_img} />
-                                                            <spa>c/{`${post.username}`}</spa>
+                                                            <span>c/{`${post.username}`}</span>
                                                         </div>
                                                     </span>
                                                 </div>
@@ -136,13 +136,13 @@ const NewNavBar = () => {
                         <div className='nnb-as-container-1'>
                             <div className='nnb-as-container-2'>
                                 <a className='nnb-as-a1'>
-                                    <i class="fa-solid fa-arrow-up-right-dots nav-icon"></i>
+                                    <i className="fa-solid fa-arrow-up-right-dots nav-icon"></i>
                                 </a>
                                 <a className='nnb-as-a1'>
-                                    <i class="fa-solid fa-sink nav-icon"></i>
+                                    <i className="fa-solid fa-sink nav-icon"></i>
                                 </a>
                                 <a className='nnb-as-a1'>
-                                    <i class="fa-solid fa-video nav-icon"></i>
+                                    <i className="fa-solid fa-video nav-icon"></i>
                                 </a>
                             </div>
                         </div>
@@ -151,12 +151,12 @@ const NewNavBar = () => {
                                 <div className='nnb-containers'>
                                     <span className='nnb-span-3'>
                                         <a className='nnb-anchors' href='#'>
-                                            <i class="fa-regular fa-comment-dots nav-icon"></i>
+                                            <i className="fa-regular fa-comment-dots nav-icon"></i>
                                         </a>
                                     </span>
                                     <span className='nnb-span-3'>
                                         <a className='nnb-anchors' href='#'>
-                                            <i class="fa-regular fa-bell nav-icon"></i>
+                                            <i className="fa-regular fa-bell nav-icon"></i>
                                         </a>
                                     </span>
                                     <span className='nnb-span-3'>
@@ -166,13 +166,13 @@ const NewNavBar = () => {
                                     </span>
                                     <span className='nnb-span-3'>
                                         <a className='nnb-anchors' href='#'>
-                                            <i class="fa-solid fa-bullhorn nav-icon"></i>
+                                            <i className="fa-solid fa-bullhorn nav-icon"></i>
                                         </a>
                                     </span>
                                     <span className='nnb-span-3'>
                                         <button className='nnb-bitcoin' href='#'>
                                             <div className='nnb-bit-container'>
-                                                <i class="fa-brands fa-bitcoin"></i>
+                                                <i className="fa-brands fa-bitcoin"></i>
                                                 <span className='nnb-bit-text'>Free</span>
                                             </div>
                                         </button>
