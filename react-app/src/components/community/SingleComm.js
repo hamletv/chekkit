@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import CreatePostBar from "./CreatePostBar";
-import TrendingBar from "./TrendingBar";
-import './Posts.css'
+import { Link, useParams } from "react-router-dom";
+import CreatePostBar from '../posts/CreatePostBar'
+import TrendingBar from "../posts/TrendingBar";
+import '../posts/Posts.css'
 
-const AllPosts = () => {
-    const allPosts = useSelector(state => Object.values(state.post))
-    const allComms = useSelector(state => Object.values(state.community))
-    const posts = allPosts.reverse();
-    // const comments = useSelector(state => Object.values(state.comment))
-    // const user = useSelector(state => state.session.user)
+const SingleCommunity = () => {
+    const { id } = useParams();
+    const allPosts = useSelector(state => Object.values(state.post));
+    const posts = allPosts.filter(post => post.community_id === +id).reverse();
 
     return (
         <div className="all-posts-container">
@@ -81,17 +79,17 @@ const AllPosts = () => {
 
                         {/* side panel 1 */}
 
-                        <div className="_3Kd">
+                        {/* <div className="_3Kd">
                             <div className="_1FU">
                                 <div className="_1G4">
                                     <div className="_3RP">
                                         <div className="_2-a">
                                             <h2 className="_3t">Chekkit's Top Communities</h2>
-                                        </div>
+                                        </div> */}
 
                                         {/* list */}
 
-                                        <ol>
+                                        {/* <ol>
                                             {allComms.map((comm, i) => (
                                                 <li className="_267">
                                                 <a className="_2AR">
@@ -105,9 +103,7 @@ const AllPosts = () => {
                                                 </a>
                                                 <div className="yPM">
                                                     <button className="_2iu">
-                                                        <Link className="ctc-a" to={`/communities/${comm.id}`}>
-                                                        <span>View</span>
-                                                        </Link>
+                                                        <span>Join</span>
                                                     </button>
                                                 </div>
                                             </li>
@@ -115,20 +111,22 @@ const AllPosts = () => {
                                         </ol>
                                         <div className="lg-view-all">
                                             <Link to='/communities' className="view-all">View All</Link>
-                                        </div>
+                                        </div> */}
 
                                         {/* list end */}
 
-                                    </div>
+                                    {/* </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         {/* side panel 1 end */}
                     </div>
                 </div>
             </div>
         </div>
-    );
+     );
 }
 
-export default AllPosts;
+
+
+export default SingleCommunity;

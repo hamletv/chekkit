@@ -1,3 +1,4 @@
+import { getComms } from "./community";
 // constants
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
@@ -68,6 +69,39 @@ export const logout = () => async (dispatch) => {
     dispatch(removeUser());
   }
 };
+
+
+export const addUsertoCommunity = (payload) => async dispatch => {
+  const response = await fetch('/api/communities/user', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  if (response.ok) {
+    const user = await response.json()
+    await dispatch(setUser(user))
+    await dispatch(getComms())
+    return user;
+  }
+}
+
+export const deleteUserFromComm = (payload) => async dispatch => {
+  const response = await fetch('/api/communities/user', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  if (response.ok) {
+    const user = await response.json()
+    await dispatch(setUser(user))
+    await dispatch(getComms())
+    return user;
+  }
+}
 
 
 export const signUp = (firstName, lastName, username, email, password, confirm_password) => async (dispatch) => {

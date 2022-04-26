@@ -12,7 +12,6 @@ class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    # votes = db.Column(db.Integer)
     img_url = db.Column(db.Text)
     title = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text)
@@ -29,12 +28,11 @@ class Post(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'username': self.user.username,
-            # 'votes': self.votes,
             'img_url': self.img_url,
             'title': self.title,
             'description': self.description,
             'profile_img': self.user.profile_img,
-            # 'comments': [comment.to_dict() for comment in self.comments],
+            'community_id': self.community_id,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

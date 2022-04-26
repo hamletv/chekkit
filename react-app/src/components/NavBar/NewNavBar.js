@@ -12,13 +12,11 @@ const NewNavBar = () => {
     const allComms = useSelector(state => Object.values(state.community))
     const [search, setSearch] = useState('');
     const [searchShow, setSearchShow] = useState(false);
+    const [currentComm, setCurrentComm] = useState('Home');
     const [homeBtnShow, setHomeBtnShow] = useState(false);
     const filtered = allPosts.filter(post => {
         return post.title.toLowerCase().includes(search.toLowerCase()) || post.username.toLowerCase().includes(search.toLowerCase())
     });
-
-    console.log('NAV POSTS: ', allPosts[1])
-    console.log('NAV COMMS: ', allComms)
 
     const handleChange = e => {
         setSearch(e.target.value);
@@ -30,6 +28,10 @@ const NewNavBar = () => {
         setSearchShow(false);
     };
 
+    const handleMenu = (e) => {
+        setHomeBtnShow(false);
+    }
+
     return (
         <header className='header-container'>
             <div className='header-container-2'>
@@ -39,13 +41,13 @@ const NewNavBar = () => {
                         <button className='nnb-left'></button>
                         <div className='filler-container'></div>
                         <NavLink to='/posts' exact={true} className='logo-container'>
-                            <i className="fa-brands fa-reddit-alien"></i>
-                            <p className='nnb-app-name'>chekkit</p>
+                            <i className="fa-brands fa-reddit-alien" onClick={() => setCurrentComm('Home')}></i>
+                            <p className='nnb-app-name' onClick={() => setCurrentComm('Home')}>chekkit</p>
                         </NavLink>
                         <div className='nnb-comm'>
                             <button className='nnb-comm-button' onClick={() => setHomeBtnShow(!homeBtnShow)}>
                                 <span className='nnb-span'>
-                                    <h1 className='nnb-h1'>Home</h1>
+                                    <h1 className='nnb-h1'>{currentComm}</h1>
                                 </span>
                                 <i className="fa-solid fa-house"></i>
                                 <i className="fa-solid fa-angle-down"></i>
@@ -56,14 +58,14 @@ const NewNavBar = () => {
                                     My communities
                                 </div>
                                 <Link className='ns-button' to={'/new-subchekkit/'}>
-                                    <button className='cc-button'>
+                                    <button className='cc-button' onClick={() => {handleMenu(); setCurrentComm('New Community')}}>
                                         <i className="fa-solid fa-plus nav-icon"></i>
                                         <span className='cc-line'>Create Community</span>
                                     </button>
                                 </Link>
                                  {allComms.map((comm, i) => (
                                     <div key={i}>
-                                        <Link className='result cc-a'>
+                                        <Link to={`/communities/${comm.id}`} className='result cc-a' onClick={() => {handleMenu(); setCurrentComm(comm.comm_name)}}>
                                             <div className='community-line'>
                                                 <img className='community-img' src={comm.comm_img} />
                                             </div>

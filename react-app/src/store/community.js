@@ -18,10 +18,10 @@ export const addCommAC = (comm) => {
     };
 };
 
-export const editCommAC = (comm_name, comm_img, about) => {
+export const editCommAC = (comm_name, comm_img, about, users) => {
     return {
         type: EDIT_COMM,
-        comm_name, comm_img, about
+        comm_name, comm_img, about, users
     };
 };
 
@@ -61,11 +61,11 @@ export const addComm = (payload) => async(dispatch) => {
     return response;
 };
 
-export const editComm = ({ id, user_id, comm_name, comm_img, about }) => async(dispatch) => {
+export const editComm = ({ id, user_id, comm_name, comm_img, about, users }) => async(dispatch) => {
     const response = await fetch(`/api/communities/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_id, comm_name, comm_img, about })
+        body: JSON.stringify({ user_id, comm_name, comm_img, about, users })
     });
     if(response.ok){
         const comm = await response.json();
