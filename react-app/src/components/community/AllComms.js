@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getComms } from "../../store/community";
-import { addUsertoCommunity } from "../../store/session";
 import './AllComms.css'
 import JoinCommunity from "./Join";
-
 
 const AllCommunities = () => {
     const allComms = useSelector(state => Object.values(state.community));
@@ -15,23 +12,6 @@ const AllCommunities = () => {
     const [join, setJoin] = useState('Join');
     const [community_id, setCommunityId] = useState();
     const dispatch = useDispatch();
-
-    console.log('ALL COMMS: ', allComms)
-
-    const joinCommunity = async (e) => {
-        e.preventDefault();
-        const newMember = { user_id: user.id, community_id }
-        setJoin('Leave');
-        await dispatch(addUsertoCommunity(newMember));
-        await dispatch(getComms());
-    }
-
-    // const leaveCommunity = async (e) => {
-    //     e.preventDefault();
-    //     const removedMember = { user_id, community_id }
-    //     setJoin('Join');
-    //     dispatch()
-    // }
 
     return (
         <div>
@@ -140,9 +120,6 @@ const AllCommunities = () => {
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>

@@ -9,9 +9,8 @@ const AllPosts = () => {
     const allPosts = useSelector(state => Object.values(state.post))
     const allComms = useSelector(state => Object.values(state.community))
     const posts = allPosts.reverse();
-    const comments = useSelector(state => Object.values(state.comment))
-    const user = useSelector(state => state.session.user)
-    console.log('FROM POSTS: ', posts)
+    // const comments = useSelector(state => Object.values(state.comment))
+    // const user = useSelector(state => state.session.user)
 
     return (
         <div className="all-posts-container">
