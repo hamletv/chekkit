@@ -41,8 +41,8 @@ const NewNavBar = () => {
                         <button className='nnb-left'></button>
                         <div className='filler-container'></div>
                         <NavLink to='/posts' exact={true} className='logo-container'>
-                            <i className="fa-brands fa-reddit-alien"></i>
-                            <p className='nnb-app-name'>chekkit</p>
+                            <i className="fa-brands fa-reddit-alien" onClick={() => setCurrentComm('Home')}></i>
+                            <p className='nnb-app-name' onClick={() => setCurrentComm('Home')}>chekkit</p>
                         </NavLink>
                         <div className='nnb-comm'>
                             <button className='nnb-comm-button' onClick={() => setHomeBtnShow(!homeBtnShow)}>
@@ -58,7 +58,7 @@ const NewNavBar = () => {
                                     My communities
                                 </div>
                                 <Link className='ns-button' to={'/new-subchekkit/'}>
-                                    <button className='cc-button' onClick={() => handleMenu()}>
+                                    <button className='cc-button' onClick={() => {handleMenu(); setCurrentComm('New Community')}}>
                                         <i className="fa-solid fa-plus nav-icon"></i>
                                         <span className='cc-line'>Create Community</span>
                                     </button>
